@@ -1,41 +1,48 @@
 import {TokenType, tokenTypeToRegexMap} from "./TokenType";
 
-class Token {
-	private type: TokenType;
-	private data: string;
-	private row: number;
-	private pos: number;
+class Token
+{
+	private readonly _type: TokenType;
+	private _data: string;
+	private readonly _row: number;
+	private readonly _pos: number;
 
 	// Static list of separators (equivalent to your SEPARATORS vector)
 	public static readonly SEPARATORS: string[] = [
 		'(', ')', '[', ']', '{', '}', ';', ','
 	];
 
-	constructor(type: TokenType, data: string, row: number, pos: number) {
-		this.type = type;
-		this.data = data;
-		this.row = row;
-		this.pos = pos;
+	constructor(type: TokenType, data: string, row: number, pos: number)
+	{
+		this._type = type;
+		this._data = data;
+		this._row = row;
+		this._pos = pos;
 	}
 
-	public getType(): TokenType {
-		return this.type;
+	public getType(): TokenType
+	{
+		return this._type;
 	}
 
-	public getData(): string {
-		return this.data;
+	public getData(): string
+	{
+		return this._data;
 	}
 
-	public setData(data: string): void {
-		this.data = data;
+	public setData(data: string): void
+	{
+		this._data = data;
 	}
 
-	public getRow(): number {
-		return this.row;
+	public getRow(): number
+	{
+		return this._row;
 	}
 
-	public getPos(): number {
-		return this.pos;
+	public getPos(): number
+	{
+		return this._pos;
 	}
 }
 

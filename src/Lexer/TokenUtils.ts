@@ -2,7 +2,8 @@ import {Token, TokenType, tokenTypeToRegexMap} from "./Token";
 
 const MAX_SAFE_INTEGER = 9007199254740992.0;
 
-export function createToken(data: string, row: number, pos: number): Token {
+export function createToken(data: string, row: number, pos: number): Token
+{
 	for (const pattern of tokenTypeToRegexMap)
 	{
 		const match = data.match(pattern.regex);
@@ -33,19 +34,23 @@ export function createToken(data: string, row: number, pos: number): Token {
 	return new Token(TokenType.ERROR, data, row, pos);
 }
 
-export function isSeparator(ch: string): boolean {
+export function isSeparator(ch: string): boolean
+{
 	return isWhitespace(ch) || Token.SEPARATORS.includes(ch);
 }
 
-export function isOperation(ch: string): boolean {
+export function isOperation(ch: string): boolean
+{
 	return ['+', '-', '*', '=', '/', '!', '<', '>'].includes(ch);
 }
 
-export function isQuote(ch: string): boolean {
+export function isQuote(ch: string): boolean
+{
 	return ch === '"';
 }
 
-function isWhitespace(ch: string): boolean {
+function isWhitespace(ch: string): boolean
+{
 	return /\s/.test(ch);
 }
 
