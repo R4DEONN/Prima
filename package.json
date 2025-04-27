@@ -1,5 +1,9 @@
 {
   "type": "module",
+  "scripts": {
+    "start": "webpack --mode production && node ./dist/bundle.js",
+    "test": "jest --coverage"
+  },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.4",
