@@ -1,1 +1,10 @@
-console.log('Hello World!')
+import {GrammarOptimizer} from "./TableOptimizer/TableOptimizer";
+import * as fs from "node:fs";
+
+function main(argc: number, argv: string[])
+{
+	const inputStr = fs.readFileSync(argv[3], "utf8");
+	GrammarOptimizer.optimize(inputStr, (str) => console.log(str));
+}
+
+main(process.argv.length, process.argv);
