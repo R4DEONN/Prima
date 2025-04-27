@@ -2,6 +2,7 @@
   "type": "module",
   "scripts": {
     "start": "webpack --mode production && node ./dist/bundle.js",
+    "build": "webpack --mode development",
     "test": "jest --coverage"
   },
   "devDependencies": {
