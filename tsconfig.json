@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
+    "module": "commonjs",
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
     "sourceMap": true,
     "target": "ESNext",
     "rootDir": "./src",
+    "esModuleInterop": true,
     "outDir": "./build"
   },
   "include": ["src/**/*"],
