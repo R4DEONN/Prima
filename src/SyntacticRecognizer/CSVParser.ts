@@ -28,7 +28,7 @@ class CSVParser {
 			const row: TableRow = {
 				number: parseInt(tokens[0].trim()),
 				nonTerminal: tokens[1].trim(),
-				guidingSymbols: tokens[2].trim().split(' ').filter(s => s !== ''),
+				guidingSymbols: tokens[2].trim().split(' ').filter((s: string) => s !== ''),
 				isShift: parseInt(tokens[3].trim()) !== 0,
 				isError: parseInt(tokens[4].trim()) !== 0,
 				pointer: this.parsePointer(tokens[5].trim()),
