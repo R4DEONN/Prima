@@ -74,8 +74,8 @@ namespace GrammarOptimizer
 	{
 		const dictionary = new Dictionary();
 		const rows = input.split("\n");
-		const ruleRegex = /^<([^>]+)>\s*->\s*(.+)$/;
-		const symbolRegex = /<[^>]*>?|[^<]/g;
+		const ruleRegex = /<([^>]+)>\s*->\s*(.+)/;
+		const symbolRegex = /<[^>]*>?|~[^~]*~/g;
 
 		for (const row of rows)
 		{
@@ -93,17 +93,18 @@ namespace GrammarOptimizer
 				}
 
 				const ruleSymbols: Entity[] = [];
-				const matches = right.matchAll(symbolRegex);
-				for (const match of matches)
+				const matches = right.match(symbolRegex);
+				for (const symbol of matches)
 				{
-					const symbol = match[0];
 					if (symbol.startsWith("<") && symbol.endsWith(">"))
 					{
 						ruleSymbols.push(new NonTerminal(symbol));
 					}
 					else
 					{
-						ruleSymbols.push(new Terminal(symbol));
+						const terminal = new Terminal(symbol);
+						ruleSymbols.push(terminal);
+						dictionary.add(terminal);
 					}
 				}
 				nonTerminal.addRule(ruleSymbols);
