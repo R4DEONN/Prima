@@ -10,6 +10,8 @@
     "esModuleInterop": true,
     "outDir": "./build"
   },
-  "include": ["src/**/*"],
+  "include": [
+	"frontend/src/**/*"
+  ],
   "exclude": ["node_modules"]
 }

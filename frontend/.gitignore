@@ -1,5 +1,5 @@
 node_modules
-.idea
+../.idea
 build/bundle.js
 build/bundle.js.map
 dist
