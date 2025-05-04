@@ -15,7 +15,9 @@ namespace GrammarOptimizer
 			for (const rule of nonTerminal.getRules())
 			{
 				let result = `${nonTerminal.getValue()} -> `;
-                rule.forEach(symbol => result += symbol.getValue());
+                rule.forEach(symbol => {
+                    result += symbol.getType() == EntityType.NON_TERMINAL ? symbol.getValue() : `~${symbol.getValue()}~`;
+                });
 				result += " | ";
 				let isFirst = true;
 
@@ -47,11 +49,11 @@ namespace GrammarOptimizer
 									result += " ";
 								}
 								isSecondFirst = false;
-								result += followSymbol;
+								result += `~${followSymbol}~`;
 							}
 							continue;
 						}
-						result += guidingSymbol;
+						result += `~${guidingSymbol}~`;
 						continue;
 					}
 					if (rule[0].getType() === EntityType.NON_TERMINAL)
@@ -59,12 +61,16 @@ namespace GrammarOptimizer
 						const firstSet = firstStar.get(rule[0].getValue());
 						if (firstSet?.has(guidingSymbol))
 						{
+                            if (guidingSymbol === "e")
+                            {
+                                continue;
+                            }
 							if (!isFirst)
 							{
 								result += " ";
 							}
 							isFirst = false;
-							result += guidingSymbol;
+							result += `~${guidingSymbol}~`;
 						}
 					}
 				}
@@ -105,7 +111,7 @@ namespace GrammarOptimizer
 					}
 					else
 					{
-						const terminal = new Terminal(symbol);
+						const terminal = new Terminal(symbol.slice(1, symbol.length - 1));
 						ruleSymbols.push(terminal);
 						dictionary.add(terminal);
 					}

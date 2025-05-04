@@ -1,6 +1,8 @@
-<S> -> ~real~<idlist>
+<S> -> ~real~<idlist><A>~#~
 <idlist> -> <idlist>~,~<id>
 <idlist> -> <id>
+<idlist> -> ~e~
 <id> -> ~A~
 <id> -> ~B~
 <id> -> ~C~
+<A> -> ~m~
