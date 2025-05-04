@@ -15,12 +15,15 @@ namespace GrammarOptimizer
 			for (const rule of nonTerminal.getRules())
 			{
 				let result = `${nonTerminal.getValue()} -> `;
-				for (const symbol of rule)
-				{
-					result += symbol.getValue();
-				}
+                rule.forEach(symbol => result += symbol.getValue());
 				result += " | ";
 				let isFirst = true;
+
+                if (rule[0].getType() === EntityType.NON_TERMINAL)
+                {
+                    result += rule[0].getValue();
+                    isFirst = false;
+                }
 
 				for (const guidingSymbol of firstStar.get(nonTerminal.getValue()) || [])
 				{

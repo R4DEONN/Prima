@@ -11,7 +11,7 @@
     "outDir": "./build"
   },
   "include": [
-	"frontend/src/**/*"
+	"src/**/*"
   ],
   "exclude": ["node_modules"]
 }
