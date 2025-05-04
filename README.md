@@ -1,5 +1,7 @@
 # Types
+
 ## Core:
+
 * int
 * float
 * bool
@@ -8,10 +10,11 @@
 * string
 
 ## Other:
+
 * array
 
-
 # Заметки
+
 * Все значения в функции передаются по ссылке
 
 # Grammar:
@@ -121,4 +124,35 @@
 <AssignmentOperator> -> ~+=~
 <AssignmentOperator> -> ~-=~
 ```
+
 TODO: в грамматике описать объекты, массивы (мб классы).
+
+```mermaid
+classDiagram
+    namespace Frontend {
+        class Prima
+        class Scanner
+        class AST
+        class SyntaxAnalyzer
+        class SemanticAnalyzer
+        class CodeGenerator
+        class ErrorReporter {
+            <<interface>>
+            report()
+        }
+        class ConsoleReporter
+    }
+
+    Prima *-- Scanner
+    Prima *-- SyntaxAnalyzer
+    Prima *-- SemanticAnalyzer
+    Prima *-- ErrorReporter
+    Prima *-- CodeGenerator
+    ErrorReporter <|.. ConsoleReporter
+    
+    namespace Backend {
+        class VirtualMachine
+    }
+    
+    CodeGenerator --> VirtualMachine : Create byte code for
+```

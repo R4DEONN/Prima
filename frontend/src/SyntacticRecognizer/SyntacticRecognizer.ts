@@ -1,128 +1,90 @@
-import {TableRow} from "../Common/Table";
-import {Token} from "../Lexer/Token";
+type Action =
+	| { type: 'shift', state: number }
+	| { type: 'reduce', production: number }
+	| { type: 'accept' }
+	| { type: 'error' };
 
-class SyntacticRecognizer {
-	private currentState: number = 1;
-	private currentTokenIndex: number = 0;
-	private stack: number[] = [];
+export type Rule = {
+	left: string;
+	right: string[];
+};
+
+type SLRTable = {
+	action: (state: number, symbol: string) => Action;
+	goto: (state: number, nonTerminal: string) => number;
+	rule: Rule[];
+};
+
+class SyntacticRecognizer
+{
+	private _stateStack: number[] = [0];
+	private _symbolStack: string[] = [];
+	private readonly _input: string[];
+	private _position = 0;
 
 	constructor(
-		private table: Map<number, TableRow>,
-		private tokens: Token[]
-	) {
+		private table: SLRTable,
+		input: string[]
+	)
+	{
+		this._input = [...input, '#'];
 	}
 
-	public parse(): boolean {
-		while (this.currentState > 0 && this.currentTokenIndex < this.tokens.length)
+	public parse(): boolean
+	{
+		while (true)
 		{
-			this.printTrace(`Processing state: ${this.currentState}`);
+			const currentState = this._stateStack[this._stateStack.length - 1];
+			const currentSymbol = this._input[this._position];
 
-			if (!this.processState(this.currentState))
+			const action = this.table.action(currentState, currentSymbol);
+
+			console.log(`State: ${currentState}, Symbol: ${currentSymbol}, Action:`, action);
+			console.log(`State Stack:`, this._stateStack);
+			console.log(`Symbol Stack:`, this._symbolStack);
+			console.log(`Input Left:`, this._input.slice(this._position));
+
+			switch (action.type)
 			{
-				return false;
-			}
+				case 'shift':
+					// Push symbol and new state to respective stacks
+					this._symbolStack.push(currentSymbol);
+					this._stateStack.push(action.state);
+					this._position++;
+					break;
 
-			if (this.isEnd(this.currentState))
-			{
-				this.printTrace("End of parsing reached.");
-				return true;
-			}
-		}
+				case 'reduce':
+					const production = this.table.rule[action.production];
+					console.log(`Reducing by ${production.left} -> ${production.right.join(' ')}`);
 
-		this.printTrace("Error: Unexpected end of parsing");
-		return false;
-	}
+					// Handle reduction - pop rhs from both stacks
+					if (production.right[0] !== 'ε')
+					{ // Skip for epsilon productions
+						this._stateStack = this._stateStack.slice(0, -production.right.length);
+						this._symbolStack = this._symbolStack.slice(0, -production.right.length);
+					}
 
-	private processState(currentState: number): boolean {
-		if (this.isStateNotFound(currentState))
-		{
-			this.printTrace(`Error: Invalid state ${currentState}`);
-			return false;
-		}
+					// Push LHS and new state
+					const newState = this._stateStack[this._stateStack.length - 1];
+					const gotoState = this.table.goto(newState, production.left);
 
-		const row = this.table.get(currentState)!;
-		const currentToken = this.tokens[this.currentTokenIndex];
-		this.printTrace(`Current state: ${row.number}, Non-terminal: ${row.nonTerminal} Token: ${currentToken.getData()}`);
+					this._symbolStack.push(production.left);
+					this._stateStack.push(gotoState);
+					break;
 
-		if (this.currentTokenIndex >= this.tokens.length)
-		{
-			this.printTrace("Error: Unexpected end of input");
-			return false;
-		}
+				case 'accept':
+					console.log('Parsing completed successfully!');
+					return true;
 
-		const currentSymbol = currentToken.getData();
-		const isSymbolValid = this.isCurrentStateInSymbols(row, currentSymbol);
-
-		if (row.isError && !isSymbolValid)
-		{
-			this.printTrace(`Error: Unexpected symbol '${currentSymbol}' at position ${currentToken.getPos()}\n Expected: ${row.guidingSymbols.join(' ')}`);
-			return false;
-		}
-
-		if (isSymbolValid)
-		{
-			if (row.isShift && !this.handleShift())
-			{
-				return false;
-			}
-
-			this.handlePointerAndStack(row, currentState);
-		}
-		else
-		{
-			this.currentState = currentState + 1;
-		}
-
-		return true;
-	}
-
-	private handleShift(): boolean {
-		if (this.currentTokenIndex >= this.tokens.length)
-		{
-			this.printTrace("Error: Unexpected end of input");
-			return false;
-		}
-
-		const currentSymbol = this.tokens[this.currentTokenIndex].getData();
-		this.printTrace(`Shift: ${currentSymbol}`);
-		this.currentTokenIndex++;
-		return true;
-	}
-
-	private handlePointerAndStack(row: TableRow, currentState: number): void {
-		if (row.pointer > 0)
-		{
-			this.currentState = row.pointer;
-		}
-		else if (row.pointer === -1)
-		{
-			if (this.stack.length > 0)
-			{
-				this.currentState = this.stack.pop()!;
+				case 'error':
+					console.error(`Syntax error at position ${this._position}, symbol '${currentSymbol}'`);
+					console.error(`State Stack:`, this._stateStack);
+					console.error(`Symbol Stack:`, this._symbolStack);
+					console.error(`Input Left:`, this._input.slice(this._position));
+					return false;
 			}
 		}
-
-		if (row.isStack)
-		{
-			this.stack.push(currentState + 1);
-		}
-	}
-
-	private printTrace(message: string): void {
-		console.log(message);
-	}
-
-	private isStateNotFound(currentState: number): boolean {
-		return !this.table.has(currentState);
-	}
-
-	private isCurrentStateInSymbols(row: TableRow, currentSymbol: string): boolean {
-		return row.guidingSymbols.includes(currentSymbol);
-	}
-
-	private isEnd(currentState: number): boolean {
-		return this.table.get(currentState)!.isEnd;
 	}
 }
 
-export {SyntacticRecognizer};
+export {SyntacticRecognizer, SLRTable};
