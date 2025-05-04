@@ -20,10 +20,10 @@
 # Grammar:
 
 ```
-<Program> -> <StatementList> #
+<Program> -> <StatementList> ~#~
 <StatementList> -> <Statement>
 <StatementList> -> <Statement> <StatementList>
-<StatementList> -> e
+<StatementList> -> ~e~
 <Statement> -> <Declaration> ~;~
 <Statement> -> <Expression> ~;~
 <Statement> -> <IfStatement>
@@ -38,7 +38,7 @@
 <FunctionDeclaration> -> ~function~ ~Identifier~ ~(~ <ParameterList> ~)~ ~:~ <FunctionReturnType> <Block>
 <ParameterList> -> <Parameter>
 <ParameterList> -> <ParameterList> ~,~ <Parameter>
-<ParameterList> -> e
+<ParameterList> -> ~e~
 <Parameter> -> ~Identifier~ ~:~ <Type>
 <Type> -> ~int~
 <Type> -> ~float~
@@ -101,7 +101,7 @@
 
 <ArgumentList> -> <Expression>
 <ArgumentList> -> <ArgumentList> ~,~ <Expression>
-<ArgumentList> -> e
+<ArgumentList> -> ~e~
 
 <Block> -> ~{~ <StatementList> ~}~
 
@@ -111,11 +111,11 @@
 <FirstForArgument> -> <VariableDeclaration>
 <FirstForArgument> -> <Expression>
 <FirstForArgument> -> <Assignment>
-<FirstForArgument> -> e
+<FirstForArgument> -> ~e~
 <SecondForArgument> -> <Expression>
-<SecondForArgument> -> e
+<SecondForArgument> -> ~e~
 <ThirdForArgument> -> <Expression>
-<ThirdForArgument> -> e
+<ThirdForArgument> -> ~e~
 <ReturnStatement> -> ~return~ <Expression> ~;~
 <ReturnStatement> -> ~return~ ~;~
 
