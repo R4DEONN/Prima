@@ -1,38 +1,54 @@
 import {Scanner} from "./Scanner/Scanner";
 import * as fs from "node:fs";
 import * as readline from "node:readline";
+import {ConsoleReporter} from "./Error/ErrorReporter/ConsoleReporter";
+import {IErrorReporter} from "./Error/ErrorReporter/IErrorReporter";
 
-class Prima {
-	private _scanner: Scanner;
+class Prima
+{
+	private static _errorReporter: IErrorReporter = new ConsoleReporter();
 
-	constructor(sourcePath: string) {
-		const source = fs.readFileSync(sourcePath, 'utf8');
-		this._scanner = new Scanner(source);
+	static run(source: string)
+	{
+		const scanner = new Scanner(source, this._errorReporter);
+		const tokens = scanner.scanTokens();
+		if (this._errorReporter.hadError())
+		{
+			process.exit(1);
+		}
+
+		tokens.forEach(token => console.log(token));
 	}
 
-	run(source: string) {
-		this._scanner = new Scanner(source);
-
-	}
-
-	runFile(sourcePath: string) {
-		const source = fs.readFileSync(sourcePath, 'utf8');
-		this.run(source);
+	static runFile(sourcePath: string)
+	{
+		try
+		{
+			const source = fs.readFileSync(sourcePath, 'utf8');
+			this.run(source);
+		}
+		catch (e)
+		{
+			this._errorReporter.report(1, 1, `Invalid path: ${sourcePath}`);
+			process.exit(1);
+		}
 	}
 
 	/**
 	 * Запуск в режиме консольного интерпретатора
 	 */
-	async runPrompt() {
-		const readline = require('readline').createInterface({
+	static async runPrompt()
+	{
+		const readlineInterface = readline.createInterface({
 			input: process.stdin,
 			output: process.stdout
 		});
 
-		for (;;)
+		for (; ;)
 		{
-			const line = await new Promise<string>(resolve => {
-				readline.question('> ', resolve);
+			const line = await new Promise<string>(resolve =>
+			{
+				readlineInterface.question('> ', resolve);
 			});
 
 			if (line === null)
@@ -41,9 +57,10 @@ class Prima {
 			}
 
 			this.run(line);
+			this._errorReporter.setError(false);
 		}
 
-		readline.close();
+		readlineInterface.close();
 	}
 }
 

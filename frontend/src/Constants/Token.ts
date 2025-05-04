@@ -29,3 +29,5 @@ class Token {
         return `At line ${this._line} and pos ${this._pos}: ${this._type} (${this._lexeme})`;
     }
 }
+
+export {Token};

@@ -2,8 +2,7 @@
 
 ## Core:
 
-* int
-* float
+* number
 * bool
 * null
 * object
@@ -11,7 +10,9 @@
 
 ## Other:
 
-* array
+* Array
+* String (с методами)
+* Class (через прототипы)
 
 # Заметки
 
