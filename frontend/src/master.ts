@@ -50,7 +50,6 @@ function main(argc: number, argv: string[])
 			break;
 
 		case "prompt":
-			// Запускаем асинхронно, потому что REPL обычно работает через readline/promises
 			(async () =>
 			{
 				await Prima.runPrompt();
