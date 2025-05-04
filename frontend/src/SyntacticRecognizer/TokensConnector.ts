@@ -1,11 +1,14 @@
 import {Token, TokenType} from "../Lexer/Token";
 
-class TokensConnector {
-	private static toLower(str: string): string {
+class TokensConnector
+{
+	private static toLower(str: string): string
+	{
 		return str.toLowerCase();
 	}
 
-	public static convertTokenData(token: Token): Token {
+	public static convertTokenData(token: Token): Token
+	{
 		if (token.getType() === TokenType.IDENTIFIER)
 		{
 			const lowerData = this.toLower(token.getData());
@@ -66,7 +69,8 @@ class TokensConnector {
 		return token;
 	}
 
-	public static convertTokens(tokens: Token[]): Token[] {
+	public static convertTokens(tokens: Token[]): Token[]
+	{
 		return tokens.map(token => this.convertTokenData(token));
 	}
 }
