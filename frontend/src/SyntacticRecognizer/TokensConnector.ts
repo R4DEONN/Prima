@@ -2,16 +2,16 @@ import {Token, TokenType} from "../Lexer/Token";
 
 class TokensConnector
 {
-	private static toLower(str: string): string
+	public static convertTokens(tokens: Token[]): Token[]
 	{
-		return str.toLowerCase();
+		return tokens.map(token => this.convertTokenData(token));
 	}
 
 	public static convertTokenData(token: Token): Token
 	{
 		if (token.getType() === TokenType.IDENTIFIER)
 		{
-			const lowerData = this.toLower(token.getData());
+			const lowerData = this._toLower(token.getData());
 			if (lowerData === "true")
 			{
 				token.setData("t");
@@ -26,7 +26,7 @@ class TokensConnector
 
 		if (token.getType() === TokenType.LOGICAL)
 		{
-			const lowerData = this.toLower(token.getData());
+			const lowerData = this._toLower(token.getData());
 			if (lowerData === "<=")
 			{
 				token.setData("l");
@@ -69,9 +69,9 @@ class TokensConnector
 		return token;
 	}
 
-	public static convertTokens(tokens: Token[]): Token[]
+	private static _toLower(str: string): string
 	{
-		return tokens.map(token => this.convertTokenData(token));
+		return str.toLowerCase();
 	}
 }
 

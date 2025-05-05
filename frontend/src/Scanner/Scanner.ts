@@ -18,7 +18,7 @@ class Scanner
 	{
 	}
 
-	scanTokens(): Array<Token>
+	public scanTokens(): Array<Token>
 	{
 		while (!this._isAtEnd())
 		{
