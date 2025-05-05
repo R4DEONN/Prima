@@ -185,11 +185,29 @@ classDiagram
         identifier
     }
     
-    class ASTNode
+    class NodeType {
+        <<enumeration>>
+        Expression
+        Literal
+    }
+    
+    class ASTNode {
+        type: NodeType
+    }
     class Expression
+    class Literal {
+        value: string|bool|number
+    }
+    class MemberExpression {
+        object: Expression
+        property: Expression
+        computed: bool
+    }
     class BinaryExpression
     class UnaryExpression
-    class CallExpression
+    class CallExpression {
+        callee: MemberExpression
+    }
     class Identifier {
         name: string
     }
@@ -213,6 +231,8 @@ classDiagram
     }
     
     ASTNode <|-- Expression
+    Expression <|-- Literal
+    Expression <|-- MemberExpression
     Expression <|-- BinaryExpression
     Expression <|-- UnaryExpression
     Expression <|-- CallExpression
