@@ -1,6 +1,16 @@
-# Types
+# Prima Language Documentation
 
-## Core:
+## Ссылки
+* [Типы](#types)
+  * [Ядро](#core)
+  * [std](#other)
+* [Грамматика](#grammar)
+* [Диаграмма классов](#диаграмма-классов)
+  * [AST](#ast-types)
+
+## Types
+
+### Core:
 
 * number
 * bool
@@ -8,17 +18,17 @@
 * object
 * string
 
-## Other:
+### Other:
 
 * Array
 * String (с методами)
 * Class (через прототипы)
 
-# Заметки
+## Заметки
 
 * Все значения в функции передаются по ссылке
 
-# Grammar:
+## Grammar:
 
 ```
 <Program> -> <StatementList> ~#~
@@ -128,6 +138,8 @@
 
 TODO: в грамматике описать объекты, массивы (мб классы).
 
+
+## Диаграмма классов
 ```mermaid
 classDiagram
     namespace Frontend {
@@ -156,4 +168,61 @@ classDiagram
     }
     
     CodeGenerator --> VirtualMachine : Create byte code for
+```
+
+### AST Types
+
+```mermaid
+classDiagram
+    class Type {
+        <<enumeration>>
+        number
+        string
+        bool
+        object
+        identifier
+    }
+    
+    class ASTNode
+    class Expression
+    class BinaryExpression
+    class UnaryExpression
+    class CallExpression
+    class Identifier {
+        name: string
+    }
+    
+    class Statement
+    class IfStatement
+    class ForStatement
+    
+    class Declaration {
+        name: Identifier
+    }
+    class VariableDeclaration
+    class FunctionDeclaration {
+        parameters: Array~Parameter~
+        type: Type
+        body: Block
+    }
+    class Parameter {
+        name: Identifier
+        type: Type
+    }
+    
+    ASTNode <|-- Expression
+    Expression <|-- BinaryExpression
+    Expression <|-- UnaryExpression
+    Expression <|-- CallExpression
+    Expression <|-- Identifier
+    
+    ASTNode <|-- Statement
+    Statement <|-- IfStatement
+    Statement <|-- ForStatement
+    
+    ASTNode <|-- Declaration
+    Identifier --o Declaration
+    Declaration <|-- VariableDeclaration
+    Declaration <|-- FunctionDeclaration
+    FunctionDeclaration *-- Parameter
 ```
