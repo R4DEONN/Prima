@@ -1,33 +1,40 @@
 import {TokenType} from "./TokenType";
 
-class Token {
-    constructor(
-        private readonly _type: TokenType,
-        private readonly _lexeme: string,
-        private readonly _line: number,
-        private readonly _pos: number,
-    ) {
-    }
+class Token
+{
+	constructor(
+		private readonly _type: TokenType,
+		private readonly _lexeme: string,
+		private readonly _line: number,
+		private readonly _pos: number,
+	)
+	{
+	}
 
-    getType() {
-        return this._type;
-    }
+	public getType(): TokenType
+	{
+		return this._type;
+	}
 
-    getLexeme() {
-        return this._lexeme;
-    }
+	public getLexeme(): string
+	{
+		return this._lexeme;
+	}
 
-    getLine() {
-        return this._line;
-    }
+	public getLine(): number
+	{
+		return this._line;
+	}
 
-    getPos() {
-        return this._pos;
-    }
+	public getPos(): number
+	{
+		return this._pos;
+	}
 
-    toString() {
-        return `At line ${this._line} and pos ${this._pos}: ${this._type} (${this._lexeme})`;
-    }
+	public toString(): string
+	{
+		return `At line ${this._line} and pos ${this._pos}: ${this._type} (${this._lexeme})`;
+	}
 }
 
 export {Token};

@@ -1,11 +1,13 @@
 import {GrammarOptimizer} from "./TableOptimizer/TableOptimizer";
 import {SyntacticRecognizer} from "./SyntacticRecognizer/SyntacticRecognizer";
 import * as fs from "node:fs";
+import {Scanner} from "./Scanner/Scanner";
 
 function main(argc: number, argv: string[])
 {
 	// const inputStr = fs.readFileSync(argv[3], "utf8");
 	// GrammarOptimizer.optimize(inputStr, (str) => process.stdout.write(str));
+	const primeNumb = new Scanner();
 	const table = {
 		"<Z>": {
 			"<Z>": "OK",

@@ -8,7 +8,7 @@ class Prima
 {
 	private static _errorReporter: IErrorReporter = new ConsoleReporter();
 
-	static run(source: string)
+	public static run(source: string): void
 	{
 		const scanner = new Scanner(source, this._errorReporter);
 		const tokens = scanner.scanTokens();
@@ -20,7 +20,7 @@ class Prima
 		tokens.forEach(token => console.log(token));
 	}
 
-	static runFile(sourcePath: string)
+	public static runFile(sourcePath: string): void
 	{
 		try
 		{
@@ -37,7 +37,7 @@ class Prima
 	/**
 	 * Запуск в режиме консольного интерпретатора
 	 */
-	static async runPrompt()
+	public static async runPrompt(): Promise<void>
 	{
 		const readlineInterface = readline.createInterface({
 			input: process.stdin,

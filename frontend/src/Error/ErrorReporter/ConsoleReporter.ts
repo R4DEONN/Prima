@@ -2,7 +2,7 @@ import {BaseReporter} from "./BaseReporter";
 
 class ConsoleReporter extends BaseReporter
 {
-	_additionalReport(line: number, pos: number, message: string)
+	protected _additionalReport(line: number, pos: number, message: string): void
 	{
 		console.error(`Error at line ${line} and pos ${pos}: ${message}`);
 	}

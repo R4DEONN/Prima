@@ -4,17 +4,17 @@ abstract class BaseReporter implements IErrorReporter
 {
 	private _hadError: boolean = false;
 
-	hadError(): boolean
+	public hadError(): boolean
 	{
 		return this._hadError;
 	}
 
-	setError(error: boolean)
+	public setError(error: boolean)
 	{
 		this._hadError = error;
 	}
 
-	report(line: number, pos: number, message: string): void
+	public report(line: number, pos: number, message: string): void
 	{
 		this._hadError = true;
 		this._additionalReport(line, pos, message);
