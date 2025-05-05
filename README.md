@@ -157,3 +157,5 @@ classDiagram
     
     CodeGenerator --> VirtualMachine : Create byte code for
 ```
+
+[Диаграмма UML](https://drive.google.com/file/d/1UHDILx1tE2_ZwmfK0skRpRAy9a6agTaS/view?usp=sharing)
