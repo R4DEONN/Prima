@@ -21,11 +21,10 @@ public:
 
 	PreludeErrorCode run()
 	{
+		ip = chunk.code.begin();
 		while (ip < chunk.code.end())
 		{
-			OpCode instruction = static_cast<OpCode>(*ip++);
-
-			switch (instruction)
+			switch (static_cast<OpCode>(*ip++))
 			{
 			case OpCode::CONSTANT: {
 				Value constant = chunk.constants[*ip++];
@@ -38,10 +37,12 @@ public:
 				return PreludeErrorCode::PRELUDE_RUNTIME_ERROR;
 			}
 		}
+
+		return PreludeErrorCode::PRELUDE_OK;
 	}
 
 private:
 	Chunk chunk;
-	std::vector<uint8_t>::iterator ip;
+	std::vector<uint8_t>::const_iterator ip;
 	std::stack<Value> stack;
 };

@@ -5,10 +5,10 @@
 int main()
 {
 	Chunk chunk;
+	chunk.writeConstant(5, 1);
 	chunk.write(OpCode::RETURN, 1);
 	Prelude prelude(chunk);
-	auto errorCode = prelude.run();
-	switch (errorCode)
+	switch (auto errorCode = prelude.run())
 	{
 	case PreludeErrorCode::PRELUDE_OK:
 		std::cout << "No errors" << std::endl;

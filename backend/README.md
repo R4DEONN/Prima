@@ -15,7 +15,7 @@ JIT-компилятор - Prisma
 ## Архитектура виртуальной машины
 ```mermaid
 classDiagram
-    class Value {
+    class ValueType {
         <<Enumeration>>
         NULL
         BOOL
@@ -24,6 +24,8 @@ classDiagram
         STRING
         FUNCTION
     }
+    
+    class Value
 
     class OpCode {
         <<Enumeration>>
@@ -38,13 +40,9 @@ classDiagram
         CONSTANT
     }
 
-    class Instruction {
-        opCode: OpCode
-        line: usize
-    }
-    
     class Chunk {
         code: vector~OpCode~
+        lines: vector~int~
         constants: vector~Value~
     }
 
