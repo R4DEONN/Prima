@@ -192,9 +192,12 @@ classDiagram
     }
     
     class ASTNode {
-        type: NodeType
+        nodeType: NodeType
     }
-    class Expression
+    class Expression {
+        <!-- Тип после вычисления -->
+        type: Type
+    }
     class Literal {
         value: string|bool|number
     }
@@ -203,31 +206,60 @@ classDiagram
         property: Expression
         computed: bool
     }
-    class BinaryExpression
-    class UnaryExpression
+    class BinaryExpression {
+        left: Expression
+        right: Expression
+        operator: string|Operation
+    }
+    class UnaryExpression {
+        operator: string|Operation
+        operand: Expression
+    }
     class CallExpression {
-        callee: MemberExpression
+        callee: Expression
+        arguments: Array~Expression~
+        
     }
     class Identifier {
         name: string
     }
     
     class Statement
-    class IfStatement
-    class ForStatement
+    class BlockStatement {
+        body: Array~ASTNode~
+    }
+    class IfStatement {
+        test: Exression
+        consequent: BlockStatement
+        alternate?: BlockStatement
+    }
+    class ForStatement {
+        init?: Expression
+        test?: Expression
+        update?: Expression
+        body: BlockStatement
+    }
     
     class Declaration {
         name: Identifier
     }
-    class VariableDeclaration
+    class VariableDeclaration {
+        kind: "const"|"var"
+        type: Type
+        initializer?: Expression
+    }
     class FunctionDeclaration {
         parameters: Array~Parameter~
         type: Type
-        body: Block
+        body: BlockStatement
     }
     class Parameter {
         name: Identifier
         type: Type
+    }
+    class ClassDeclaration {
+        superClass?: Expression
+        body: ClassBody
     }
     
     ASTNode <|-- Expression
@@ -241,10 +273,11 @@ classDiagram
     ASTNode <|-- Statement
     Statement <|-- IfStatement
     Statement <|-- ForStatement
+    Statement <|-- BlockStatement
     
     ASTNode <|-- Declaration
-    Identifier --o Declaration
     Declaration <|-- VariableDeclaration
+    Declaration <|-- ClassDeclaration
     Declaration <|-- FunctionDeclaration
     FunctionDeclaration *-- Parameter
 ```
