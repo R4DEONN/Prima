@@ -229,13 +229,13 @@ classDiagram
         body: Array~ASTNode~
     }
     class IfStatement {
-        test: Exression
+        condition: Expression
         consequent: BlockStatement
         alternate?: BlockStatement
     }
     class ForStatement {
         init?: Expression
-        test?: Expression
+        condition?: Expression
         update?: Expression
         body: BlockStatement
     }
