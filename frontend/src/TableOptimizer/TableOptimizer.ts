@@ -31,7 +31,7 @@ namespace GrammarOptimizer
 				{
 					if (
 						rule[0].getType() === EntityType.TERMINAL &&
-						rule[0].getValue() === guidingSymbol
+						rule[0].getValue() === guidingSymbol.toString()
 					)
 					{
 						if (!isFirst)
@@ -39,7 +39,7 @@ namespace GrammarOptimizer
 							result += " ";
 						}
 						isFirst = false;
-						if (guidingSymbol === "e")
+						if (guidingSymbol.toString() === "e")
 						{
 							let isSecondFirst = true;
 							for (const followSymbol of follow.get(nonTerminal.getValue()) || [])
@@ -49,11 +49,11 @@ namespace GrammarOptimizer
 									result += " ";
 								}
 								isSecondFirst = false;
-								result += `~${followSymbol}~`;
+								result += followSymbol;
 							}
 							continue;
 						}
-						result += `~${guidingSymbol}~`;
+						result += guidingSymbol;
 						continue;
 					}
 					if (rule[0].getType() === EntityType.NON_TERMINAL)
@@ -61,7 +61,7 @@ namespace GrammarOptimizer
 						const firstSet = firstStar.get(rule[0].getValue());
 						if (firstSet?.has(guidingSymbol))
 						{
-                            if (guidingSymbol === "e")
+                            if (guidingSymbol.toString() === "e")
                             {
                                 continue;
                             }
@@ -70,7 +70,7 @@ namespace GrammarOptimizer
 								result += " ";
 							}
 							isFirst = false;
-							result += `~${guidingSymbol}~`;
+							result += guidingSymbol;
 						}
 					}
 				}

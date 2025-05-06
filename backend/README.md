@@ -1,5 +1,9 @@
 # Виртуальная машина для языка Prima
 
+Интерпретатор - Prelude
+
+JIT-компилятор - Prism
+
 ## Список команд
 | Код                     | Обозначение | Название  | Стек         | Действие |
 |-------------------------|-------------|-----------|--------------|----------|
@@ -13,27 +17,25 @@
 classDiagram
     class Value {
         <<Enumeration>>
-        Null
-        Bool(bool)
-        Int(i64)
-        Float(f64)
-        String(Rc<String>)
-        Function(Rc<Function>)
+        NULL
+        BOOL
+        INT
+        FLOAT
+        STRING
+        FUNCTION
     }
 
     class OpCode {
         <<Enumeration>>
-        Push
-        Pop
-        Add
-        Sub
-        Mul
-        Div
-        JumpIfFalse(usize)
-        Jump(usize)
-        Call(usize)
-        Return
-        LoadConstant(usize)
+        PUSH
+        POP
+        ADD
+        SUB
+        MUL
+        DIV
+        CALL
+        RETURN
+        CONSTANT
     }
 
     class Instruction {
@@ -41,9 +43,11 @@ classDiagram
         line: usize
     }
     
-    class MemoryManager {
-        allocate(&mut self, size: usize) Result<*mut u8, Error>
-        deallocate(&mut self, ptr: *mut u8)
-        collect_garbage(&mut self)
+    class Chunk {
+        code: vector~OpCode~
+        constants: vector~Value~
     }
+
+    Chunk *-- OpCode
+    Chunk *-- Value
 ```
