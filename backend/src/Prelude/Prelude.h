@@ -4,6 +4,13 @@
 #include <utility>
 #include "../Common/Chunk.h"
 
+#define BINARY_OP(op) \
+do { \
+Value b = pop(); \
+Value a = pop(); \
+push(a op b); \
+} while (false)
+
 enum class PreludeErrorCode
 {
 	PRELUDE_OK = 0,
@@ -26,12 +33,29 @@ public:
 		{
 			switch (static_cast<OpCode>(*ip++))
 			{
-			case OpCode::CONSTANT: {
+			case OpCode::CONSTANT:
+			{
 				Value constant = chunk.constants[*ip++];
-				std::cout << constant << std::endl;
+				push(constant);
 				break;
 			}
+			case OpCode::ADD:
+				BINARY_OP(+);
+				break;
+			case OpCode::SUBTRACT:
+				BINARY_OP(-);
+				break;
+			case OpCode::MULTIPLY:
+				BINARY_OP(*);
+				break;
+			case OpCode::DIVIDE:
+				BINARY_OP(/);
+				break;
+			case OpCode::NEGATE:
+				push(-pop());
+				break;
 			case OpCode::RETURN:
+				std::cout << pop() << std::endl;
 				return PreludeErrorCode::PRELUDE_OK;
 			default:
 				return PreludeErrorCode::PRELUDE_RUNTIME_ERROR;
@@ -42,6 +66,18 @@ public:
 	}
 
 private:
+	void push(const Value &value)
+	{
+		stack.push(value);
+	}
+
+	Value pop()
+	{
+		auto value = stack.top();
+		stack.pop();
+		return value;
+	}
+
 	Chunk chunk;
 	std::vector<uint8_t>::const_iterator ip;
 	std::stack<Value> stack;

@@ -14,14 +14,17 @@ add_executable(${PROJECT_NAME}
         src/Common/Value.cpp
 )
 
-add_executable(test
-        test/ChunkTest.cpp
-        src/Common/Chunk.h
-        src/Common/OpCode.h
-        src/Common/Value.h
-        src/Prelude/Prelude.h
-        src/Common/Value.cpp
-)
+find_package(Catch2)
 
-find_package(Catch2 REQUIRED)
-target_link_libraries(test PRIVATE Catch2::Catch2WithMain)
+if(Catch2_FOUND)
+    add_executable(test
+            test/ChunkTest.cpp
+            src/Common/Chunk.h
+            src/Common/OpCode.h
+            src/Common/Value.h
+            src/Prelude/Prelude.h
+            src/Common/Value.cpp
+    )
+
+    target_link_libraries(test PRIVATE Catch2::Catch2WithMain)
+endif()
