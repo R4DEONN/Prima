@@ -1,4 +1,4 @@
-# Виртуальная машина для языка Prima
+# Виртуальная машина языка Prima
 
 Интерпретатор - Prelude
 
@@ -19,8 +19,7 @@ classDiagram
         <<Enumeration>>
         NULL
         BOOL
-        INT
-        FLOAT
+        DOUBLE
         STRING
         FUNCTION
     }

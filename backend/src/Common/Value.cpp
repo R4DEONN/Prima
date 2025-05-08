@@ -1,5 +1,34 @@
 #include "Value.h"
 
+bool toBool(const Value& value)
+{
+	return std::visit([](auto&& arg) -> bool
+	{
+		using T = std::decay_t<decltype(arg)>;
+
+		if constexpr (std::is_same_v<T, std::monostate>)
+		{
+			return false;
+		}
+		else if constexpr (std::is_same_v<T, bool>)
+		{
+			return arg;
+		}
+		else if constexpr (std::is_integral_v<T> || std::is_floating_point_v<T>)
+		{
+			return static_cast<bool>(arg);
+		}
+		else if constexpr (std::is_same_v<T, std::string>)
+		{
+			return !arg.empty();
+		}
+		else
+		{
+			throw std::runtime_error("Invalid value type");
+		}
+	}, value);
+}
+
 std::ostream &operator<<(std::ostream &output, const Value &value)
 {
 	if (std::holds_alternative<int>(value))
@@ -56,7 +85,7 @@ Value applyArithmeticOp(const Value &lhs, const Value &rhs, Op op)
 		}
 		else
 		{
-			return std::monostate{};
+			throw std::invalid_argument("Invalid type");
 		}
 	}, lhs, rhs);
 }
@@ -87,17 +116,62 @@ Value operator/(const Value &lhs, const Value &rhs)
 			constexpr T epsilon = static_cast<T>(1e-9);
 			if (std::abs(b) < epsilon)
 			{
-				return std::monostate{};
+				throw std::runtime_error("Divide by zero");
 			}
 		}
 		else
 		{
 			if (b == 0)
 			{
-				return std::monostate{};
+				throw std::runtime_error("Divide by zero");
 			}
 		}
 
 		return a / b;
 	});
 }
+
+bool operator==(const Value& lhs, const Value& rhs)
+{
+	return std::visit([](const auto& l, const auto& r) -> bool
+	{
+		using L = std::decay_t<decltype(l)>;
+		using R = std::decay_t<decltype(r)>;
+
+		if constexpr (std::is_same_v<L, R>)
+		{
+			return l == r;
+		}
+		else
+		{
+			throw std::invalid_argument("Invalid type");
+		}
+	}, lhs, rhs);
+}
+
+bool operator!=(const Value& lhs, const Value& rhs)
+{
+	return !(lhs == rhs);
+}
+
+bool operator<(const Value& lhs, const Value& rhs)
+{
+	return std::visit([](const auto& l, const auto& r) -> bool
+	{
+		using L = std::decay_t<decltype(l)>;
+		using R = std::decay_t<decltype(r)>;
+
+		if constexpr (std::is_same_v<L, R>)
+		{
+			return l < r;
+		}
+		else
+		{
+			throw std::invalid_argument("Invalid type");
+		}
+	}, lhs, rhs);
+}
+
+bool operator>(const Value& lhs, const Value& rhs) { return rhs < lhs; }
+bool operator<=(const Value& lhs, const Value& rhs) { return !(rhs < lhs); }
+bool operator>=(const Value& lhs, const Value& rhs) { return !(lhs < rhs); }

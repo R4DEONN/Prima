@@ -11,13 +11,6 @@ Value a = pop(); \
 push(a op b); \
 } while (false)
 
-enum class PreludeErrorCode
-{
-	PRELUDE_OK = 0,
-	PRELUDE_COMPILE_ERROR = 1,
-	PRELUDE_RUNTIME_ERROR = 2,
-};
-
 class Prelude
 {
 public:
@@ -26,7 +19,7 @@ public:
 	{
 	}
 
-	PreludeErrorCode run()
+	void run()
 	{
 		ip = chunk.code.begin();
 		while (ip < chunk.code.end())
@@ -39,6 +32,9 @@ public:
 				push(constant);
 				break;
 			}
+			case OpCode::NOT:
+				push(!toBool(pop()));
+				break;
 			case OpCode::ADD:
 				BINARY_OP(+);
 				break;
@@ -56,13 +52,29 @@ public:
 				break;
 			case OpCode::RETURN:
 				std::cout << pop() << std::endl;
-				return PreludeErrorCode::PRELUDE_OK;
+				return;
+			case OpCode::NIL:
+				push(std::monostate{});
+				break;
+			case OpCode::TRUE:
+				push(true);
+				break;
+			case OpCode::FALSE:
+				push(false);
+				break;
+			case OpCode::EQUAL:
+				BINARY_OP(==);
+				break;
+			case OpCode::GREATER:
+				BINARY_OP(>);
+				break;
+			case OpCode::LESS:
+				BINARY_OP(<);
+				break;
 			default:
-				return PreludeErrorCode::PRELUDE_RUNTIME_ERROR;
+				throw std::runtime_error("Unknown opcode");
 			}
 		}
-
-		return PreludeErrorCode::PRELUDE_OK;
 	}
 
 private:
@@ -73,6 +85,10 @@ private:
 
 	Value pop()
 	{
+		if (stack.empty())
+		{
+			throw std::runtime_error("Stack underflow");
+		}
 		auto value = stack.top();
 		stack.pop();
 		return value;
