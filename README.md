@@ -1,23 +1,35 @@
-# Types
+# Prima Language Documentation
 
-## Core:
+## Ссылки
 
-* int
-* float
+* [Типы](#types)
+    * [Ядро](#core)
+    * [std](#other)
+* [Грамматика](#grammar)
+* [Диаграмма классов](#диаграмма-классов)
+    * [AST](#ast-types)
+
+## Types
+
+### Core:
+
+* number
 * bool
 * null
 * object
 * string
 
-## Other:
+### Other:
 
-* array
+* Array
+* String (с методами)
+* Class (через прототипы)
 
-# Заметки
+## Заметки
 
 * Все значения в функции передаются по ссылке
 
-# Grammar:
+## Grammar:
 
 ```
 <Program> -> <StatementList> ~#~
@@ -127,6 +139,8 @@
 
 TODO: в грамматике описать объекты, массивы (мб классы).
 
+## Диаграмма классов
+
 ```mermaid
 classDiagram
     namespace Frontend {
@@ -149,10 +163,174 @@ classDiagram
     Prima *-- ErrorReporter
     Prima *-- CodeGenerator
     ErrorReporter <|.. ConsoleReporter
-    
+
     namespace Backend {
         class VirtualMachine
     }
+
+    CodeGenerator --> VirtualMachine: Create byte code for
+```
+
+[Диаграмма UML](https://drive.google.com/file/d/1UHDILx1tE2_ZwmfK0skRpRAy9a6agTaS/view?usp=sharing)
+
+### AST Types
+
+```mermaid
+classDiagram
+    class Type {
+        <<enumeration>>
+        number
+        string
+        bool
+        object
+        identifier
+    }
+
+    class ASTNode {
+        nodeType: "string"
+    }
     
-    CodeGenerator --> VirtualMachine : Create byte code for
+    class Program {
+        body: Array~Statement|Declaration~
+    }
+    
+    class Expression {
+        <!-- Тип после вычисления -->
+        type: Type
+    }
+    class Literal {
+        type: "string"|"bool"|"number"
+        value: string|bool|number
+    }
+    class MemberExpression {
+        object: Expression
+        property: Expression
+        computed: bool
+    }
+    class BinaryExpression {
+        left: Expression
+        right: Expression
+        operator: string|Operation
+    }
+    class UnaryExpression {
+        operator: string|Operation
+        operand: Expression
+    }
+    class CallExpression {
+        callee: Expression
+        arguments: Array~Expression~
+    }
+    class Identifier {
+        name: string
+    }
+    class FunctionExpression {
+        body: BlockStatement
+    }
+
+    class Statement
+    class ExpressionStatement {
+        expression: Expression
+    }
+    class BlockStatement {
+        body: Array~Statement|Declaration~
+    }
+    class IfStatement {
+        condition: Expression
+        consequent: BlockStatement
+        alternate?: BlockStatement
+    }
+    class ForStatement {
+        init?: Expression
+        condition?: Expression
+        update?: Expression
+        body: BlockStatement
+    }
+
+    class Declaration {
+        name: Identifier
+    }
+    class VariableDeclaration {
+        kind: "const"|"var"
+        type: Type
+        initializer?: Expression
+    }
+    class FunctionDeclaration {
+        parameters: Array~Parameter~
+        type: Type
+        body: BlockStatement
+    }
+    class Parameter {
+        name: Identifier
+        type: Type
+    }
+    class ImportDeclaration {
+        source: Literal
+        specifiers: Array~ImportSpecifier~
+    }
+    class ImportSpecifier {
+        <!-- imported - импортируемое имя -->
+        <!-- local - локальное имя объекта -->
+        <!-- Klass as ModuleKlass -->
+        <!-- Klass - imported и ModuleKlass - local -->
+        <!-- Если нет синонима, то imported == local -->
+        imported: Identifier
+        local: Identifier
+    }
+    class ExportDeclaration {
+        specifiers: Array~ExportSpecifier~
+    }
+    class ExportSpecifier {
+        exported: Identifier
+        local: Identifier 
+    }
+    class ClassDeclaration {
+        superClass?: Expression
+        body: Array~PropertyDefinition~
+        abstract: bool
+    }
+    ClassDeclaration *-- PropertyDefinition
+    class PropertyDefinition {
+        key: Identifier
+        value: Expression
+        static: bool
+        override: bool
+        type: Type
+        accessibility: "private"|"public"|"protected"
+    }
+    ClassDeclaration *-- MethodDefinition
+    class MethodDefinition {
+        constructor: bool
+        key: Identifier
+        value: FunctionExpression
+        static: bool
+        override: bool
+        accessibility: "private"|"public"|"protected"
+    }
+
+    ASTNode <|-- Statement
+    Statement <|-- IfStatement
+    Statement <|-- ForStatement
+    Statement <|-- BlockStatement
+    Statement <|-- ExpressionStatement
+
+    ASTNode <|-- Expression
+    Expression <|-- Literal
+    Expression <|-- MemberExpression
+    Expression <|-- BinaryExpression
+    Expression <|-- UnaryExpression
+    Expression <|-- CallExpression
+    Expression <|-- FunctionExpression
+    Expression <|-- Identifier
+    
+    ASTNode <|-- Declaration
+    Declaration <|-- VariableDeclaration
+    Declaration <|-- ClassDeclaration
+    Declaration <|-- FunctionDeclaration
+    FunctionDeclaration *-- Parameter
+    Declaration <|-- ImportDeclaration
+    Declaration <|-- ExportDeclaration
+    
+    ASTNode <|-- ImportSpecifier
+    ASTNode <|-- ExportSpecifier
+    
 ```

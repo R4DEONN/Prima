@@ -18,6 +18,8 @@ abstract class Entity {
 	equals(rhs: Entity): boolean {
 		return this.getType() === rhs.getType() && this._value === rhs.getValue();
 	}
+
+	abstract toString(): string;
 }
 
 type Rule = Array<Entity>;
@@ -53,6 +55,10 @@ class NonTerminal extends Entity {
 	getType(): EntityType {
 		return EntityType.NON_TERMINAL;
 	}
+
+	toString() {
+		return `${this.getValue()}`;
+	}
 }
 
 class Terminal extends Entity {
@@ -62,6 +68,10 @@ class Terminal extends Entity {
 
 	getType(): EntityType {
 		return EntityType.TERMINAL;
+	}
+
+	toString() {
+		return `~${this.getValue()}~`;
 	}
 }
 

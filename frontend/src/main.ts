@@ -17,6 +17,10 @@ function main(argc: number, argv: string[])
         const inputStr = fs.readFileSync(argv[3], "utf8");
         GrammarOptimizer.optimize(inputStr, (str) => console.log(str));
     }
+    else if (process.argv[2] == 'recognize')
+    {
+
+    }
 
 }
 

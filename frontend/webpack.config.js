@@ -1,7 +1,6 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/main.ts', // Точка входа
     target: 'node',
     module: {
         rules: [

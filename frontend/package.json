@@ -1,7 +1,8 @@
 {
   "type": "commonjs",
   "scripts": {
-    "start": "webpack --mode production && node ./build/bundle.js",
+    "start": "webpack --mode production --entry ./src/main.ts && node ./build/bundle.js",
+    "start_prima": "webpack --mode production --entry ./src/master.ts && node ./build/bundle.js",
     "build": "webpack --mode development",
     "test": "jest --coverage"
   },
