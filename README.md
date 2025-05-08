@@ -33,32 +33,86 @@
 
 ```
 <Program> -> <StatementList> ~#~
+
 <StatementList> -> <Statement>
 <StatementList> -> <Statement> <StatementList>
-<StatementList> -> ~e~
-<Statement> -> <Declaration> ~;~
+<StatementList> -> ~ε~
+
+<Statement> -> <Declaration>
 <Statement> -> <Expression> ~;~
 <Statement> -> <IfStatement>
 <Statement> -> <ForStatement>
 <Statement> -> <ReturnStatement> ~;~
 <Statement> -> <Assignment> ~;~
-<Declaration> -> <VariableDeclaration>
+
+<Block> -> ~{~ <StatementList> ~}~
+
+<Declaration> -> <VariableDeclaration> ~;~
 <Declaration> -> <FunctionDeclaration>
+<Declaration> -> <ClassDeclaration>
+<Declaration> -> <ImportDeclaration>
+<Declaration> -> <ExportDeclaration>
+
 <VariableDeclaration> -> ~var~ ~Identifier~ ~:~ <Type>
 <VariableDeclaration> -> ~var~ ~Identifier~ ~:~ <Type> ~=~ <Expression>
 <VariableDeclaration> -> ~const~ ~Identifier~ ~:~ <Type> ~=~ <Expression>
+
+<ClassDeclaration> -> <AbstractModifier> ~class~ ~Identifier~ <SuperClass> ~{~ <ClassElementList> ~}~
+<AbstractModifier> -> ~abstract~
+<AbstractModifier> -> ~ε~
+<SuperClass> -> ~extends~ <Expression>
+<SuperClass> -> ~ε~
+<ClassElementList> -> <ClassElement>
+<ClassElementList> -> <ClassElement> <ClassElementList>
+<ClassElementList> -> ~ε~
+<ClassElement> -> <PropertyDefinition>
+<ClassElement> -> <MethodDefinition>
+
+<PropertyDefinition> -> <AccessibilityModifier> <StaticModifier> <OverrideModifier> ~Identifier~ ~:~ <Type> ~=~ <Expression> ~;~
+
+<MethodDefinition> -> <AccessibilityModifier> <StaticModifier> <OverrideModifier> ~Identifier~ ~(~ <ParameterList> ~)~ ~:~ <FunctionReturnType> <Block>
+<MethodDefinition> -> <AccessibilityModifier> <StaticModifier> <OverrideModifier> ~constructor~ ~(~ <ParameterList> ~)~ <Block>
+
+<AccessibilityModifier> -> ~public~
+<AccessibilityModifier> -> ~private~
+<AccessibilityModifier> -> ~protected~
+<AccessibilityModifier> -> ~ε~
+
+<StaticModifier> -> ~static~
+<StaticModifier> -> ~ε~
+
+<OverrideModifier> -> ~override~
+<OverrideModifier> -> ~ε~
+
+<ImportDeclaration> -> ~import~ ~{~ <ImportSpecifierList> ~}~ ~from~ ~StringLiteral~ ~;~
+<ImportSpecifierList> -> <ImportSpecifier>
+<ImportSpecifierList> -> <ImportSpecifier> ~,~ <ImportSpecifierList>
+<ImportSpecifierList> -> ~ε~
+<ImportSpecifier> -> ~Identifier~ ~as~ ~Identifier~
+<ImportSpecifier> -> ~Identifier~
+
+<ExportDeclaration> -> ~export~ ~{~ <ExportSpecifierList> ~}~ ~;~
+<ExportSpecifierList> -> <ExportSpecifier>
+<ExportSpecifierList> -> <ExportSpecifier> ~,~ <ExportSpecifierList>
+<ExportSpecifierList> -> ~ε~
+<ExportSpecifier> -> ~Identifier~ ~as~ ~Identifier~
+<ExportSpecifier> -> ~Identifier~
+
 <FunctionDeclaration> -> ~function~ ~Identifier~ ~(~ <ParameterList> ~)~ ~:~ <FunctionReturnType> <Block>
+
 <ParameterList> -> <Parameter>
 <ParameterList> -> <ParameterList> ~,~ <Parameter>
-<ParameterList> -> ~e~
+<ParameterList> -> ~ε~
 <Parameter> -> ~Identifier~ ~:~ <Type>
-<Type> -> ~int~
-<Type> -> ~float~
+
+<Type> -> ~number~
 <Type> -> ~bool~
 <Type> -> ~null~
 <Type> -> ~object~
 <Type> -> ~string~
 <Type> -> ~array~
+<Type> -> ~Identifier~
+
 <FunctionReturnType> -> <Type>
 <FunctionReturnType> -> ~void~
 
@@ -100,8 +154,7 @@
 <PostfixExpression> -> <PostfixExpression> ~++~
 <PostfixExpression> -> <PostfixExpression> ~--~
 
-<PrimaryExpression> -> ~IntegerLiteral~
-<PrimaryExpression> -> ~FloatLiteral~
+<PrimaryExpression> -> ~NumberLiteral~
 <PrimaryExpression> -> ~StringLiteral~
 <PrimaryExpression> -> ~BooleanLiteral~
 <PrimaryExpression> -> ~null~
@@ -113,23 +166,23 @@
 
 <ArgumentList> -> <Expression>
 <ArgumentList> -> <ArgumentList> ~,~ <Expression>
-<ArgumentList> -> ~e~
-
-<Block> -> ~{~ <StatementList> ~}~
+<ArgumentList> -> ~ε~
 
 <IfStatement> -> ~if~ ~(~ <Expression> ~)~ <Block>
 <IfStatement> -> ~if~ ~(~ <Expression> ~)~ <Block> ~else~ <Block>
+
 <ForStatement> -> ~for~ ~(~ <FirstForArgument> ~;~ <SecondForArgument> ~;~ <ThirdForArgument> ~)~ <Block>
 <FirstForArgument> -> <VariableDeclaration>
 <FirstForArgument> -> <Expression>
 <FirstForArgument> -> <Assignment>
-<FirstForArgument> -> ~e~
+<FirstForArgument> -> ~ε~
 <SecondForArgument> -> <Expression>
-<SecondForArgument> -> ~e~
+<SecondForArgument> -> ~ε~
 <ThirdForArgument> -> <Expression>
-<ThirdForArgument> -> ~e~
-<ReturnStatement> -> ~return~ <Expression> ~;~
-<ReturnStatement> -> ~return~ ~;~
+<ThirdForArgument> -> ~ε~
+
+<ReturnStatement> -> ~return~ <Expression>
+<ReturnStatement> -> ~return~
 
 <Assignment> -> ~Identifier~ <AssignmentOperator> <Expression>
 <AssignmentOperator> -> ~=~
