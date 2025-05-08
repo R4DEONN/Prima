@@ -1,12 +1,13 @@
 # Prima Language Documentation
 
 ## Ссылки
+
 * [Типы](#types)
-  * [Ядро](#core)
-  * [std](#other)
+    * [Ядро](#core)
+    * [std](#other)
 * [Грамматика](#grammar)
 * [Диаграмма классов](#диаграмма-классов)
-  * [AST](#ast-types)
+    * [AST](#ast-types)
 
 ## Types
 
@@ -138,8 +139,8 @@
 
 TODO: в грамматике описать объекты, массивы (мб классы).
 
-
 ## Диаграмма классов
+
 ```mermaid
 classDiagram
     namespace Frontend {
@@ -162,12 +163,12 @@ classDiagram
     Prima *-- ErrorReporter
     Prima *-- CodeGenerator
     ErrorReporter <|.. ConsoleReporter
-    
+
     namespace Backend {
         class VirtualMachine
     }
-    
-    CodeGenerator --> VirtualMachine : Create byte code for
+
+    CodeGenerator --> VirtualMachine: Create byte code for
 ```
 
 [Диаграмма UML](https://drive.google.com/file/d/1UHDILx1tE2_ZwmfK0skRpRAy9a6agTaS/view?usp=sharing)
@@ -184,21 +185,21 @@ classDiagram
         object
         identifier
     }
-    
-    class NodeType {
-        <<enumeration>>
-        Expression
-        Literal
-    }
-    
+
     class ASTNode {
-        nodeType: NodeType
+        nodeType: "string"
     }
+    
+    class Program {
+        body: Array~Statement|Declaration~
+    }
+    
     class Expression {
         <!-- Тип после вычисления -->
         type: Type
     }
     class Literal {
+        type: "string"|"bool"|"number"
         value: string|bool|number
     }
     class MemberExpression {
@@ -218,15 +219,20 @@ classDiagram
     class CallExpression {
         callee: Expression
         arguments: Array~Expression~
-        
     }
     class Identifier {
         name: string
     }
-    
+    class FunctionExpression {
+        body: BlockStatement
+    }
+
     class Statement
+    class ExpressionStatement {
+        expression: Expression
+    }
     class BlockStatement {
-        body: Array~ASTNode~
+        body: Array~Statement|Declaration~
     }
     class IfStatement {
         condition: Expression
@@ -239,7 +245,7 @@ classDiagram
         update?: Expression
         body: BlockStatement
     }
-    
+
     class Declaration {
         name: Identifier
     }
@@ -257,27 +263,74 @@ classDiagram
         name: Identifier
         type: Type
     }
+    class ImportDeclaration {
+        source: Literal
+        specifiers: Array~ImportSpecifier~
+    }
+    class ImportSpecifier {
+        <!-- imported - импортируемое имя -->
+        <!-- local - локальное имя объекта -->
+        <!-- Klass as ModuleKlass -->
+        <!-- Klass - imported и ModuleKlass - local -->
+        <!-- Если нет синонима, то imported == local -->
+        imported: Identifier
+        local: Identifier
+    }
+    class ExportDeclaration {
+        specifiers: Array~ExportSpecifier~
+    }
+    class ExportSpecifier {
+        exported: Identifier
+        local: Identifier 
+    }
     class ClassDeclaration {
         superClass?: Expression
-        body: ClassBody
+        body: Array~PropertyDefinition~
+        abstract: bool
     }
-    
+    ClassDeclaration *-- PropertyDefinition
+    class PropertyDefinition {
+        key: Identifier
+        value: Expression
+        static: bool
+        override: bool
+        type: Type
+        accessibility: "private"|"public"|"protected"
+    }
+    ClassDeclaration *-- MethodDefinition
+    class MethodDefinition {
+        constructor: bool
+        key: Identifier
+        value: FunctionExpression
+        static: bool
+        override: bool
+        accessibility: "private"|"public"|"protected"
+    }
+
+    ASTNode <|-- Statement
+    Statement <|-- IfStatement
+    Statement <|-- ForStatement
+    Statement <|-- BlockStatement
+    Statement <|-- ExpressionStatement
+
     ASTNode <|-- Expression
     Expression <|-- Literal
     Expression <|-- MemberExpression
     Expression <|-- BinaryExpression
     Expression <|-- UnaryExpression
     Expression <|-- CallExpression
+    Expression <|-- FunctionExpression
     Expression <|-- Identifier
-    
-    ASTNode <|-- Statement
-    Statement <|-- IfStatement
-    Statement <|-- ForStatement
-    Statement <|-- BlockStatement
     
     ASTNode <|-- Declaration
     Declaration <|-- VariableDeclaration
     Declaration <|-- ClassDeclaration
     Declaration <|-- FunctionDeclaration
     FunctionDeclaration *-- Parameter
+    Declaration <|-- ImportDeclaration
+    Declaration <|-- ExportDeclaration
+    
+    ASTNode <|-- ImportSpecifier
+    ASTNode <|-- ExportSpecifier
+    
 ```
