@@ -36,7 +36,7 @@
 
 <StatementList> -> <Statement>
 <StatementList> -> <Statement> <StatementList>
-<StatementList> -> ~e~
+<StatementList> -> ~ε~
 
 <Statement> -> <Declaration>
 <Statement> -> <Expression> ~;~
@@ -59,12 +59,12 @@
 
 <ClassDeclaration> -> <AbstractModifier> ~class~ ~Identifier~ <SuperClass> ~{~ <ClassElementList> ~}~
 <AbstractModifier> -> ~abstract~
-<AbstractModifier> -> ~e~
+<AbstractModifier> -> ~ε~
 <SuperClass> -> ~extends~ <Expression>
-<SuperClass> -> ~e~
+<SuperClass> -> ~ε~
 <ClassElementList> -> <ClassElement>
 <ClassElementList> -> <ClassElement> <ClassElementList>
-<ClassElementList> -> ~e~
+<ClassElementList> -> ~ε~
 <ClassElement> -> <PropertyDefinition>
 <ClassElement> -> <MethodDefinition>
 
@@ -76,25 +76,25 @@
 <AccessibilityModifier> -> ~public~
 <AccessibilityModifier> -> ~private~
 <AccessibilityModifier> -> ~protected~
-<AccessibilityModifier> -> ~e~
+<AccessibilityModifier> -> ~ε~
 
 <StaticModifier> -> ~static~
-<StaticModifier> -> ~e~
+<StaticModifier> -> ~ε~
 
 <OverrideModifier> -> ~override~
-<OverrideModifier> -> ~e~
+<OverrideModifier> -> ~ε~
 
 <ImportDeclaration> -> ~import~ ~{~ <ImportSpecifierList> ~}~ ~from~ ~StringLiteral~ ~;~
 <ImportSpecifierList> -> <ImportSpecifier>
 <ImportSpecifierList> -> <ImportSpecifier> ~,~ <ImportSpecifierList>
-<ImportSpecifierList> -> ~e~
+<ImportSpecifierList> -> ~ε~
 <ImportSpecifier> -> ~Identifier~ ~as~ ~Identifier~
 <ImportSpecifier> -> ~Identifier~
 
 <ExportDeclaration> -> ~export~ ~{~ <ExportSpecifierList> ~}~ ~;~
 <ExportSpecifierList> -> <ExportSpecifier>
 <ExportSpecifierList> -> <ExportSpecifier> ~,~ <ExportSpecifierList>
-<ExportSpecifierList> -> ~e~
+<ExportSpecifierList> -> ~ε~
 <ExportSpecifier> -> ~Identifier~ ~as~ ~Identifier~
 <ExportSpecifier> -> ~Identifier~
 
@@ -102,7 +102,7 @@
 
 <ParameterList> -> <Parameter>
 <ParameterList> -> <ParameterList> ~,~ <Parameter>
-<ParameterList> -> ~e~
+<ParameterList> -> ~ε~
 <Parameter> -> ~Identifier~ ~:~ <Type>
 
 <Type> -> ~number~
@@ -166,7 +166,7 @@
 
 <ArgumentList> -> <Expression>
 <ArgumentList> -> <ArgumentList> ~,~ <Expression>
-<ArgumentList> -> ~e~
+<ArgumentList> -> ~ε~
 
 <IfStatement> -> ~if~ ~(~ <Expression> ~)~ <Block>
 <IfStatement> -> ~if~ ~(~ <Expression> ~)~ <Block> ~else~ <Block>
@@ -175,11 +175,11 @@
 <FirstForArgument> -> <VariableDeclaration>
 <FirstForArgument> -> <Expression>
 <FirstForArgument> -> <Assignment>
-<FirstForArgument> -> ~e~
+<FirstForArgument> -> ~ε~
 <SecondForArgument> -> <Expression>
-<SecondForArgument> -> ~e~
+<SecondForArgument> -> ~ε~
 <ThirdForArgument> -> <Expression>
-<ThirdForArgument> -> ~e~
+<ThirdForArgument> -> ~ε~
 
 <ReturnStatement> -> ~return~ <Expression>
 <ReturnStatement> -> ~return~
