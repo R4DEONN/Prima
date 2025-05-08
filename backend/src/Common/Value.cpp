@@ -1,5 +1,38 @@
 #include "Value.h"
 
+std::string getTypeName(const Value &value)
+{
+	return std::visit([](auto &&arg) -> std::string
+	{
+		using T = std::decay_t<decltype(arg)>;
+
+		if constexpr (std::is_same_v<T, std::monostate>)
+		{
+			return "null";
+		}
+		else if constexpr (std::is_same_v<T, bool>)
+		{
+			return "bool";
+		}
+		else if constexpr (std::is_integral_v<T>)
+		{
+			return "int";
+		}
+		else if constexpr (std::is_floating_point_v<T>)
+		{
+			return "double";
+		}
+		else if constexpr (std::is_same_v<T, std::string>)
+		{
+			return "string";
+		}
+		else
+		{
+			throw std::runtime_error("Invalid type");
+		}
+	}, value);
+}
+
 bool toBool(const Value& value)
 {
 	return std::visit([](auto&& arg) -> bool
@@ -66,7 +99,7 @@ Value operator-(const Value &value)
 		}
 		else
 		{
-			throw std::invalid_argument("Invalid type");
+			throw std::invalid_argument("Cannot negate value of type: " + getTypeName(arg));
 		}
 	}, value);
 }
@@ -85,7 +118,7 @@ Value applyArithmeticOp(const Value &lhs, const Value &rhs, Op op)
 		}
 		else
 		{
-			throw std::invalid_argument("Invalid type");
+			throw std::invalid_argument("Cannot do this operation with: " + getTypeName(l) + " and " + getTypeName(r));
 		}
 	}, lhs, rhs);
 }
@@ -144,7 +177,7 @@ bool operator==(const Value& lhs, const Value& rhs)
 		}
 		else
 		{
-			throw std::invalid_argument("Invalid type");
+			throw std::invalid_argument("Cannot compare: " + getTypeName(l) + " and " + getTypeName(r));
 		}
 	}, lhs, rhs);
 }
@@ -167,7 +200,7 @@ bool operator<(const Value& lhs, const Value& rhs)
 		}
 		else
 		{
-			throw std::invalid_argument("Invalid type");
+			throw std::invalid_argument("Cannot compare: " + getTypeName(l) + " and " + getTypeName(r));
 		}
 	}, lhs, rhs);
 }

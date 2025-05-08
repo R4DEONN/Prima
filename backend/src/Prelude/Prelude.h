@@ -21,6 +21,18 @@ public:
 
 	void run()
 	{
+		try
+		{
+			runImpl();
+		}
+		catch (const std::exception& e)
+		{
+			throw std::runtime_error(e.what() + std::string(" at line ") + std::to_string(chunk.lines[ip - chunk.code.begin()]));
+		}
+	}
+
+	void runImpl()
+	{
 		ip = chunk.code.begin();
 		while (ip < chunk.code.end())
 		{
