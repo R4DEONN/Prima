@@ -16,7 +16,6 @@
 * number
 * bool
 * null
-* object
 * string
 
 ### Other:
@@ -44,6 +43,11 @@
 <Statement> -> <ForStatement>
 <Statement> -> <ReturnStatement> ~;~
 <Statement> -> <Assignment> ~;~
+<Statement> -> <ContinueStatement> ~;~
+<Statement> -> <BreakStatement> ~;~
+
+<ContinueStatement> -> ~continue~
+<BreakStatement> -> ~break~
 
 <Block> -> ~{~ <StatementList> ~}~
 
@@ -60,7 +64,7 @@
 <ClassDeclaration> -> <AbstractModifier> ~class~ ~Identifier~ <SuperClass> ~{~ <ClassElementList> ~}~
 <AbstractModifier> -> ~abstract~
 <AbstractModifier> -> ~ε~
-<SuperClass> -> ~extends~ <Expression>
+<SuperClass> -> ~extends~ ~Identifier~
 <SuperClass> -> ~ε~
 <ClassElementList> -> <ClassElement>
 <ClassElementList> -> <ClassElement> <ClassElementList>
@@ -108,7 +112,6 @@
 <Type> -> ~number~
 <Type> -> ~bool~
 <Type> -> ~null~
-<Type> -> ~object~
 <Type> -> ~string~
 <Type> -> ~array~
 <Type> -> ~Identifier~
@@ -190,7 +193,7 @@
 <AssignmentOperator> -> ~-=~
 ```
 
-TODO: в грамматике описать объекты, массивы (мб классы).
+TODO: в грамматике описать объекты, массивы
 
 ## Диаграмма классов
 
@@ -235,7 +238,6 @@ classDiagram
         number
         string
         bool
-        object
         identifier
     }
 
