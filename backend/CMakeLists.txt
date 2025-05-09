@@ -10,8 +10,11 @@ add_executable(${PROJECT_NAME}
         src/Common/Chunk.h
         src/Common/OpCode.h
         src/Common/Value.h
-        src/Prelude/Prelude.h
         src/Common/Value.cpp
+        src/Prelude/Prelude.h
+        src/Scanner/Scanner.h
+        src/Scanner/Token.h
+        src/Scanner/TokenType.h
 )
 
 find_package(Catch2)
