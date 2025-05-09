@@ -2,7 +2,6 @@ import Editor from '@monaco-editor/react';
 import {useAppSelector, useAppDispatch} from '../../app/hooks.ts';
 import {updateCode} from '../../features/editor/editorSlice.ts';
 import {editorOptions, registerPrimaLanguage} from "./monacoConfig.ts";
-import {a} from "vite/dist/node/moduleRunnerTransport.d-DJ_mE5sf";
 
 export function CodeEditor()
 {
