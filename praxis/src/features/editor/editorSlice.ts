@@ -3,7 +3,7 @@ import type {PayloadAction} from '@reduxjs/toolkit';
 
 interface EditorState
 {
-	theme: 'vs' | 'vs-dark' | 'hc-black';
+	theme: 'vs' | 'vs-dark' | 'hc-black' | 'primaTheme';
 	language: string;
 	code: string;
 }

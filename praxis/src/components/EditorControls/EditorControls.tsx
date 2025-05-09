@@ -11,6 +11,7 @@ export function EditorControls()
 		{value: 'vs', label: 'Light'},
 		{value: 'vs-dark', label: 'Dark'},
 		{value: 'hc-black', label: 'High Contrast'},
+		{value: 'primaTheme', label: 'Prima Dark'},
 	];
 
 	const languageOptions = [

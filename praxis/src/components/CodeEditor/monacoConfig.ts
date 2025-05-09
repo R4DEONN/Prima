@@ -8,35 +8,26 @@ export const registerPrimaLanguage = (monaco: any) =>
 	monaco.languages.setMonarchTokensProvider('prima', {
 		defaultToken: 'invalid',
 
-		// Ключевые слова
+		// Список зарезервированных слов языка, которые должны подсвечиваться особым образом
 		keywords: [
 			'function', 'var', 'const', 'if', 'else', 'for', 'return',
 			'int', 'float', 'bool', 'string', 'array', 'object', 'null', 'void'
 		],
 
-		// Операторы
+		// Список операторов (например, +, &&, ==), которые будут распознаваться отдельно от других символов
 		operators: [
 			'=', '+=', '-=', '||', '&&', '==', '!=', '<', '<=', '>', '>=',
 			'+', '-', '*', '/', '%', '**', '!', '++', '--'
 		],
 
-		// Символы
+		// Регулярное выражение, которое описывает символы, используемые в операторах.
+		// Это нужно для группировки символов, которые могут быть частью операторов (например, +=, !=).
 		symbols: /[=><!~?:&|+\-*\/\^%]+/,
 
-		// Числовые литералы
-		numberLiterals: [
-			'IntegerLiteral', 'FloatLiteral'
-		],
-
-		// Строковые литералы
-		stringLiterals: [
-			'StringLiteral'
-		],
-
-		// Логические литералы
-		booleanLiterals: [
-			'BooleanLiteral'
-		],
+		// Категории литералов (чисел, строк, булевых значений), которые могут использоваться для дополнительной обработки
+		numberLiterals: ['IntegerLiteral', 'FloatLiteral'],
+		stringLiterals: ['StringLiteral'],
+		booleanLiterals: ['BooleanLiteral'],
 
 		// Разделители
 		delimiters: [';', ',', '(', ')', '{', '}', '[', ']', ':', '.'],
@@ -44,6 +35,8 @@ export const registerPrimaLanguage = (monaco: any) =>
 		// Идентификаторы
 		identifier: /^[_a-zA-Z][_a-zA-Z0-9]*/,
 
+		//Токенизатор — это набор правил, которые разбивают исходный код на токены (ключевые слова, строки, числа и т. д.).
+		// Он работает как конечный автомат, переключаясь между состояниями (root, comment, whitespace).
 		tokenizer: {
 			root: [
 				// Комментарии
@@ -88,16 +81,16 @@ export const registerPrimaLanguage = (monaco: any) =>
 			],
 
 			comment: [
-				[/[^\/*]+/, 'comment'],
-				[/\/\*/, 'comment', '@push'],
-				["\\*/", 'comment', '@pop'],
-				[/[\/*]/, 'comment']
+				[/[^\/*]+/, 'comment'],         // Любой текст внутри /* ... */
+				[/\/\*/, 'comment', '@push'],   // Вложенный комментарий (переход в новое состояние)
+				["\\*/", 'comment', '@pop'],    // Конец комментария (возврат в предыдущее состояние)
+				[/[\/*]/, 'comment']            // Одиночные / или *
 			],
 
 			whitespace: [
-				[/[ \t\r\n]+/, 'white'],
-				[/\/\*/, 'comment', '@comment'],
-				[/\/\/.*$/, 'comment']
+				[/[ \t\r\n]+/, 'white'],          // Пробелы, табы, переносы строк
+				[/\/\*/, 'comment', '@comment'],  // Начало многострочного комментария
+				[/\/\/.*$/, 'comment']            // Однострочный комментарий
 			]
 		}
 	});
@@ -110,31 +103,31 @@ export const registerPrimaLanguage = (monaco: any) =>
 					label: 'function',
 					kind: monaco.languages.CompletionItemKind.Keyword,
 					documentation: 'Define a new function',
-					insertText: 'function newFun(): void {}'
+					insertText: 'function'
 				},
 				{
 					label: 'if',
 					kind: monaco.languages.CompletionItemKind.Keyword,
 					documentation: 'If statement',
-					insertText: 'if (${1:condition}) {\n\t${2}\n}'
+					insertText: 'if ()'
 				},
 				{
 					label: 'for',
 					kind: monaco.languages.CompletionItemKind.Keyword,
 					documentation: 'For loop',
-					insertText: 'for (${1:init}; ${2:condition}; ${3:update}) {\n\t${4}\n}'
+					insertText: 'for (;;)'
 				},
 				{
 					label: 'var',
 					kind: monaco.languages.CompletionItemKind.Keyword,
 					documentation: 'Variable declaration',
-					insertText: 'var ${1:name}: ${2:type} = ${3:value};'
+					insertText: 'var'
 				},
 				{
 					label: 'return',
 					kind: monaco.languages.CompletionItemKind.Keyword,
 					documentation: 'Return statement',
-					insertText: 'return ${1:value};'
+					insertText: 'return;'
 				},
 				{
 					label: 'int',
@@ -166,7 +159,7 @@ export const registerPrimaLanguage = (monaco: any) =>
 			{token: 'string', foreground: '#CE9178'},
 			{token: 'comment', foreground: '#6A9955'},
 			{token: 'identifier', foreground: '#9CDCFE'},
-			{token: 'delimiter', foreground: '#D4D4D4'}
+			{token: 'delimiter', foreground: '#F9D829'}
 		],
 		colors: {
 			'editor.background': '#1E1E1E',
