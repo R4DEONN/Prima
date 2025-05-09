@@ -33,5 +33,7 @@ export const editorSlice = createSlice({
 	},
 });
 
+//Экспортируем actions (А точнее action creator'ы)
 export const {setTheme, setLanguage, updateCode} = editorSlice.actions;
+//Экспортируем сам редьсер
 export default editorSlice.reducer;

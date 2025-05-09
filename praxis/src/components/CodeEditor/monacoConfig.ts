@@ -1,13 +1,10 @@
-import Editor from '@monaco-editor/react';
-import {useAppSelector, useAppDispatch} from '../app/hooks';
-import {updateCode} from '../features/editor/editorSlice';
+import type * as monaco from 'monaco-editor';
 
-const registerPrimaLanguage = (monaco: any) =>
+export const registerPrimaLanguage = (monaco: any) =>
 {
-	// Регистрация языка
 	monaco.languages.register({id: 'prima'});
 
-	// Настройка токенизатора
+	// Конфигурация языка (токенизатор)
 	monaco.languages.setMonarchTokensProvider('prima', {
 		defaultToken: 'invalid',
 
@@ -105,7 +102,6 @@ const registerPrimaLanguage = (monaco: any) =>
 		}
 	});
 
-	// Настройка автодополнения
 	monaco.languages.registerCompletionItemProvider('prima', {
 		provideCompletionItems: (model: any, position: any) =>
 		{
@@ -114,7 +110,7 @@ const registerPrimaLanguage = (monaco: any) =>
 					label: 'function',
 					kind: monaco.languages.CompletionItemKind.Keyword,
 					documentation: 'Define a new function',
-					insertText: 'function ${1:name}(${2:params}): ${3:returnType} {\n\t${4}\n}'
+					insertText: 'function newFun(): void {}'
 				},
 				{
 					label: 'if',
@@ -158,7 +154,6 @@ const registerPrimaLanguage = (monaco: any) =>
 		}
 	});
 
-	// Регистрация темы (опционально)
 	monaco.editor.defineTheme('primaTheme', {
 		base: 'vs-dark',
 		inherit: true,
@@ -180,28 +175,9 @@ const registerPrimaLanguage = (monaco: any) =>
 	});
 };
 
-export function CodeEditor()
-{
-	const {theme, language, code} = useAppSelector((state) => state.editor);
-	const dispatch = useAppDispatch();
-
-	const handleEditorDidMount = (editor: any, monaco: any) =>
-	{
-		registerPrimaLanguage(monaco);
-	};
-
-	return (
-		<Editor
-			height="80vh"
-			language={language}
-			theme={theme}
-			value={code}
-			onChange={(value) => dispatch(updateCode(value || ''))}
-			onMount={handleEditorDidMount}
-			options={{
-				minimap: {enabled: false},
-				fontSize: 14,
-			}}
-		/>
-	);
-}
+export const editorOptions: monaco.editor.IStandaloneEditorConstructionOptions = {
+	minimap: {enabled: false},
+	fontSize: 14,
+	scrollBeyondLastLine: false,
+	automaticLayout: true,
+};

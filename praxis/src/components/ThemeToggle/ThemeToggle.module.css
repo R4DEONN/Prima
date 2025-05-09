@@ -1,0 +1,12 @@
+.toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    transition: transform 0.2s;
+}
+
+.toggle:hover {
+    transform: scale(1.1);
+}
