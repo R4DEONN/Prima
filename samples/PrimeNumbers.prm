@@ -3,12 +3,12 @@ function print(str: string): void
     // implement of printing
 }
 
-function sqrt(num: int): float
+function sqrt(num: number): number
 {
     return num ** 0.5;
 }
 
-function isPrime(num: int): bool
+function isPrime(num: number): bool
 {
     if (num <= 1)
     {
@@ -25,7 +25,7 @@ function isPrime(num: int): bool
         return false;
     }
 
-    for (var i: int = 3; i <= sqrt(num); i += 2)
+    for (var i: number = 3; i <= sqrt(num); i += 2)
     {
         if (num % i == 0)
         {
@@ -36,10 +36,10 @@ function isPrime(num: int): bool
     return true;
 }
 
-const start: int = 10;
-const end: int = 100;
+const start: number = 10;
+const end: number = 100;
 
-for (var num: int = start; num <= end; num++)
+for (var num: number = start; num <= end; num++)
 {
     if (isPrime(num))
     {

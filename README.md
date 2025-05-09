@@ -158,8 +158,8 @@
 <PostfixExpression> -> <PrimaryExpression> ~--~
 <PostfixExpression> -> <MemberExpression>
 
-<MemberExpression> -> <PostfixExpression> ~.~ ~Identifier~
-<MemberExpression> -> <PostfixExpression> ~[~ <Expression> ~]~
+<MemberExpression> -> <PrimaryExpression> ~.~ ~Identifier~
+<MemberExpression> -> <PrimaryExpression> ~[~ <Expression> ~]~
 
 <PrimaryExpression> -> ~NumberLiteral~
 <PrimaryExpression> -> ~StringLiteral~
