@@ -3,14 +3,14 @@ import type {PayloadAction} from '@reduxjs/toolkit';
 
 interface EditorState
 {
-	theme: 'vs' | 'vs-dark' | 'hc-black' | 'primaTheme';
+	theme: 'vs' | 'vs-dark' | 'hc-black' | 'prima-dark' | 'prima-dark-2';
 	language: string;
 	code: string;
 }
 
 const initialState: EditorState = {
-	theme: 'vs-dark',
-	language: 'javascript',
+	theme: 'prima-dark',
+	language: 'prima',
 	code: '// Начните писать код...',
 };
 

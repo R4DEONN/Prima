@@ -2,11 +2,14 @@ import Editor from '@monaco-editor/react';
 import {useAppSelector, useAppDispatch} from '../../app/hooks.ts';
 import {updateCode} from '../../features/editor/editorSlice.ts';
 import {editorOptions, registerPrimaLanguage} from "./monacoConfig.ts";
+import {useEffect, useRef, useState} from "react";
 
 export function CodeEditor()
 {
 	const {theme, language, code} = useAppSelector((state) => state.editor);
 	const dispatch = useAppDispatch();
+	const editorRef = useRef<any>(null);
+	const [isMounted, setIsMounted] = useState(false);
 
 	const logTokens = (editor: any) =>
 	{
@@ -21,19 +24,26 @@ export function CodeEditor()
 		});
 	}
 
-	const handleEditorDidMount = (editor: any, monaco: any) =>
+	const handleEditorDidMount = (editor: any, monacoInstance: typeof monaco) =>
 	{
-		registerPrimaLanguage(monaco);
-
-		//logTokens(editor);
+		registerPrimaLanguage(monacoInstance);
+		editorRef.current = editor;
+		logTokens(editor);
+		setIsMounted(true);
 	};
+
+	useEffect(() => {
+		if (isMounted && editorRef.current) {
+			monaco.editor.setTheme(theme);
+		}
+	}, [isMounted, theme]);
 
 	return (
 		<Editor
-			height="80vh"
+			height="90%"
 			width="70%"
 			language={language}
-			theme={theme}
+			theme={isMounted ? theme : 'vs'}
 			value={code}
 			onChange={(value) => dispatch(updateCode(value || ''))}
 			onMount={handleEditorDidMount}

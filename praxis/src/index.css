@@ -20,6 +20,8 @@
   --bg-color: #ffffff;
   --text-color: #333333;
   --primary-color: #646cff;
+  --dropdown-border-color: #ccc;
+  --dropdown-border-hover-color: #888;
 }
 
 [data-theme="dark"] {
@@ -27,6 +29,8 @@
   --bg-color: #242424;
   --text-color: #ffffff;
   --primary-color: #535bf2;
+  --dropdown-border-color: #ccc;
+  --dropdown-border-hover-color: #888;
 }
 
 body {

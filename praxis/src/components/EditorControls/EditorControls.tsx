@@ -11,7 +11,9 @@ export function EditorControls()
 		{value: 'vs', label: 'Light'},
 		{value: 'vs-dark', label: 'Dark'},
 		{value: 'hc-black', label: 'High Contrast'},
-		{value: 'primaTheme', label: 'Prima Dark'},
+		{value: 'prima-dark', label: 'Prima Dark'},
+		{value: 'prima-dark-2', label: 'Prima Dark 2'},
+		{value: 'prima-dark-3', label: 'Prima Dark 3'},
 	];
 
 	const languageOptions = [
@@ -21,8 +23,8 @@ export function EditorControls()
 	];
 
 	return (
-		<div style={{display: 'flex', gap: '10px', marginBottom: '10px'}}>
-			<h1 style={{marginRight: '60%'}}>Praxis</h1>
+		<div style={{display: 'flex', gap: '1%', marginBottom: '1%', alignItems: 'center', boxSizing: 'border-box', height: '10%'}}>
+			<h1 style={{marginRight: '66%'}}>Praxis</h1>
 
 			<Dropdown
 				options={themeOptions}

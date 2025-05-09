@@ -39,15 +39,19 @@ export const registerPrimaLanguage = (monaco: any) =>
 		// Он работает как конечный автомат, переключаясь между состояниями (root, comment, whitespace).
 		tokenizer: {
 			root: [
+				[/[a-zA-Z_$][\w$]*(?=\()/, 'function.call'],
+
+				[/\bfunction\b/, 'keyword', '@functionName'],
+
 				// Комментарии
 				[/\/\/.*$/, 'comment'],
 				[/\/\*/, 'comment', '@comment'],
 
-				// Типы
-				[/\b(int|float|bool|string|array|object|null|void)\b/, 'type'],
-
 				// Ключевые слова
-				[/\b(function|var|const|if|else|for|return)\b/, 'keyword'],
+				[/\b(function|var|const|if|else|for|return|true|false)\b/, 'keyword'],
+
+				// Типы
+				[/\b(number|bool|string|array|object|null|void)\b/, 'type'],
 
 				// Идентификаторы
 				[/[a-zA-Z_$][\w$]*/, {
@@ -91,7 +95,12 @@ export const registerPrimaLanguage = (monaco: any) =>
 				[/[ \t\r\n]+/, 'white'],          // Пробелы, табы, переносы строк
 				[/\/\*/, 'comment', '@comment'],  // Начало многострочного комментария
 				[/\/\/.*$/, 'comment']            // Однострочный комментарий
-			]
+			],
+
+			functionName: [
+				// Следующий идентификатор после function - имя функции
+				[/[a-zA-Z_$][\w$]*/, 'function.name', '@pop'],
+			],
 		}
 	});
 
@@ -147,7 +156,7 @@ export const registerPrimaLanguage = (monaco: any) =>
 		}
 	});
 
-	monaco.editor.defineTheme('primaTheme', {
+	monaco.editor.defineTheme('prima-dark', {
 		base: 'vs-dark',
 		inherit: true,
 		rules: [
@@ -163,7 +172,52 @@ export const registerPrimaLanguage = (monaco: any) =>
 		],
 		colors: {
 			'editor.background': '#1E1E1E',
-			'editor.foreground': '#D4D4D4'
+			'editor.foreground': '#D4D4D4',
+			'editorGutter.background': '#282828' // Цвет фона области номеров строк
+		}
+	});
+
+	monaco.editor.defineTheme('prima-dark-2', {
+		base: 'vs-dark',
+		inherit: false,
+		rules: [
+			{token: 'keyword', foreground: '#c57b39'},
+			{token: 'type', foreground: '#c57b39'},
+			{token: 'operator', foreground: '#D4D4D4'},
+			{token: 'number', foreground: '#6f96ba'},
+			{token: 'number.float', foreground: '#6f96ba'},
+			{token: 'string', foreground: '#6c875a'},
+			{token: 'comment', foreground: '#808080'},
+			{token: 'identifier', foreground: '#abb7c5'},
+			{token: 'function.name', foreground: '#f9c872'},
+			{token: 'function.call', foreground: '#f9c872'},
+			{token: 'delimiter', foreground: '#c57b39'}
+		],
+		colors: {
+			'editor.background': '#1c2022',
+			'editor.foreground': '#bababa',
+		}
+	});
+
+	monaco.editor.defineTheme('prima-dark-3', {
+		base: 'vs-dark',
+		inherit: false,
+		rules: [
+			{token: 'keyword', foreground: '#ca906f'},
+			{token: 'type', foreground: '#ca906f'},
+			{token: 'operator', foreground: '#bcbec4'},
+			{token: 'number', foreground: '#46aab7'},
+			{token: 'number.float', foreground: '#46aab7'},
+			{token: 'string', foreground: '#70aa74'},
+			{token: 'comment', foreground: '#7b7e85'},
+			{token: 'identifier', foreground: '#9776a9'},
+			{token: 'function.name', foreground: '#67a6f3'},
+			{token: 'function.call', foreground: '#67a6f3'},
+			{token: 'delimiter', foreground: '#bcbec4'}
+		],
+		colors: {
+			'editor.background': '#1e1f22',
+			'editor.foreground': '#bcbec4',
 		}
 	});
 };
