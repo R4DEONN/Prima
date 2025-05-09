@@ -1,4 +1,8 @@
-# Виртуальная машина для языка Prima
+# Виртуальная машина языка Prima
+
+Интерпретатор - Prelude
+
+JIT-компилятор - Prisma
 
 ## Список команд
 | Код                     | Обозначение | Название  | Стек         | Действие |
@@ -11,39 +15,36 @@
 ## Архитектура виртуальной машины
 ```mermaid
 classDiagram
-    class Value {
+    class ValueType {
         <<Enumeration>>
-        Null
-        Bool(bool)
-        Int(i64)
-        Float(f64)
-        String(Rc<String>)
-        Function(Rc<Function>)
+        NULL
+        BOOL
+        DOUBLE
+        STRING
+        FUNCTION
     }
+    
+    class Value
 
     class OpCode {
         <<Enumeration>>
-        Push
-        Pop
-        Add
-        Sub
-        Mul
-        Div
-        JumpIfFalse(usize)
-        Jump(usize)
-        Call(usize)
-        Return
-        LoadConstant(usize)
+        PUSH
+        POP
+        ADD
+        SUB
+        MUL
+        DIV
+        CALL
+        RETURN
+        CONSTANT
     }
 
-    class Instruction {
-        opCode: OpCode
-        line: usize
+    class Chunk {
+        code: vector~OpCode~
+        lines: vector~int~
+        constants: vector~Value~
     }
-    
-    class MemoryManager {
-        allocate(&mut self, size: usize) Result<*mut u8, Error>
-        deallocate(&mut self, ptr: *mut u8)
-        collect_garbage(&mut self)
-    }
+
+    Chunk *-- OpCode
+    Chunk *-- Value
 ```

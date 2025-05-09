@@ -41,26 +41,19 @@ class Prima
 	{
 		const readlineInterface = readline.createInterface({
 			input: process.stdin,
-			output: process.stdout
+			output: process.stdout,
+			prompt: '> ',
 		});
 
-		for (; ;)
-		{
-			const line = await new Promise<string>(resolve =>
-			{
-				readlineInterface.question('> ', resolve);
-			});
-
-			if (line === null)
-			{
-				break;
-			}
-
-			this.run(line);
-			this._errorReporter.setError(false);
-		}
-
-		readlineInterface.close();
+		readlineInterface
+			.on('line', line => {
+				this.run(line);
+				this._errorReporter.setError(false);
+				readlineInterface.prompt();
+			})
+			.on('close', () => {
+				process.exit(0);
+			})
 	}
 }
 
