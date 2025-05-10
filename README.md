@@ -373,11 +373,16 @@ classDiagram
         accessibility: "private"|"public"|"protected"
     }
 
+    class ReturnStatement {
+      argument?: Expression
+    }
+  
     ASTNode <|-- Statement
     Statement <|-- IfStatement
     Statement <|-- ForStatement
     Statement <|-- BlockStatement
     Statement <|-- ExpressionStatement
+    Statement <|-- ReturnStatement
 
     ASTNode <|-- Expression
     Expression <|-- Literal
