@@ -1,8 +1,1 @@
-<S> -> ~real~<idlist><A>~#~
-<idlist> -> <idlist>~,~<id>
-<idlist> -> <id>
-<idlist> -> ~e~
-<id> -> ~A~
-<id> -> ~B~
-<id> -> ~C~
-<A> -> ~m~
+!(5 - 4 > 3 * 2 == !0) true
