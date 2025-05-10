@@ -24,7 +24,7 @@ export function EditorControls()
 	];
 
 	return (
-		<div style={{display: 'flex', gap: '1%', marginBottom: '1%', alignItems: 'center', boxSizing: 'border-box', height: '10%'}}>
+		<div style={{display: 'flex', gap: '1%', marginBottom: '1%', alignItems: 'center', boxSizing: 'border-box', height: '5%'}}>
 			<h1 style={{marginRight: '66%'}}>Praxis</h1>
 
 			<Dropdown
@@ -39,7 +39,6 @@ export function EditorControls()
 			/>
 			<ThemeToggle>
 			</ThemeToggle>
-			<RunButton/>
 		</div>
 	);
 }

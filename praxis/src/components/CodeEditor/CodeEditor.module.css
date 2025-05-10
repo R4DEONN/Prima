@@ -1,0 +1,24 @@
+.editorContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 70%;
+    height: 100%;
+}
+
+.controls {
+    position: absolute;
+    bottom: 4.2rem;
+    right: 1rem;
+    z-index: 10;
+}
+
+.outputContainer {
+    height: 95%;
+    border-top: 1px solid #ddd;
+    overflow: hidden;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}

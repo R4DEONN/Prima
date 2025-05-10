@@ -1,14 +1,16 @@
-import { createSlice } from '@reduxjs/toolkit';
-import type {PayloadAction} from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
+import type {PayloadAction} from "@reduxjs/toolkit";
 
-interface Command {
+interface Command
+{
 	input: string;
 	output: string;
 	timestamp: number;
 	status: 'success' | 'error' | 'pending';
 }
 
-interface CommandState {
+interface CommandState
+{
 	history: Command[];
 	isRunning: boolean;
 }
@@ -22,42 +24,37 @@ export const commandSlice = createSlice({
 	name: 'command',
 	initialState,
 	reducers: {
-		executeCommand: (state, action: PayloadAction<string>) => {
-			try {
+		executeCommand: (state, action: PayloadAction<string>) =>
+		{
+			try
+			{
 				const command = JSON.parse(action.payload);
 				const newCommand: Command = {
-					input: `Запуск ${command.language} кода`,
-					output: 'Выполнение...',
+					input: command.input || `Запуск ${command.language} кода`,
+					output: command.output,
 					timestamp: Date.now(),
-					status: 'pending'
+					status: command.status || 'pending'
 				};
-
 				state.history.push(newCommand);
-				state.isRunning = true;
-
-				// Здесь будет логика выполнения кода
-				setTimeout(() => {
-					newCommand.output = `Код выполнен успешно!\nРезультат: ${Math.random()}`;
-					newCommand.status = 'success';
-					state.isRunning = false;
-				}, 2000);
-
-			} catch (e) {
+				state.isRunning = false;
+			} catch (e)
+			{
 				state.history.push({
-					input: action.payload,
-					output: 'Ошибка выполнения команды',
+					input: 'Ошибка выполнения',
+					output: e instanceof Error ? e.message : String(e),
 					timestamp: Date.now(),
 					status: 'error'
 				});
 			}
 		},
-		clearHistory: (state) => {
+		clearHistory: (state) =>
+		{
 			state.history = [];
 		},
 	},
 });
 
-export const { executeCommand, clearHistory } = commandSlice.actions;
+export const {executeCommand, clearHistory} = commandSlice.actions;
 
 export const selectCommandHistory = (state: { command: CommandState }) =>
 	state.command.history;
