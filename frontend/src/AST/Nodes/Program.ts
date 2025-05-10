@@ -6,7 +6,7 @@ import {Statement} from "./Statement";
 export class Program extends ASTNode
 {
     constructor(
-        public body: Array<Statement | Declaration>
+        public body: Array<Statement | Declaration> = []
     )
     {
         super(NodeType.PROGRAM)

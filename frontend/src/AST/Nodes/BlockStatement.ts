@@ -5,7 +5,7 @@ import {NodeType} from "../Types/NodeType";
 export class BlockStatement extends Statement
 {
     constructor(
-        public body: Array<Statement | Declaration>
+        public body: Array<Statement | Declaration> = []
     )
     {
         super(NodeType.BLOCK_STATEMENT);

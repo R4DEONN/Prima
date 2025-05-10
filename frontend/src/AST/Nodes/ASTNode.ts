@@ -6,6 +6,9 @@ export abstract class ASTNode
     {
     }
 
-    abstract generate(): string
+    public generate(): string
+    {
+        return this.nodeType;
+    }
 
 }
