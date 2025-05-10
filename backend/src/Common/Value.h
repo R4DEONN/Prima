@@ -4,7 +4,7 @@
 #include <string>
 #include <iostream>
 
-using Value = std::variant<std::monostate, int, double, bool, std::string>;
+using Value = std::variant<int, double, bool, std::string>;
 
 std::ostream& operator<<(std::ostream& output, const Value& value);
 

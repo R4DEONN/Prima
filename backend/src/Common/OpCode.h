@@ -17,7 +17,6 @@ enum class OpCode : uint8_t
 
 	//Declaration
 	CONSTANT,
-	NIL,
 	TRUE,
 	FALSE,
 

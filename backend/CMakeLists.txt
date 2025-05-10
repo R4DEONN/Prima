@@ -12,9 +12,12 @@ add_executable(${PROJECT_NAME}
         src/Common/Value.h
         src/Common/Value.cpp
         src/Prelude/Prelude.h
-        src/Scanner/Scanner.h
-        src/Scanner/Token.h
-        src/Scanner/TokenType.h
+        src/Common/Object.h
+        src/Common/ObjectType.h
+        src/Common/StringObject.h
+        src/Common/ChunkCreator.h
+        src/Common/ChunkCreator.cpp
+        src/Common/ValueType.h
 )
 
 find_package(Catch2)

@@ -6,21 +6,17 @@ std::string getTypeName(const Value &value)
 	{
 		using T = std::decay_t<decltype(arg)>;
 
-		if constexpr (std::is_same_v<T, std::monostate>)
-		{
-			return "null";
-		}
-		else if constexpr (std::is_same_v<T, bool>)
+		if constexpr (std::is_same_v<T, bool>)
 		{
 			return "bool";
 		}
 		else if constexpr (std::is_integral_v<T>)
 		{
-			return "int";
+			return "number";
 		}
 		else if constexpr (std::is_floating_point_v<T>)
 		{
-			return "double";
+			return "number";
 		}
 		else if constexpr (std::is_same_v<T, std::string>)
 		{
@@ -39,11 +35,7 @@ bool toBool(const Value& value)
 	{
 		using T = std::decay_t<decltype(arg)>;
 
-		if constexpr (std::is_same_v<T, std::monostate>)
-		{
-			return false;
-		}
-		else if constexpr (std::is_same_v<T, bool>)
+		if constexpr (std::is_same_v<T, bool>)
 		{
 			return arg;
 		}
