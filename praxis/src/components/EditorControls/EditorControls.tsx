@@ -2,6 +2,7 @@ import {useAppSelector} from '../../app/hooks.ts';
 import {setTheme, setLanguage} from '../../features/editor/editorSlice.ts';
 import {Dropdown} from "../Dropdown/Dropdown.tsx";
 import {ThemeToggle} from "../ThemeToggle/ThemeToggle.tsx";
+import {RunButton} from "../RunButton/RunButton.tsx";
 
 export function EditorControls()
 {
@@ -38,6 +39,7 @@ export function EditorControls()
 			/>
 			<ThemeToggle>
 			</ThemeToggle>
+			<RunButton/>
 		</div>
 	);
 }
