@@ -3,6 +3,7 @@ import {useAppSelector, useAppDispatch} from '../../app/hooks.ts';
 import {updateCode} from '../../features/editor/editorSlice.ts';
 import {editorOptions, registerPrimaLanguage} from "./monacoConfig.ts";
 import {useEffect, useRef, useState} from "react";
+import * as monaco from 'monaco-editor';
 
 export function CodeEditor()
 {
@@ -11,29 +12,21 @@ export function CodeEditor()
 	const editorRef = useRef<any>(null);
 	const [isMounted, setIsMounted] = useState(false);
 
-	const logTokens = (editor: any) =>
-	{
-		const model = editor.getModel();
-		const tokens = monaco.editor.tokenize(model.getValue(), 'prima');
-		console.log('Monaco Tokens:', tokens);
-
-		model.onDidChangeContent(() =>
-		{
-			const updatedTokens = monaco.editor.tokenize(model.getValue(), 'prima');
-			console.log('Updated Tokens:', updatedTokens);
-		});
-	}
-
 	const handleEditorDidMount = (editor: any, monacoInstance: typeof monaco) =>
 	{
 		registerPrimaLanguage(monacoInstance);
 		editorRef.current = editor;
-		logTokens(editor);
+		editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS, () =>
+		{
+			editor.getAction('editor.action.formatDocument').run();
+		});
 		setIsMounted(true);
 	};
 
-	useEffect(() => {
-		if (isMounted && editorRef.current) {
+	useEffect(() =>
+	{
+		if (isMounted && editorRef.current)
+		{
 			monaco.editor.setTheme(theme);
 		}
 	}, [isMounted, theme]);

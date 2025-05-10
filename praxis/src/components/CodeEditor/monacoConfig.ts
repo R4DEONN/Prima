@@ -105,7 +105,7 @@ export const registerPrimaLanguage = (monaco: any) =>
 	});
 
 	monaco.languages.registerCompletionItemProvider('prima', {
-		provideCompletionItems: (model: any, position: any) =>
+		provideCompletionItems: (_model: monaco.editor.ITextModel, _position: monaco.Position) =>
 		{
 			const suggestions = [
 				{
@@ -196,6 +196,10 @@ export const registerPrimaLanguage = (monaco: any) =>
 		colors: {
 			'editor.background': '#1c2022',
 			'editor.foreground': '#bababa',
+			'editorLineNumber.foreground': '#606366',
+			'editorLineNumber.activeForeground': '#a4a3a3',
+			'editor.lineHighlightBackground': '#202426',
+			'editor.lineHighlightBorder': '#202426'
 		}
 	});
 
@@ -218,8 +222,93 @@ export const registerPrimaLanguage = (monaco: any) =>
 		colors: {
 			'editor.background': '#1e1f22',
 			'editor.foreground': '#bcbec4',
+			'editorLineNumber.foreground': '#4b5059',
+			'editorLineNumber.activeForeground': '#a1a3ab',
+			'editor.lineHighlightBackground': '#26282e',
+			'editor.lineHighlightBorder': '#26282e'
 		}
 	});
+
+	// Добавьте этот код после registerCompletionItemProvider
+	monaco.languages.registerDocumentFormattingEditProvider('prima', {
+		provideDocumentFormattingEdits: (_model: monaco.editor.ITextModel, _options: monaco.languages.FormattingOptions, _token: monaco.CancellationToken) =>
+		{
+			return [{
+				range: _model.getFullModelRange(),
+				text: formatPrimaCode(_model.getValue())
+			}];
+		}
+	});
+
+	function formatPrimaCode(code: string): string {
+		// Удаляем все существующие точки с запятой (мы добавим их позже)
+		code = code.replace(/;/g, '');
+
+		// Нормализуем пробелы
+		code = code.replace(/(\w+):(\w+)/g, '$1: $2')  // Типы
+			.replace(/\):(\w+)/g, '): $1')      // Возвращаемый тип
+			.replace(/(\{|\})/g, ' $1 ')        // Скобки
+			.replace(/\s+/g, ' ')               // Множественные пробелы
+			.trim();
+
+		const lines = code.split(/(\{|\})/);
+		let indentLevel = 0;
+		const indentSize = 4;
+		let result: string[] = [];
+		let inFunction = false;
+
+		for (let i = 0; i < lines.length; i++) {
+			let line = lines[i].trim();
+			if (line === '') continue;
+
+			// Обработка функции
+			if (line.startsWith('function')) {
+				// Всегда добавляем пустую строку перед функцией (кроме самой первой)
+				if (result.length > 0 && result[result.length-1].trim() === '') {
+					result.push('');
+				}
+				inFunction = true;
+				result.push(line);
+				continue;
+			}
+
+			// Открывающая скобка функции
+			if (line === '{' && inFunction) {
+				result.push(' '.repeat(indentLevel * indentSize) + line);
+				indentLevel++;
+				continue;
+			}
+
+			// Тело функции
+			if (inFunction && line !== '}') {
+				if (line.startsWith('return')) {
+					result.push(' '.repeat(indentLevel * indentSize) + line + ';');
+				}
+				continue;
+			}
+
+			// Закрывающая скобка функции
+			if (line === '}' && inFunction) {
+				indentLevel--;
+				const closingLine = ' '.repeat(indentLevel * indentSize) + line;
+				result.push(closingLine);
+				// Всегда добавляем пустую строку после функции
+				result.push('');
+				inFunction = false;
+				continue;
+			}
+
+			// Обычные строки
+			result.push(' '.repeat(indentLevel * indentSize) + line);
+		}
+
+		// Удаляем возможную лишнюю пустую строку в самом конце
+		if (result.length > 0 && result[result.length-1].trim() === '') {
+			result.pop();
+		}
+
+		return result.join('\n');
+	}
 };
 
 export const editorOptions: monaco.editor.IStandaloneEditorConstructionOptions = {
@@ -227,4 +316,7 @@ export const editorOptions: monaco.editor.IStandaloneEditorConstructionOptions =
 	fontSize: 14,
 	scrollBeyondLastLine: false,
 	automaticLayout: true,
+	tabSize: 4,
+	formatOnType: true,
+	formatOnPaste: true,
 };

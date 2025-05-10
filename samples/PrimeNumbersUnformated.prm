@@ -1,0 +1,8 @@
+function print(str:string):void{
+//implementofprinting
+}
+function sqrt(num:number):number{return num**0.5;}
+function isPrime(num:number):bool{if(num<=1){return false;}if(num==2){return true;}if(num%2==0){return false;}for(vari:number=3;i<=sqrt(num);i+=2){if(num%i==0){return false;}}return true;}
+const start:number=10;
+const end:number=100;
+for(var num:number=start;num<=end;num++){if(isPrime(num)){print(num);}}

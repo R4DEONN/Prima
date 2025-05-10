@@ -1,4 +1,4 @@
-import {useAppSelector, useAppDispatch} from '../../app/hooks.ts';
+import {useAppSelector} from '../../app/hooks.ts';
 import {setTheme, setLanguage} from '../../features/editor/editorSlice.ts';
 import {Dropdown} from "../Dropdown/Dropdown.tsx";
 import {ThemeToggle} from "../ThemeToggle/ThemeToggle.tsx";
@@ -29,12 +29,12 @@ export function EditorControls()
 			<Dropdown
 				options={themeOptions}
 				selectedValue={theme}
-				actionCreator={setTheme}
+				actionCreator={setTheme as (payload: string) => any}
 			/>
 			<Dropdown
 				options={languageOptions}
 				selectedValue={language}
-				actionCreator={setLanguage}
+				actionCreator={setLanguage as (payload: string) => any}
 			/>
 			<ThemeToggle>
 			</ThemeToggle>

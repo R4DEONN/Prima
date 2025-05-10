@@ -1,5 +1,3 @@
-import {Provider} from 'react-redux';
-import {store} from './app/store';
 import {CodeEditor} from './components/CodeEditor/CodeEditor.tsx';
 import {EditorControls} from './components/EditorControls/EditorControls.tsx';
 
