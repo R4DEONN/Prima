@@ -72,10 +72,10 @@
 <ClassElement> -> <PropertyDefinition>
 <ClassElement> -> <MethodDefinition>
 
-<PropertyDefinition> -> <AccessibilityModifier> <StaticModifier> <OverrideModifier> ~Identifier~ ~:~ <Type> ~=~ <Expression> ~;~
+<PropertyDefinition> -> <AbstractModifier> <AccessibilityModifier> <StaticModifier> <OverrideModifier> ~Identifier~ ~:~ <Type> ~=~ <Expression> ~;~
 
-<MethodDefinition> -> <AccessibilityModifier> <StaticModifier> <OverrideModifier> ~Identifier~ ~(~ <ParameterList> ~)~ ~:~ <FunctionReturnType> <Block>
-<MethodDefinition> -> <AccessibilityModifier> <StaticModifier> <OverrideModifier> ~constructor~ ~(~ <ParameterList> ~)~ <Block>
+<MethodDefinition> -> <AbstractModifier> <AccessibilityModifier> <StaticModifier> <OverrideModifier> ~Identifier~ ~(~ <ParameterList> ~)~ ~:~ <FunctionReturnType> <Block>
+<MethodDefinition> -> <AccessibilityModifier> ~constructor~ ~(~ <ParameterList> ~)~ <Block>
 
 <AccessibilityModifier> -> ~public~
 <AccessibilityModifier> -> ~private~
@@ -187,18 +187,19 @@
 
 <ForStatement> -> ~for~ ~(~ <FirstForArgument> ~;~ <SecondForArgument> ~;~ <ThirdForArgument> ~)~ <Block>
 <FirstForArgument> -> <VariableDeclaration>
-<FirstForArgument> -> <Expression>
 <FirstForArgument> -> <Assignment>
 <FirstForArgument> -> ~ε~
 <SecondForArgument> -> <Expression>
 <SecondForArgument> -> ~ε~
-<ThirdForArgument> -> <Expression>
+<ThirdForArgument> -> <Assignment>
 <ThirdForArgument> -> ~ε~
 
 <ReturnStatement> -> ~return~ <Expression>
 <ReturnStatement> -> ~return~
 
-<Assignment> -> <MemberExpression> <AssignmentOperator> <Expression>
+<Assignment> -> <PostfixExpression> <AssignmentRightPart>
+<AssignmentRightPart> -> <AssignmentOperator> <Expression>
+<AssignmentRightPart> -> ~ε~
 <AssignmentOperator> -> ~=~
 <AssignmentOperator> -> ~+=~
 <AssignmentOperator> -> ~-=~

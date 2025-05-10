@@ -2,17 +2,17 @@
 <StatementList> -> ~ε~ | ~#~ ~}~
 <StatementList> -> <Statement><StatementList'> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~abstract~ ~break~ ~const~ ~continue~ ~export~ ~for~ ~function~ ~if~ ~import~ ~null~ ~return~ ~var~ ~ε~
 <Statement> -> <Declaration> | ~abstract~ ~const~ ~export~ ~function~ ~import~ ~var~ ~ε~
-<Statement> -> <Expression>~@~ | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
+<Statement> -> <Expression>~;~ | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
 <Statement> -> <IfStatement> | ~if~
 <Statement> -> <ForStatement> | ~for~
-<Statement> -> <ReturnStatement>~@~ | ~return~
-<Statement> -> <Assignment>~@~ | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
-<Statement> -> <ContinueStatement>~@~ | ~continue~
-<Statement> -> <BreakStatement>~@~ | ~break~
+<Statement> -> <ReturnStatement>~;~ | ~return~
+<Statement> -> <Assignment>~;~ | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
+<Statement> -> <ContinueStatement>~;~ | ~continue~
+<Statement> -> <BreakStatement>~;~ | ~break~
 <ContinueStatement> -> ~continue~ | ~continue~
 <BreakStatement> -> ~break~ | ~break~
 <Block> -> ~{~<StatementList>~}~ | ~{~
-<Declaration> -> <VariableDeclaration>~@~ | ~const~ ~var~
+<Declaration> -> <VariableDeclaration>~;~ | ~const~ ~var~
 <Declaration> -> <FunctionDeclaration> | ~function~
 <Declaration> -> <ClassDeclaration> | ~abstract~ ~ε~
 <Declaration> -> <ImportDeclaration> | ~import~
@@ -21,28 +21,29 @@
 <VariableDeclaration> -> ~var~~Identifier~~:~<Type><VariableDeclaration'> | ~var~
 <ClassDeclaration> -> <AbstractModifier>~class~~Identifier~<SuperClass>~{~<ClassElementList>~}~ | ~abstract~ ~ε~
 <AbstractModifier> -> ~abstract~ | ~abstract~
-<AbstractModifier> -> ~ε~ | ~class~
+<AbstractModifier> -> ~ε~ | ~abstract~ ~class~ ~private~ ~protected~ ~public~ ~}~
 <SuperClass> -> ~extends~~Identifier~ | ~extends~
 <SuperClass> -> ~ε~ | ~{~
 <ClassElementList> -> ~ε~ | ~}~
-<ClassElementList> -> <ClassElement><ClassElementList'> | ~private~ ~protected~ ~public~ ~ε~
-<ClassElement> -> <PropertyDefinition> | ~private~ ~protected~ ~public~ ~ε~
-<ClassElement> -> <MethodDefinition> | ~private~ ~protected~ ~public~ ~ε~
-<PropertyDefinition> -> <AccessibilityModifier><StaticModifier><OverrideModifier>~Identifier~~:~<Type>~=~<Expression>~@~ | ~private~ ~protected~ ~public~ ~ε~
-<MethodDefinition> -> <AccessibilityModifier><StaticModifier><OverrideModifier><MethodDefinition'> | ~private~ ~protected~ ~public~ ~ε~
+<ClassElementList> -> <ClassElement><ClassElementList'> | ~abstract~ ~private~ ~protected~ ~public~ ~ε~
+<ClassElement> -> <PropertyDefinition> | ~abstract~ ~ε~
+<ClassElement> -> <MethodDefinition> | ~abstract~ ~private~ ~protected~ ~public~ ~ε~
+<PropertyDefinition> -> <AbstractModifier><AccessibilityModifier><StaticModifier><OverrideModifier>~Identifier~~:~<Type>~=~<Expression>~;~ | ~abstract~ ~ε~
+<MethodDefinition> -> <AbstractModifier><AccessibilityModifier><StaticModifier><OverrideModifier>~Identifier~~(~<ParameterList>~)~~:~<FunctionReturnType><Block> | ~abstract~ ~ε~
+<MethodDefinition> -> <AccessibilityModifier>~constructor~~(~<ParameterList>~)~<Block> | ~private~ ~protected~ ~public~ ~ε~
 <AccessibilityModifier> -> ~public~ | ~public~
 <AccessibilityModifier> -> ~private~ | ~private~
 <AccessibilityModifier> -> ~protected~ | ~protected~
-<AccessibilityModifier> -> ~ε~ | ~private~ ~protected~ ~public~ ~static~ ~}~
+<AccessibilityModifier> -> ~ε~ | ~abstract~ ~constructor~ ~private~ ~protected~ ~public~ ~static~ ~}~
 <StaticModifier> -> ~static~ | ~static~
-<StaticModifier> -> ~ε~ | ~override~ ~private~ ~protected~ ~public~ ~}~
+<StaticModifier> -> ~ε~ | ~abstract~ ~override~ ~private~ ~protected~ ~public~ ~}~
 <OverrideModifier> -> ~override~ | ~override~
-<OverrideModifier> -> ~ε~ | ~Identifier~ ~constructor~
-<ImportDeclaration> -> ~import~~{~<ImportSpecifierList>~}~~from~~StringLiteral~~@~ | ~import~
+<OverrideModifier> -> ~ε~ | ~Identifier~
+<ImportDeclaration> -> ~import~~{~<ImportSpecifierList>~}~~from~~StringLiteral~~;~ | ~import~
 <ImportSpecifierList> -> ~ε~ | ~}~
 <ImportSpecifierList> -> <ImportSpecifier><ImportSpecifierList'> | ~Identifier~
 <ImportSpecifier> -> ~Identifier~<ImportSpecifier'> | ~Identifier~
-<ExportDeclaration> -> ~export~~{~<ExportSpecifierList>~}~~@~ | ~export~
+<ExportDeclaration> -> ~export~~{~<ExportSpecifierList>~}~~;~ | ~export~
 <ExportSpecifierList> -> ~ε~ | ~}~
 <ExportSpecifierList> -> <ExportSpecifier><ExportSpecifierList'> | ~Identifier~
 <ExportSpecifier> -> ~Identifier~<ExportSpecifier'> | ~Identifier~
@@ -82,22 +83,23 @@
 <FunctionExpression> -> ~function~~(~<ParameterList>~)~<Block> | ~function~
 <FunctionCall> -> <MemberExpression><FunctionCallArgumentList> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
 <FunctionCallArgumentList> -> ~(~<ArgumentList>~)~ | ~(~
-<FunctionCallArgumentList> -> ~ε~ | ~!=~ ~%~ ~&&~ ~)~ ~**~ ~*~ ~++~ ~+~ ~,~ ~--~ ~-~ ~/~ ~<=~ ~<~ ~==~ ~>=~ ~>~ ~@~ ~]~ ~||~
+<FunctionCallArgumentList> -> ~ε~ | ~!=~ ~%~ ~&&~ ~)~ ~**~ ~*~ ~++~ ~+=~ ~+~ ~,~ ~--~ ~-=~ ~-~ ~/~ ~;~ ~<=~ ~<~ ~==~ ~=~ ~>=~ ~>~ ~]~ ~||~
 <ArrayLiteral> -> ~[~<ArgumentList>~]~ | ~[~
 <ArgumentList> -> ~ε~<ArgumentList'1> | ~)~ ~]~
 <ArgumentList> -> <Expression><ArgumentList'1> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
 <IfStatement> -> ~if~~(~<Expression>~)~<Block><IfStatement'> | ~if~
-<ForStatement> -> ~for~~(~<FirstForArgument>~@~<SecondForArgument>~@~<ThirdForArgument>~)~<Block> | ~for~
+<ForStatement> -> ~for~~(~<FirstForArgument>~;~<SecondForArgument>~;~<ThirdForArgument>~)~<Block> | ~for~
 <FirstForArgument> -> <VariableDeclaration> | ~const~ ~var~
-<FirstForArgument> -> <Expression> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
 <FirstForArgument> -> <Assignment> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
-<FirstForArgument> -> ~ε~ | ~@~
+<FirstForArgument> -> ~ε~ | ~;~
 <SecondForArgument> -> <Expression> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
-<SecondForArgument> -> ~ε~ | ~@~
-<ThirdForArgument> -> <Expression> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
+<SecondForArgument> -> ~ε~ | ~;~
+<ThirdForArgument> -> <Assignment> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
 <ThirdForArgument> -> ~ε~ | ~)~
 <ReturnStatement> -> ~return~<ReturnStatement'> | ~return~
-<Assignment> -> <MemberExpression><AssignmentOperator><Expression> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
+<Assignment> -> <PostfixExpression><AssignmentRightPart> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
+<AssignmentRightPart> -> <AssignmentOperator><Expression> | ~+=~ ~-=~ ~=~
+<AssignmentRightPart> -> ~ε~ | ~)~ ~;~
 <AssignmentOperator> -> ~=~ | ~=~
 <AssignmentOperator> -> ~+=~ | ~+=~
 <AssignmentOperator> -> ~-=~ | ~-=~
@@ -121,12 +123,10 @@
 <ArgumentList'> -> ~,~<Expression><ArgumentList''> | ~,~
 <StatementList'> -> ~ε~ | ~#~ ~}~
 <StatementList'> -> <StatementList> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~abstract~ ~break~ ~const~ ~continue~ ~export~ ~for~ ~function~ ~if~ ~import~ ~null~ ~return~ ~var~ ~ε~
-<VariableDeclaration'> -> ~ε~ | ~@~
+<VariableDeclaration'> -> ~ε~ | ~;~
 <VariableDeclaration'> -> ~=~<Expression> | ~=~
 <ClassElementList'> -> ~ε~ | ~}~
-<ClassElementList'> -> <ClassElementList> | ~private~ ~protected~ ~public~ ~ε~
-<MethodDefinition'> -> ~Identifier~~(~<ParameterList>~)~~:~<FunctionReturnType><Block> | ~Identifier~
-<MethodDefinition'> -> ~constructor~~(~<ParameterList>~)~<Block> | ~constructor~
+<ClassElementList'> -> <ClassElementList> | ~abstract~ ~private~ ~protected~ ~public~ ~ε~
 <ImportSpecifierList'> -> ~ε~ | ~}~
 <ImportSpecifierList'> -> ~,~<ImportSpecifierList> | ~,~
 <ImportSpecifier'> -> ~as~~Identifier~ | ~as~
@@ -137,48 +137,48 @@
 <ExportSpecifier'> -> ~ε~ | ~,~ ~}~
 <ParameterList'1> -> ~ε~ | ~)~
 <ParameterList'1> -> <ParameterList'> | ~,~
-<LogicalOrExpression'1> -> ~ε~ | ~)~ ~,~ ~@~ ~]~
+<LogicalOrExpression'1> -> ~ε~ | ~)~ ~,~ ~;~ ~]~
 <LogicalOrExpression'1> -> <LogicalOrExpression'> | ~||~
-<LogicalAndExpression'1> -> ~ε~ | ~)~ ~,~ ~@~ ~]~ ~||~
+<LogicalAndExpression'1> -> ~ε~ | ~)~ ~,~ ~;~ ~]~ ~||~
 <LogicalAndExpression'1> -> <LogicalAndExpression'> | ~&&~
-<EqualityExpression'1> -> ~ε~ | ~&&~ ~)~ ~,~ ~@~ ~]~ ~||~
+<EqualityExpression'1> -> ~ε~ | ~&&~ ~)~ ~,~ ~;~ ~]~ ~||~
 <EqualityExpression'1> -> <EqualityExpression'> | ~!=~ ~==~
-<RelationalExpression'1> -> ~ε~ | ~!=~ ~&&~ ~)~ ~,~ ~==~ ~@~ ~]~ ~||~
+<RelationalExpression'1> -> ~ε~ | ~!=~ ~&&~ ~)~ ~,~ ~;~ ~==~ ~]~ ~||~
 <RelationalExpression'1> -> <RelationalExpression'> | ~<=~ ~<~ ~>=~ ~>~
-<AdditiveExpression'1> -> ~ε~ | ~!=~ ~&&~ ~)~ ~,~ ~<=~ ~<~ ~==~ ~>=~ ~>~ ~@~ ~]~ ~||~
+<AdditiveExpression'1> -> ~ε~ | ~!=~ ~&&~ ~)~ ~,~ ~;~ ~<=~ ~<~ ~==~ ~>=~ ~>~ ~]~ ~||~
 <AdditiveExpression'1> -> <AdditiveExpression'> | ~+~ ~-~
-<MultiplicativeExpression'1> -> ~ε~ | ~!=~ ~&&~ ~)~ ~+~ ~,~ ~-~ ~<=~ ~<~ ~==~ ~>=~ ~>~ ~@~ ~]~ ~||~
+<MultiplicativeExpression'1> -> ~ε~ | ~!=~ ~&&~ ~)~ ~+~ ~,~ ~-~ ~;~ ~<=~ ~<~ ~==~ ~>=~ ~>~ ~]~ ~||~
 <MultiplicativeExpression'1> -> <MultiplicativeExpression'> | ~%~ ~*~ ~/~
-<ExponentiationExpression'1> -> ~ε~ | ~!=~ ~%~ ~&&~ ~)~ ~*~ ~+~ ~,~ ~-~ ~/~ ~<=~ ~<~ ~==~ ~>=~ ~>~ ~@~ ~]~ ~||~
+<ExponentiationExpression'1> -> ~ε~ | ~!=~ ~%~ ~&&~ ~)~ ~*~ ~+~ ~,~ ~-~ ~/~ ~;~ ~<=~ ~<~ ~==~ ~>=~ ~>~ ~]~ ~||~
 <ExponentiationExpression'1> -> <ExponentiationExpression'> | ~**~
-<PostfixExpression'> -> ~ε~ | ~!=~ ~%~ ~&&~ ~)~ ~**~ ~*~ ~+~ ~,~ ~-~ ~/~ ~<=~ ~<~ ~==~ ~>=~ ~>~ ~@~ ~]~ ~||~
+<PostfixExpression'> -> ~ε~ | ~!=~ ~%~ ~&&~ ~)~ ~**~ ~*~ ~+=~ ~+~ ~,~ ~-=~ ~-~ ~/~ ~;~ ~<=~ ~<~ ~==~ ~=~ ~>=~ ~>~ ~]~ ~||~
 <PostfixExpression'> -> ~++~ | ~++~
 <PostfixExpression'> -> ~--~ | ~--~
-<MemberExpression'1> -> ~ε~ | ~!=~ ~%~ ~&&~ ~(~ ~)~ ~**~ ~*~ ~++~ ~+=~ ~+~ ~,~ ~--~ ~-=~ ~-~ ~/~ ~<=~ ~<~ ~==~ ~=~ ~>=~ ~>~ ~@~ ~]~ ~||~
+<MemberExpression'1> -> ~ε~ | ~!=~ ~%~ ~&&~ ~(~ ~)~ ~**~ ~*~ ~++~ ~+=~ ~+~ ~,~ ~--~ ~-=~ ~-~ ~/~ ~;~ ~<=~ ~<~ ~==~ ~=~ ~>=~ ~>~ ~]~ ~||~
 <MemberExpression'1> -> <MemberExpression'> | ~.~ ~[~
 <ArgumentList'1> -> ~ε~ | ~)~ ~]~
 <ArgumentList'1> -> <ArgumentList'> | ~,~
 <IfStatement'> -> ~ε~ | ~!~ ~#~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~abstract~ ~break~ ~const~ ~continue~ ~export~ ~for~ ~function~ ~if~ ~import~ ~null~ ~return~ ~var~ ~}~
 <IfStatement'> -> ~else~<Block> | ~else~
 <ReturnStatement'> -> <Expression> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
-<ReturnStatement'> -> ~ε~ | ~@~
+<ReturnStatement'> -> ~ε~ | ~;~
 <ParameterList''> -> ~ε~ | ~)~
 <ParameterList''> -> <ParameterList'> | ~,~
-<LogicalOrExpression''> -> ~ε~ | ~)~ ~,~ ~@~ ~]~
+<LogicalOrExpression''> -> ~ε~ | ~)~ ~,~ ~;~ ~]~
 <LogicalOrExpression''> -> <LogicalOrExpression'> | ~||~
-<LogicalAndExpression''> -> ~ε~ | ~)~ ~,~ ~@~ ~]~ ~||~
+<LogicalAndExpression''> -> ~ε~ | ~)~ ~,~ ~;~ ~]~ ~||~
 <LogicalAndExpression''> -> <LogicalAndExpression'> | ~&&~
-<EqualityExpression''> -> ~ε~ | ~&&~ ~)~ ~,~ ~@~ ~]~ ~||~
+<EqualityExpression''> -> ~ε~ | ~&&~ ~)~ ~,~ ~;~ ~]~ ~||~
 <EqualityExpression''> -> <EqualityExpression'> | ~!=~ ~==~
-<RelationalExpression''> -> ~ε~ | ~!=~ ~&&~ ~)~ ~,~ ~==~ ~@~ ~]~ ~||~
+<RelationalExpression''> -> ~ε~ | ~!=~ ~&&~ ~)~ ~,~ ~;~ ~==~ ~]~ ~||~
 <RelationalExpression''> -> <RelationalExpression'> | ~<=~ ~<~ ~>=~ ~>~
-<AdditiveExpression''> -> ~ε~ | ~!=~ ~&&~ ~)~ ~,~ ~<=~ ~<~ ~==~ ~>=~ ~>~ ~@~ ~]~ ~||~
+<AdditiveExpression''> -> ~ε~ | ~!=~ ~&&~ ~)~ ~,~ ~;~ ~<=~ ~<~ ~==~ ~>=~ ~>~ ~]~ ~||~
 <AdditiveExpression''> -> <AdditiveExpression'> | ~+~ ~-~
-<MultiplicativeExpression''> -> ~ε~ | ~!=~ ~&&~ ~)~ ~+~ ~,~ ~-~ ~<=~ ~<~ ~==~ ~>=~ ~>~ ~@~ ~]~ ~||~
+<MultiplicativeExpression''> -> ~ε~ | ~!=~ ~&&~ ~)~ ~+~ ~,~ ~-~ ~;~ ~<=~ ~<~ ~==~ ~>=~ ~>~ ~]~ ~||~
 <MultiplicativeExpression''> -> <MultiplicativeExpression'> | ~%~ ~*~ ~/~
-<ExponentiationExpression''> -> ~ε~ | ~!=~ ~%~ ~&&~ ~)~ ~*~ ~+~ ~,~ ~-~ ~/~ ~<=~ ~<~ ~==~ ~>=~ ~>~ ~@~ ~]~ ~||~
+<ExponentiationExpression''> -> ~ε~ | ~!=~ ~%~ ~&&~ ~)~ ~*~ ~+~ ~,~ ~-~ ~/~ ~;~ ~<=~ ~<~ ~==~ ~>=~ ~>~ ~]~ ~||~
 <ExponentiationExpression''> -> <ExponentiationExpression'> | ~**~
-<MemberExpression''> -> ~ε~ | ~!=~ ~%~ ~&&~ ~(~ ~)~ ~**~ ~*~ ~++~ ~+=~ ~+~ ~,~ ~--~ ~-=~ ~-~ ~/~ ~<=~ ~<~ ~==~ ~=~ ~>=~ ~>~ ~@~ ~]~ ~||~
+<MemberExpression''> -> ~ε~ | ~!=~ ~%~ ~&&~ ~(~ ~)~ ~**~ ~*~ ~++~ ~+=~ ~+~ ~,~ ~--~ ~-=~ ~-~ ~/~ ~;~ ~<=~ ~<~ ~==~ ~=~ ~>=~ ~>~ ~]~ ~||~
 <MemberExpression''> -> <MemberExpression'> | ~.~ ~[~
 <ArgumentList''> -> ~ε~ | ~)~ ~]~
 <ArgumentList''> -> <ArgumentList'> | ~,~
