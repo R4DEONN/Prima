@@ -153,24 +153,28 @@
 <UnaryExpression> -> ~-~ <UnaryExpression>
 <UnaryExpression> -> ~!~ <UnaryExpression>
 
-<PostfixExpression> -> <PrimaryExpression>
-<PostfixExpression> -> <PrimaryExpression> ~++~
-<PostfixExpression> -> <PrimaryExpression> ~--~
-<PostfixExpression> -> <MemberExpression>
+<PostfixExpression> -> <FunctionCall>
+<PostfixExpression> -> <FunctionCall> ~++~
+<PostfixExpression> -> <FunctionCall> ~--~
 
-<MemberExpression> -> <PrimaryExpression> ~.~ ~Identifier~
-<MemberExpression> -> <PrimaryExpression> ~[~ <Expression> ~]~
+<MemberExpression> -> <PrimaryExpression>
+<MemberExpression> -> <MemberExpression> ~.~ ~Identifier~
+<MemberExpression> -> <MemberExpression> ~[~ <Expression> ~]~
 
 <PrimaryExpression> -> ~NumberLiteral~
 <PrimaryExpression> -> ~StringLiteral~
 <PrimaryExpression> -> ~BooleanLiteral~
 <PrimaryExpression> -> <ArrayLiteral>
-<PrimaryExpression> -> ~null~
 <PrimaryExpression> -> ~Identifier~
+<PrimaryExpression> -> ~null~
+<PrimaryExpression> -> <FunctionExpression>
 <PrimaryExpression> -> ~(~ <Expression> ~)~
-<PrimaryExpression> -> <FunctionCall>
 
-<FunctionCall> -> <Expression> ~(~ <ArgumentList> ~)~
+<FunctionExpression> -> ~function~ ~(~ <ParameterList> ~)~ <Block>
+
+<FunctionCall> -> <MemberExpression> <FunctionCallArgumentList>
+<FunctionCallArgumentList> -> ~(~ <ArgumentList> ~)~
+<FunctionCallArgumentList> -> ~ε~
 
 <ArrayLiteral> -> ~[~ <ArgumentList> ~]~
 
@@ -194,7 +198,6 @@
 <ReturnStatement> -> ~return~ <Expression>
 <ReturnStatement> -> ~return~
 
-<Assignment> -> ~Identifier~ <AssignmentOperator> <Expression>
 <Assignment> -> <MemberExpression> <AssignmentOperator> <Expression>
 <AssignmentOperator> -> ~=~
 <AssignmentOperator> -> ~+=~
