@@ -1,9 +1,12 @@
 import Editor from '@monaco-editor/react';
-import {useAppSelector, useAppDispatch} from '../../app/hooks.ts';
-import {updateCode} from '../../features/editor/editorSlice.ts';
-import {editorOptions, registerPrimaLanguage} from "./monacoConfig.ts";
+import {useAppSelector, useAppDispatch} from '../../app/hooks';
+import {updateCode} from '../../features/editor/editorSlice';
+import {editorOptions, registerPrimaLanguage} from "./monacoConfig";
 import {useEffect, useRef, useState} from "react";
 import * as monaco from 'monaco-editor';
+import {RunButton} from '../RunButton/RunButton';
+import {CommandOutput} from '../CommandOutput/CommandOutput';
+import styles from './CodeEditor.module.css';
 
 export function CodeEditor()
 {
@@ -32,15 +35,24 @@ export function CodeEditor()
 	}, [isMounted, theme]);
 
 	return (
-		<Editor
-			height="90%"
-			width="70%"
-			language={language}
-			theme={isMounted ? theme : 'vs'}
-			value={code}
-			onChange={(value) => dispatch(updateCode(value || ''))}
-			onMount={handleEditorDidMount}
-			options={editorOptions}
-		/>
-	);
+		<>
+			<div className={styles.editorContainer}>
+				<Editor
+					height="93%"
+					width="100%"
+					language={language}
+					theme={isMounted ? theme : 'vs'}
+					value={code}
+					onChange={(value) => dispatch(updateCode(value || ''))}
+					onMount={handleEditorDidMount}
+					options={editorOptions}
+				/>
+				<div className={styles.controls}>
+					<RunButton/>
+				</div>
+			</div>
+			<div className={styles.outputContainer}>
+				<CommandOutput/>
+			</div>
+		</>);
 }

@@ -9,11 +9,12 @@
   "main": "electron/main.js",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "electron:dev": "concurrently -n \"VITE,ELECTRON\" -c \"bgBlue.bold,bgMagenta.bold\" \"vite\" \"wait-on tcp:5173 && electron .\"",
-    "electron:build": "npm run build && electron-builder",
+    "build": "tsc -b && vite build",
+    "build:electron": "tsc -b tsconfig.electron.json",
+    "electron:build": "npm run build && npm run build:electron && electron-builder",
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {

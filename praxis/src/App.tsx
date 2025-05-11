@@ -4,9 +4,11 @@ import {EditorControls} from './components/EditorControls/EditorControls.tsx';
 function App()
 {
 	return (
-		<div style={{paddingLeft: '20px', height: '100vh', width: '100vw'}}>
+		<div style={{marginLeft: '2%', height: '100vh', width: '98vw'}}>
 			<EditorControls/>
-			<CodeEditor/>
+			<div style={{display: 'flex', flexDirection: 'row', width: '100%', height: '100%'}}>
+				<CodeEditor/>
+			</div>
 		</div>
 	);
 }
