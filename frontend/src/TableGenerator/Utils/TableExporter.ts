@@ -16,6 +16,7 @@ export class TableExporter
                 pointer: row.pointer,
                 isStack: row.isStack,
                 isEnd: row.isEnd,
+                action: row.action,
             }));
 
             const jsonData = JSON.stringify(transformedTable, null, 2);

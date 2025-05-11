@@ -8,6 +8,7 @@ export interface TableRow
     pointer: number | null;
     isStack: boolean;
     isEnd: boolean;
+    action?: string;
 }
 
 export type Table = TableRow[];

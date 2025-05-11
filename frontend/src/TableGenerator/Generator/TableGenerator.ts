@@ -99,11 +99,11 @@ export class TableGenerator
             this.currentRowNumber++;
             const symbol = rule.rightParts[i];
             const isLastSymbolInRule = (i === rule.rightParts.length - 1);
-            this.generateTableRowForSymbol(symbol, isLastSymbolInRule, rule.guideSymbols);
+            this.generateTableRowForSymbol(symbol, isLastSymbolInRule, rule.guideSymbols, isLastSymbolInRule ? rule.action : undefined);
         }
     }
 
-    private generateTableRowForSymbol(symbol: string, isLastSymbolInRule: boolean, guideSymbolsFromRule: string[]): void
+    private generateTableRowForSymbol(symbol: string, isLastSymbolInRule: boolean, guideSymbolsFromRule: string[], action?: string): void
     {
         const row: TableRow = {
             number: this.currentRowNumber,
@@ -114,6 +114,7 @@ export class TableGenerator
             pointer: null,
             isStack: false,
             isEnd: false,
+            action: action,
         };
 
         TableGenerator.applyInitializeTableRowLogic(row, symbol);

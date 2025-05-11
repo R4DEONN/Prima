@@ -260,7 +260,6 @@ class Scanner
             while (this._isDigit(this._peek()))
             {
                 this._advance();
-                this._pos++;
             }
         }
 
@@ -268,7 +267,6 @@ class Scanner
 
         if (this._peek() == '.' && this._isDigit(this._peekNext()))
         {
-            this._pos++;
             this._advance();
             advanceWhileDigit();
         }
@@ -280,7 +278,6 @@ class Scanner
     {
         while (this._isAlphaNumeric(this._peek()))
         {
-            this._pos++;
             this._advance();
         }
 

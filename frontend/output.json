@@ -23,7 +23,8 @@
       "~null~",
       "~return~",
       "~var~",
-      "~ε~"
+      "~#~",
+      "~}~"
     ],
     "isShift": false,
     "isError": true,
@@ -68,7 +69,7 @@
       "~null~",
       "~return~",
       "~var~",
-      "~ε~"
+      "~;~"
     ],
     "isShift": false,
     "isError": true,
@@ -86,7 +87,7 @@
       "~function~",
       "~import~",
       "~var~",
-      "~ε~"
+      "~;~"
     ],
     "isShift": false,
     "isError": false,
@@ -260,7 +261,12 @@
     "nonTerminal": "<Declaration>",
     "guidingSymbols": [
       "~abstract~",
-      "~ε~"
+      "~abstract~",
+      "~class~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~}~"
     ],
     "isShift": false,
     "isError": false,
@@ -321,7 +327,12 @@
     "nonTerminal": "<ClassDeclaration>",
     "guidingSymbols": [
       "~abstract~",
-      "~ε~"
+      "~abstract~",
+      "~class~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~}~"
     ],
     "isShift": false,
     "isError": true,
@@ -402,7 +413,12 @@
       "~private~",
       "~protected~",
       "~public~",
-      "~ε~"
+      "~abstract~",
+      "~class~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~}~"
     ],
     "isShift": false,
     "isError": true,
@@ -415,7 +431,12 @@
     "nonTerminal": "<ClassElement>",
     "guidingSymbols": [
       "~abstract~",
-      "~ε~"
+      "~abstract~",
+      "~class~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~}~"
     ],
     "isShift": false,
     "isError": false,
@@ -431,7 +452,12 @@
       "~private~",
       "~protected~",
       "~public~",
-      "~ε~"
+      "~abstract~",
+      "~class~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~}~"
     ],
     "isShift": false,
     "isError": true,
@@ -444,7 +470,12 @@
     "nonTerminal": "<PropertyDefinition>",
     "guidingSymbols": [
       "~abstract~",
-      "~ε~"
+      "~abstract~",
+      "~class~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~}~"
     ],
     "isShift": false,
     "isError": true,
@@ -457,7 +488,12 @@
     "nonTerminal": "<MethodDefinition>",
     "guidingSymbols": [
       "~abstract~",
-      "~ε~"
+      "~abstract~",
+      "~class~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~}~"
     ],
     "isShift": false,
     "isError": false,
@@ -472,7 +508,13 @@
       "~private~",
       "~protected~",
       "~public~",
-      "~ε~"
+      "~abstract~",
+      "~constructor~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~static~",
+      "~}~"
     ],
     "isShift": false,
     "isError": true,
@@ -1781,7 +1823,8 @@
       "~null~",
       "~return~",
       "~var~",
-      "~ε~"
+      "~#~",
+      "~}~"
     ],
     "isShift": false,
     "isError": true,
@@ -1833,7 +1876,7 @@
       "~private~",
       "~protected~",
       "~public~",
-      "~ε~"
+      "~}~"
     ],
     "isShift": false,
     "isError": true,
@@ -2761,7 +2804,7 @@
       "~null~",
       "~return~",
       "~var~",
-      "~ε~"
+      "~;~"
     ],
     "isShift": false,
     "isError": true,
@@ -2779,7 +2822,8 @@
     "isError": true,
     "pointer": null,
     "isStack": false,
-    "isEnd": true
+    "isEnd": true,
+    "action": "makeProgram"
   },
   {
     "number": 187,
@@ -2804,7 +2848,7 @@
       "~function~",
       "~import~",
       "~var~",
-      "~ε~",
+      "~;~",
       "~!~",
       "~(~",
       "~-~",
@@ -2861,7 +2905,8 @@
       "~null~",
       "~return~",
       "~var~",
-      "~ε~"
+      "~#~",
+      "~}~"
     ],
     "isShift": false,
     "isError": true,
@@ -2877,7 +2922,12 @@
       "~var~",
       "~function~",
       "~abstract~",
-      "~ε~",
+      "~abstract~",
+      "~class~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~}~",
       "~import~",
       "~export~"
     ],
@@ -3109,7 +3159,7 @@
       "~null~",
       "~return~",
       "~var~",
-      "~ε~"
+      "~;~"
     ],
     "isShift": false,
     "isError": true,
@@ -3171,7 +3221,12 @@
     "nonTerminal": "<ClassDeclaration>",
     "guidingSymbols": [
       "~abstract~",
-      "~ε~"
+      "~abstract~",
+      "~class~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~}~"
     ],
     "isShift": false,
     "isError": true,
@@ -3431,7 +3486,12 @@
       "~private~",
       "~protected~",
       "~public~",
-      "~ε~"
+      "~abstract~",
+      "~class~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~}~"
     ],
     "isShift": false,
     "isError": true,
@@ -3533,12 +3593,22 @@
     "nonTerminal": "<ClassElement>",
     "guidingSymbols": [
       "~abstract~",
-      "~ε~",
+      "~abstract~",
+      "~class~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~}~",
       "~abstract~",
       "~private~",
       "~protected~",
       "~public~",
-      "~ε~"
+      "~abstract~",
+      "~class~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~}~"
     ],
     "isShift": false,
     "isError": true,
@@ -3555,7 +3625,7 @@
       "~private~",
       "~protected~",
       "~public~",
-      "~ε~"
+      "~}~"
     ],
     "isShift": false,
     "isError": true,
@@ -3568,7 +3638,12 @@
     "nonTerminal": "<PropertyDefinition>",
     "guidingSymbols": [
       "~abstract~",
-      "~ε~"
+      "~abstract~",
+      "~class~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~}~"
     ],
     "isShift": false,
     "isError": true,
@@ -3581,11 +3656,22 @@
     "nonTerminal": "<MethodDefinition>",
     "guidingSymbols": [
       "~abstract~",
-      "~ε~",
+      "~abstract~",
+      "~class~",
       "~private~",
       "~protected~",
       "~public~",
-      "~ε~"
+      "~}~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~abstract~",
+      "~constructor~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~static~",
+      "~}~"
     ],
     "isShift": false,
     "isError": true,
@@ -5074,7 +5160,8 @@
     "isError": true,
     "pointer": 70,
     "isStack": false,
-    "isEnd": false
+    "isEnd": false,
+    "action": "makeNot"
   },
   {
     "number": 342,
@@ -6308,7 +6395,8 @@
     "isError": true,
     "pointer": 171,
     "isStack": false,
-    "isEnd": false
+    "isEnd": false,
+    "action": "makeEqual"
   },
   {
     "number": 418,
@@ -6420,7 +6508,8 @@
     "isError": true,
     "pointer": 173,
     "isStack": false,
-    "isEnd": false
+    "isEnd": false,
+    "action": "makeGreater"
   },
   {
     "number": 424,
@@ -6532,7 +6621,8 @@
     "isError": true,
     "pointer": 173,
     "isStack": false,
-    "isEnd": false
+    "isEnd": false,
+    "action": "makeLess"
   },
   {
     "number": 430,
@@ -6590,7 +6680,8 @@
     "isError": true,
     "pointer": 175,
     "isStack": false,
-    "isEnd": false
+    "isEnd": false,
+    "action": "makeSub"
   },
   {
     "number": 433,
@@ -6648,7 +6739,8 @@
     "isError": true,
     "pointer": 175,
     "isStack": false,
-    "isEnd": false
+    "isEnd": false,
+    "action": "makeAdd"
   },
   {
     "number": 436,
@@ -6709,7 +6801,8 @@
     "isError": true,
     "pointer": 177,
     "isStack": false,
-    "isEnd": false
+    "isEnd": false,
+    "action": "makeMod"
   },
   {
     "number": 439,
@@ -6770,7 +6863,8 @@
     "isError": true,
     "pointer": 177,
     "isStack": false,
-    "isEnd": false
+    "isEnd": false,
+    "action": "makeDiv"
   },
   {
     "number": 442,
@@ -6831,7 +6925,8 @@
     "isError": true,
     "pointer": 177,
     "isStack": false,
-    "isEnd": false
+    "isEnd": false,
+    "action": "makeMul"
   },
   {
     "number": 445,
@@ -7124,7 +7219,7 @@
       "~null~",
       "~return~",
       "~var~",
-      "~ε~"
+      "~;~"
     ],
     "isShift": false,
     "isError": true,
@@ -7198,7 +7293,12 @@
       "~private~",
       "~protected~",
       "~public~",
-      "~ε~"
+      "~abstract~",
+      "~class~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~}~"
     ],
     "isShift": false,
     "isError": true,
