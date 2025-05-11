@@ -16,7 +16,6 @@
 
 .outputContainer {
     height: 95%;
-    border-top: 1px solid #ddd;
     overflow: hidden;
     width: 30%;
     display: flex;

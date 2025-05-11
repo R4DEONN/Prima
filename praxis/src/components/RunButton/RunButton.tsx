@@ -1,26 +1,26 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { executeCommand } from '../../features/command/commandSlice';
 import styles from './RunButton.module.css';
 
-interface RunButtonProps {
-	code?: string;  // Делаем необязательным
-	language?: string;  // Делаем необязательным
+interface ExecutionResult {
+	success: boolean;
+	output: string;
 }
 
-export const RunButton: React.FC<RunButtonProps> = ({
-														code = '',  // Значение по умолчанию
-														language = 'javascript'  // Значение по умолчанию
-													}) => {
+export const RunButton = () => {
 	const dispatch = useAppDispatch();
-	// Альтернативно: получаем код из хранилища Redux
-	const editorCode = useAppSelector((state) => state.editor.code);
+	const { code, language } = useAppSelector((state) => state.editor);
+	const [isElectronEnv, setIsElectronEnv] = useState(false);
 
-	const handleRun = () => {
-		// Используем код из пропсов или из хранилища
-		const codeToRun = code || editorCode || '';
+	useEffect(() => {
+		setIsElectronEnv(
+			!!(window.electronAPI && window.process?.versions?.electron)
+		);
+	}, []);
 
-		if (!codeToRun.trim()) {
+	const handleRun = async () => {
+		if (!code.trim()) {
 			dispatch(executeCommand(JSON.stringify({
 				input: 'Ошибка выполнения',
 				output: 'Не указан код для выполнения',
@@ -29,29 +29,31 @@ export const RunButton: React.FC<RunButtonProps> = ({
 			return;
 		}
 
-		if (window.electronAPI) {
-			window.electronAPI.invoke('execute-code', {
-				language,
-				code: codeToRun,
-				mode: 'source'
-			}).then((result: { success: boolean; output: string }) => {
+		if (isElectronEnv && window.electronAPI) {
+			try {
+				const result = await window.electronAPI.invoke<ExecutionResult>(
+					'execute-code',
+					{ language, code, mode: 'source' }
+				);
+
 				dispatch(executeCommand(JSON.stringify({
 					input: `Выполнение ${language} кода`,
 					output: result.output,
 					status: result.success ? 'success' : 'error'
 				})));
-			}).catch((error) => {
+			} catch (error) {
+				const errorMessage = error instanceof Error ? error.message : 'Неизвестная ошибка';
 				dispatch(executeCommand(JSON.stringify({
 					input: 'Ошибка выполнения',
-					output: error.message,
+					output: errorMessage,
 					status: 'error'
 				})));
-			});
+			}
 		} else {
 			dispatch(executeCommand(JSON.stringify({
-				input: `Запуск ${language} кода (тестовый режим)`,
-				output: 'Веб-режим: код не выполняется\n' + codeToRun,
-				status: 'success'
+				input: `Запуск ${language} кода`,
+				output: 'Работает в тестовом режиме (не в Electron среде)',
+				status: 'info'
 			})));
 		}
 	};
@@ -60,7 +62,7 @@ export const RunButton: React.FC<RunButtonProps> = ({
 		<button
 			onClick={handleRun}
 			className={styles.button}
-			disabled={!code && !editorCode}  // Отключаем если нет кода
+			disabled={!code.trim()}
 		>
 			Запустить
 		</button>

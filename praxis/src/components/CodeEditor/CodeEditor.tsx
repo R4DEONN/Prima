@@ -48,7 +48,7 @@ export function CodeEditor()
 					options={editorOptions}
 				/>
 				<div className={styles.controls}>
-					<RunButton code={code} language={language}/>
+					<RunButton/>
 				</div>
 			</div>
 			<div className={styles.outputContainer}>

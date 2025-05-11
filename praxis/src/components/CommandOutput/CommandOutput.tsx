@@ -1,4 +1,3 @@
-import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { selectCommandHistory, clearHistory, selectIsRunning } from '../../features/command/commandSlice';
 import styles from './CommandOutput.module.css';

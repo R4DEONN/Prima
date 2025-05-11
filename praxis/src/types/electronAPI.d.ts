@@ -1,7 +1,5 @@
-interface Window {
-	electronAPI: {
-		send: (channel: string, data: any) => void;
-		on: (channel: string, func: (...args: any[]) => void) => void;
-		invoke: <T>(channel: string, data: any) => Promise<T>;
-	};
+export interface ElectronAPI {
+	invoke<T = any>(channel: string, data?: any): Promise<T>;
+	send(channel: string, data?: any): void;
+	on(channel: string, listener: (...args: any[]) => void): void;
 }
