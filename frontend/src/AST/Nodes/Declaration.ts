@@ -1,9 +1,10 @@
 import {ASTNode} from "./ASTNode";
 import {Identifier} from "./Identifier";
+import {CodeGenerator} from "../../CodeGeneration/CodeGenerator";
 
-export class Declaration extends ASTNode
+export abstract class Declaration extends ASTNode
 {
-    constructor(
+    protected constructor(
         nodeType: string,
         public name: Identifier
     )

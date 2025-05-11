@@ -1,3 +1,5 @@
+import {CodeGenerator} from "../../CodeGeneration/CodeGenerator";
+
 export abstract class ASTNode
 {
     protected constructor(
@@ -6,9 +8,5 @@ export abstract class ASTNode
     {
     }
 
-    public generate(): string
-    {
-        return this.nodeType;
-    }
-
+    abstract generate(generator: CodeGenerator): void;
 }
