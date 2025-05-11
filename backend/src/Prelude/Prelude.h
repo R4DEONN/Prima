@@ -35,11 +35,11 @@ public:
 	{
 		while (ip < chunk.code.size())
 		{
-			switch (static_cast<OpCode>(advance()))
+			switch (static_cast<OpCode>(advanceCode()))
 			{
 			case OpCode::CONSTANT:
 			{
-				Value constant = chunk.constants[advance() - 1];
+				Value constant = chunk.constants[advanceCode() - 1];
 				push(constant);
 				break;
 			}
@@ -81,13 +81,13 @@ public:
 				break;
 			case OpCode::JMP:
 			{
-				uint16_t offset = (static_cast<uint16_t>(advance()) << 8) | advance();
+				uint16_t offset = (static_cast<uint16_t>(advanceCode()) << 8) | advanceCode();
 				ip = offset;
 				break;
 			}
 			case OpCode::JMP_IF_FALSE:
 			{
-				uint16_t offset = (static_cast<uint16_t>(advance()) << 8) | advance();
+				uint16_t offset = (static_cast<uint16_t>(advanceCode()) << 8) | advanceCode();
 				if (!toBool(pop()))
 					ip = offset;
 				break;
@@ -99,7 +99,7 @@ public:
 	}
 
 private:
-	uint8_t advance()
+	uint8_t advanceCode()
 	{
 		return chunk.code[ip++];
 	}
