@@ -4,6 +4,11 @@ import {BinaryExpression} from "../AST/Nodes/BinaryExpression";
 import {UnaryExpression} from "../AST/Nodes/UnaryExpression";
 import {Program} from "../AST/Nodes/Program";
 import {Expression} from "../AST/Nodes/Expression";
+import {ExpressionStatement} from "../AST/Nodes/ExpressionStatement";
+import {BlockStatement} from "../AST/Nodes/BlockStatement";
+import {IfStatement} from "../AST/Nodes/IfStatement";
+import {Statement} from "../AST/Nodes/Statement";
+import {Declaration} from "../AST/Nodes/Declaration";
 
 export const actionHandlers: Record<string, (stack: ASTNode[]) => ASTNode> = {
     makeProgram: (stack) =>
@@ -12,9 +17,53 @@ export const actionHandlers: Record<string, (stack: ASTNode[]) => ASTNode> = {
         while (stack.length > 0)
         {
             const node = stack.shift();
-            if (node) nodes.push(node);
+            if (node)
+            {
+                nodes.push(node);
+            }
         }
         return new Program(nodes);
+    },
+
+    makeExpressionStatement: (stack) =>
+    {
+        const expression = stack.pop();
+        if (expression instanceof Expression)
+        {
+            return new ExpressionStatement(expression);
+        }
+        throw new Error("Expression expected. Got something else: " + expression.nodeType)
+    },
+
+    makeBlockStatement: (stack) =>
+    {
+        const nodes: ASTNode[] = [];
+        while (stack.length > 0)
+        {
+            const node = stack.pop();
+            if (!(node instanceof Statement) && !(node instanceof Declaration))
+            {
+                stack.push(node);
+                break;
+            }
+            nodes.push(node);
+        }
+        return new BlockStatement(nodes.reverse());
+    },
+
+    makeIf: (stack) =>
+    {
+        const block = stack.pop();
+        if (block instanceof BlockStatement)
+        {
+            const expression = stack.pop();
+            if (expression instanceof Expression)
+            {
+                return new IfStatement(expression, block);
+            }
+            throw new Error("Expression for if expected. Got something else: " + expression.nodeType);
+        }
+        throw new Error("Block for if expected. Got something else: " + block.nodeType);
     },
 
     makeAdd: bin("+", Type.NUMBER),

@@ -2,7 +2,7 @@
 <StatementList> -> ~ε~ | ~#~ ~}~
 <StatementList> -> <Statement><StatementList'> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~abstract~ ~break~ ~const~ ~continue~ ~export~ ~for~ ~function~ ~if~ ~import~ ~null~ ~return~ ~var~ ~;~
 <Statement> -> <Declaration> | ~abstract~ ~const~ ~export~ ~function~ ~import~ ~var~ ~;~
-<Statement> -> <Expression>~;~ | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
+<Statement> -> <Expression>~;~ | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~ {{makeExpressionStatement}}
 <Statement> -> <IfStatement> | ~if~
 <Statement> -> <ForStatement> | ~for~
 <Statement> -> <ReturnStatement>~;~ | ~return~
@@ -11,7 +11,7 @@
 <Statement> -> <BreakStatement>~;~ | ~break~
 <ContinueStatement> -> ~continue~ | ~continue~
 <BreakStatement> -> ~break~ | ~break~
-<Block> -> ~{~<StatementList>~}~ | ~{~
+<Block> -> ~{~<StatementList>~}~ | ~{~ {{makeBlockStatement}}
 <Declaration> -> <VariableDeclaration>~;~ | ~const~ ~var~
 <Declaration> -> <FunctionDeclaration> | ~function~
 <Declaration> -> <ClassDeclaration> | ~abstract~ ~abstract~ ~class~ ~private~ ~protected~ ~public~ ~}~
@@ -68,8 +68,9 @@
 <MultiplicativeExpression> -> <ExponentiationExpression><MultiplicativeExpression'1> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
 <ExponentiationExpression> -> <UnaryExpression><ExponentiationExpression'1> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
 <UnaryExpression> -> <PostfixExpression> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
-<UnaryExpression> -> ~-~<UnaryExpression> | ~-~ {{makeUnaryMinus}}
-<UnaryExpression> -> ~!~<UnaryExpression> | ~!~ {{makeNot}}
+<UnaryExpression> -> ~-~<UnaryExpression><Empty> | ~-~ {{makeUnaryMinus}}
+<UnaryExpression> -> ~!~<UnaryExpression><Empty> | ~!~ {{makeNot}}
+<Empty> -> ~ε~ | ~!=~ ~%~ ~&&~ ~)~ ~**~ ~*~ ~+~ ~,~ ~-~ ~/~ ~;~ ~<=~ ~<~ ~==~ ~>=~ ~>~ ~]~ ~||~
 <PostfixExpression> -> <FunctionCall><PostfixExpression'> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
 <MemberExpression> -> <PrimaryExpression><MemberExpression'1> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
 <PrimaryExpression> -> ~NumberLiteral~ | ~NumberLiteral~
@@ -87,7 +88,7 @@
 <ArrayLiteral> -> ~[~<ArgumentList>~]~ | ~[~
 <ArgumentList> -> ~ε~<ArgumentList'1> | ~)~ ~]~
 <ArgumentList> -> <Expression><ArgumentList'1> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
-<IfStatement> -> ~if~~(~<Expression>~)~<Block><IfStatement'> | ~if~
+<IfStatement> -> ~if~~(~<Expression>~)~<Block><IfStatement'> | ~if~ {{makeIf}}
 <ForStatement> -> ~for~~(~<FirstForArgument>~;~<SecondForArgument>~;~<ThirdForArgument>~)~<Block> | ~for~
 <FirstForArgument> -> <VariableDeclaration> | ~const~ ~var~
 <FirstForArgument> -> <Assignment> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~

@@ -3,7 +3,7 @@ import {Type} from "../AST/Types/Type";
 export class CodeGenerator
 {
 	private constants: Array<{ type: string, value: any }> = [];
-	private code: Array<{ line: number, op: string, arg?: number }> = [];
+	private code: Array<{ line?: number, op: string, arg?: number }> = [];
 	public lastOp: string = '';
 	private variables: Map<string, {index: number, isConst: boolean}> = new Map();
 	private nextVarIndex = 0;
@@ -26,6 +26,11 @@ export class CodeGenerator
 		return this.constants.length - 1;
 	}
 
+	addLabel(name: string): void
+	{
+		this.code.push({op: name + ":"})
+	}
+
 	emit(line: number, op: string, arg?: number): void
 	{
 		this.code.push({line, op, arg});
@@ -40,7 +45,7 @@ export class CodeGenerator
 	getCode(): string[]
 	{
 		return this.code.map(i =>
-			`${i.line} ${i.op}${i.arg !== undefined ? ' ' + i.arg : ''}`
+			`${i.line !== undefined ? i.line + ' ' : ''}${i.op}${i.arg !== undefined ? ' ' + i.arg : ''}`
 		);
 	}
 

@@ -29,7 +29,7 @@ function main(argc: number, argv: string[])
     bytecode += "\n.code\n";
     bytecode += generator.getCode().join('\n');
 
-    fs.writeFileSync("./bytecode.prmbc", bytecode);
+    fs.writeFileSync("./before.prmbc", bytecode);
 }
 
 main(process.argv.length, process.argv);

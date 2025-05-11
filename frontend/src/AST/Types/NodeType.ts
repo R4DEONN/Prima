@@ -10,6 +10,7 @@ export enum NodeType
     FUNCTION_EXPRESSION = "FunctionExpression",
     EXPRESSION_STATEMENT = "ExpressionStatement",
     BLOCK_STATEMENT = "BlockStatement",
+    IF_STATEMENT = "IfStatement",
     LITERAL = "Literal",
     RETURN_STATEMENT = "ReturnStatement"
 }

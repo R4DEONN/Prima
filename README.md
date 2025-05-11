@@ -150,8 +150,9 @@
 <ExponentiationExpression> -> <ExponentiationExpression> ~**~ <UnaryExpression>
 
 <UnaryExpression> -> <PostfixExpression>
-<UnaryExpression> -> ~-~ <UnaryExpression>
-<UnaryExpression> -> ~!~ <UnaryExpression>
+<UnaryExpression> -> ~-~ <UnaryExpression><Empty>
+<UnaryExpression> -> ~!~ <UnaryExpression><Empty>
+<Empty> -> ~ε~
 
 <PostfixExpression> -> <FunctionCall>
 <PostfixExpression> -> <FunctionCall> ~++~

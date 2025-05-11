@@ -19,7 +19,7 @@ export class ExpressionStatement extends Statement
 		// Для выражений-операторов удаляем результат со стека
 		if (this.expression.type !== Type.VOID)
 		{
-			generator.emit(1, 'pop');
+			// generator.emit(1, 'pop');
 		}
 	}
 }

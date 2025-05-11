@@ -1,8 +1,17 @@
 .constants
-number 1400
-number 88
+number 500
+number 50
 .code
 1 const 1
+1 const 1
+1 ceq
+1 jmpfalse endif1
+1 const 1
+1 const 2
+1 ceq
+1 not
+1 const 2
 1 const 2
 1 add
+endif1:
 1 ret
