@@ -3,3 +3,4 @@ vcs.xml
 git_toolbox_prj.xml
 .idea
 build
+.cache

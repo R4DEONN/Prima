@@ -65,9 +65,6 @@ public:
 			case OpCode::RETURN:
 				std::cout << pop() << std::endl;
 				return;
-			case OpCode::NIL:
-				push(std::monostate{});
-				break;
 			case OpCode::TRUE:
 				push(true);
 				break;

@@ -1,0 +1,8169 @@
+[
+  {
+    "number": 1,
+    "nonTerminal": "<Program>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~abstract~",
+      "~break~",
+      "~const~",
+      "~continue~",
+      "~export~",
+      "~for~",
+      "~function~",
+      "~if~",
+      "~import~",
+      "~null~",
+      "~return~",
+      "~var~",
+      "~ε~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 185,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 2,
+    "nonTerminal": "<StatementList>",
+    "guidingSymbols": [
+      "~#~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 187,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 3,
+    "nonTerminal": "<StatementList>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~abstract~",
+      "~break~",
+      "~const~",
+      "~continue~",
+      "~export~",
+      "~for~",
+      "~function~",
+      "~if~",
+      "~import~",
+      "~null~",
+      "~return~",
+      "~var~",
+      "~ε~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 188,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 4,
+    "nonTerminal": "<Statement>",
+    "guidingSymbols": [
+      "~abstract~",
+      "~const~",
+      "~export~",
+      "~function~",
+      "~import~",
+      "~var~",
+      "~ε~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 190,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 5,
+    "nonTerminal": "<Statement>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 191,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 6,
+    "nonTerminal": "<Statement>",
+    "guidingSymbols": [
+      "~if~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 193,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 7,
+    "nonTerminal": "<Statement>",
+    "guidingSymbols": [
+      "~for~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 194,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 8,
+    "nonTerminal": "<Statement>",
+    "guidingSymbols": [
+      "~return~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 195,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 9,
+    "nonTerminal": "<Statement>",
+    "guidingSymbols": [
+      "~(~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 197,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 10,
+    "nonTerminal": "<Statement>",
+    "guidingSymbols": [
+      "~continue~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 199,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 11,
+    "nonTerminal": "<Statement>",
+    "guidingSymbols": [
+      "~break~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 201,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 12,
+    "nonTerminal": "<ContinueStatement>",
+    "guidingSymbols": [
+      "~continue~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 203,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 13,
+    "nonTerminal": "<BreakStatement>",
+    "guidingSymbols": [
+      "~break~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 204,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 14,
+    "nonTerminal": "<Block>",
+    "guidingSymbols": [
+      "~{~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 205,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 15,
+    "nonTerminal": "<Declaration>",
+    "guidingSymbols": [
+      "~const~",
+      "~var~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 208,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 16,
+    "nonTerminal": "<Declaration>",
+    "guidingSymbols": [
+      "~function~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 210,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 17,
+    "nonTerminal": "<Declaration>",
+    "guidingSymbols": [
+      "~abstract~",
+      "~ε~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 211,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 18,
+    "nonTerminal": "<Declaration>",
+    "guidingSymbols": [
+      "~import~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 212,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 19,
+    "nonTerminal": "<Declaration>",
+    "guidingSymbols": [
+      "~export~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 213,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 20,
+    "nonTerminal": "<VariableDeclaration>",
+    "guidingSymbols": [
+      "~const~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 214,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 21,
+    "nonTerminal": "<VariableDeclaration>",
+    "guidingSymbols": [
+      "~var~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 220,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 22,
+    "nonTerminal": "<ClassDeclaration>",
+    "guidingSymbols": [
+      "~abstract~",
+      "~ε~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 225,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 23,
+    "nonTerminal": "<AbstractModifier>",
+    "guidingSymbols": [
+      "~abstract~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 232,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 24,
+    "nonTerminal": "<AbstractModifier>",
+    "guidingSymbols": [
+      "~abstract~",
+      "~class~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 233,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 25,
+    "nonTerminal": "<SuperClass>",
+    "guidingSymbols": [
+      "~extends~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 234,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 26,
+    "nonTerminal": "<SuperClass>",
+    "guidingSymbols": [
+      "~{~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 236,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 27,
+    "nonTerminal": "<ClassElementList>",
+    "guidingSymbols": [
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 237,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 28,
+    "nonTerminal": "<ClassElementList>",
+    "guidingSymbols": [
+      "~abstract~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~ε~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 238,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 29,
+    "nonTerminal": "<ClassElement>",
+    "guidingSymbols": [
+      "~abstract~",
+      "~ε~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 240,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 30,
+    "nonTerminal": "<ClassElement>",
+    "guidingSymbols": [
+      "~abstract~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~ε~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 241,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 31,
+    "nonTerminal": "<PropertyDefinition>",
+    "guidingSymbols": [
+      "~abstract~",
+      "~ε~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 242,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 32,
+    "nonTerminal": "<MethodDefinition>",
+    "guidingSymbols": [
+      "~abstract~",
+      "~ε~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 252,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 33,
+    "nonTerminal": "<MethodDefinition>",
+    "guidingSymbols": [
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~ε~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 263,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 34,
+    "nonTerminal": "<AccessibilityModifier>",
+    "guidingSymbols": [
+      "~public~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 269,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 35,
+    "nonTerminal": "<AccessibilityModifier>",
+    "guidingSymbols": [
+      "~private~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 270,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 36,
+    "nonTerminal": "<AccessibilityModifier>",
+    "guidingSymbols": [
+      "~protected~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 271,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 37,
+    "nonTerminal": "<AccessibilityModifier>",
+    "guidingSymbols": [
+      "~abstract~",
+      "~constructor~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~static~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 272,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 38,
+    "nonTerminal": "<StaticModifier>",
+    "guidingSymbols": [
+      "~static~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 273,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 39,
+    "nonTerminal": "<StaticModifier>",
+    "guidingSymbols": [
+      "~abstract~",
+      "~override~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 274,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 40,
+    "nonTerminal": "<OverrideModifier>",
+    "guidingSymbols": [
+      "~override~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 275,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 41,
+    "nonTerminal": "<OverrideModifier>",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 276,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 42,
+    "nonTerminal": "<ImportDeclaration>",
+    "guidingSymbols": [
+      "~import~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 277,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 43,
+    "nonTerminal": "<ImportSpecifierList>",
+    "guidingSymbols": [
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 284,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 44,
+    "nonTerminal": "<ImportSpecifierList>",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 285,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 45,
+    "nonTerminal": "<ImportSpecifier>",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 287,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 46,
+    "nonTerminal": "<ExportDeclaration>",
+    "guidingSymbols": [
+      "~export~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 289,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 47,
+    "nonTerminal": "<ExportSpecifierList>",
+    "guidingSymbols": [
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 294,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 48,
+    "nonTerminal": "<ExportSpecifierList>",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 295,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 49,
+    "nonTerminal": "<ExportSpecifier>",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 297,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 50,
+    "nonTerminal": "<FunctionDeclaration>",
+    "guidingSymbols": [
+      "~function~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 299,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 51,
+    "nonTerminal": "<ParameterList>",
+    "guidingSymbols": [
+      "~)~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 307,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 52,
+    "nonTerminal": "<ParameterList>",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 309,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 53,
+    "nonTerminal": "<Parameter>",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 311,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 54,
+    "nonTerminal": "<Type>",
+    "guidingSymbols": [
+      "~number~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 314,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 55,
+    "nonTerminal": "<Type>",
+    "guidingSymbols": [
+      "~bool~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 315,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 56,
+    "nonTerminal": "<Type>",
+    "guidingSymbols": [
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 316,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 57,
+    "nonTerminal": "<Type>",
+    "guidingSymbols": [
+      "~string~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 317,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 58,
+    "nonTerminal": "<Type>",
+    "guidingSymbols": [
+      "~array~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 318,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 59,
+    "nonTerminal": "<Type>",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 319,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 60,
+    "nonTerminal": "<FunctionReturnType>",
+    "guidingSymbols": [
+      "~Identifier~",
+      "~array~",
+      "~bool~",
+      "~null~",
+      "~number~",
+      "~string~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 320,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 61,
+    "nonTerminal": "<FunctionReturnType>",
+    "guidingSymbols": [
+      "~void~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 321,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 62,
+    "nonTerminal": "<Expression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 322,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 63,
+    "nonTerminal": "<LogicalOrExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 323,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 64,
+    "nonTerminal": "<LogicalAndExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 325,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 65,
+    "nonTerminal": "<EqualityExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 327,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 66,
+    "nonTerminal": "<RelationalExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 329,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 67,
+    "nonTerminal": "<AdditiveExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 331,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 68,
+    "nonTerminal": "<MultiplicativeExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 333,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 69,
+    "nonTerminal": "<ExponentiationExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 335,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 70,
+    "nonTerminal": "<UnaryExpression>",
+    "guidingSymbols": [
+      "~(~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 337,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 71,
+    "nonTerminal": "<UnaryExpression>",
+    "guidingSymbols": [
+      "~-~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 338,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 72,
+    "nonTerminal": "<UnaryExpression>",
+    "guidingSymbols": [
+      "~!~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 340,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 73,
+    "nonTerminal": "<PostfixExpression>",
+    "guidingSymbols": [
+      "~(~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 342,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 74,
+    "nonTerminal": "<MemberExpression>",
+    "guidingSymbols": [
+      "~(~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 344,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 75,
+    "nonTerminal": "<PrimaryExpression>",
+    "guidingSymbols": [
+      "~NumberLiteral~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 346,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 76,
+    "nonTerminal": "<PrimaryExpression>",
+    "guidingSymbols": [
+      "~StringLiteral~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 347,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 77,
+    "nonTerminal": "<PrimaryExpression>",
+    "guidingSymbols": [
+      "~BooleanLiteral~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 348,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 78,
+    "nonTerminal": "<PrimaryExpression>",
+    "guidingSymbols": [
+      "~[~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 349,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 79,
+    "nonTerminal": "<PrimaryExpression>",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 350,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 80,
+    "nonTerminal": "<PrimaryExpression>",
+    "guidingSymbols": [
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 351,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 81,
+    "nonTerminal": "<PrimaryExpression>",
+    "guidingSymbols": [
+      "~function~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 352,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 82,
+    "nonTerminal": "<PrimaryExpression>",
+    "guidingSymbols": [
+      "~(~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 353,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 83,
+    "nonTerminal": "<FunctionExpression>",
+    "guidingSymbols": [
+      "~function~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 356,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 84,
+    "nonTerminal": "<FunctionCall>",
+    "guidingSymbols": [
+      "~(~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 361,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 85,
+    "nonTerminal": "<FunctionCallArgumentList>",
+    "guidingSymbols": [
+      "~(~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 363,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 86,
+    "nonTerminal": "<FunctionCallArgumentList>",
+    "guidingSymbols": [
+      "~!=~",
+      "~%~",
+      "~&&~",
+      "~)~",
+      "~**~",
+      "~*~",
+      "~++~",
+      "~+=~",
+      "~+~",
+      "~,~",
+      "~--~",
+      "~-=~",
+      "~-~",
+      "~/~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~=~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 366,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 87,
+    "nonTerminal": "<ArrayLiteral>",
+    "guidingSymbols": [
+      "~[~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 367,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 88,
+    "nonTerminal": "<ArgumentList>",
+    "guidingSymbols": [
+      "~)~",
+      "~]~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 370,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 89,
+    "nonTerminal": "<ArgumentList>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 372,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 90,
+    "nonTerminal": "<IfStatement>",
+    "guidingSymbols": [
+      "~if~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 374,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 91,
+    "nonTerminal": "<ForStatement>",
+    "guidingSymbols": [
+      "~for~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 380,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 92,
+    "nonTerminal": "<FirstForArgument>",
+    "guidingSymbols": [
+      "~const~",
+      "~var~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 389,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 93,
+    "nonTerminal": "<FirstForArgument>",
+    "guidingSymbols": [
+      "~(~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 390,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 94,
+    "nonTerminal": "<FirstForArgument>",
+    "guidingSymbols": [
+      "~;~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 391,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 95,
+    "nonTerminal": "<SecondForArgument>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 392,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 96,
+    "nonTerminal": "<SecondForArgument>",
+    "guidingSymbols": [
+      "~;~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 393,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 97,
+    "nonTerminal": "<ThirdForArgument>",
+    "guidingSymbols": [
+      "~(~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 394,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 98,
+    "nonTerminal": "<ThirdForArgument>",
+    "guidingSymbols": [
+      "~)~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 395,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 99,
+    "nonTerminal": "<ReturnStatement>",
+    "guidingSymbols": [
+      "~return~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 396,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 100,
+    "nonTerminal": "<Assignment>",
+    "guidingSymbols": [
+      "~(~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 398,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 101,
+    "nonTerminal": "<AssignmentRightPart>",
+    "guidingSymbols": [
+      "~+=~",
+      "~-=~",
+      "~=~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 400,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 102,
+    "nonTerminal": "<AssignmentRightPart>",
+    "guidingSymbols": [
+      "~)~",
+      "~;~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 402,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 103,
+    "nonTerminal": "<AssignmentOperator>",
+    "guidingSymbols": [
+      "~=~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 403,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 104,
+    "nonTerminal": "<AssignmentOperator>",
+    "guidingSymbols": [
+      "~+=~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 404,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 105,
+    "nonTerminal": "<AssignmentOperator>",
+    "guidingSymbols": [
+      "~-=~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 405,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 106,
+    "nonTerminal": "<ParameterList'>",
+    "guidingSymbols": [
+      "~,~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 406,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 107,
+    "nonTerminal": "<LogicalOrExpression'>",
+    "guidingSymbols": [
+      "|~<LogicalAndExpression><LogicalOrExpression''>",
+      "|",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 409,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 108,
+    "nonTerminal": "<LogicalAndExpression'>",
+    "guidingSymbols": [
+      "~&&~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 409,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 109,
+    "nonTerminal": "<EqualityExpression'>",
+    "guidingSymbols": [
+      "~!=~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 412,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 110,
+    "nonTerminal": "<EqualityExpression'>",
+    "guidingSymbols": [
+      "~==~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 415,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 111,
+    "nonTerminal": "<RelationalExpression'>",
+    "guidingSymbols": [
+      "~>=~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 418,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 112,
+    "nonTerminal": "<RelationalExpression'>",
+    "guidingSymbols": [
+      "~>~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 421,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 113,
+    "nonTerminal": "<RelationalExpression'>",
+    "guidingSymbols": [
+      "~<=~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 424,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 114,
+    "nonTerminal": "<RelationalExpression'>",
+    "guidingSymbols": [
+      "~<~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 427,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 115,
+    "nonTerminal": "<AdditiveExpression'>",
+    "guidingSymbols": [
+      "~-~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 430,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 116,
+    "nonTerminal": "<AdditiveExpression'>",
+    "guidingSymbols": [
+      "~+~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 433,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 117,
+    "nonTerminal": "<MultiplicativeExpression'>",
+    "guidingSymbols": [
+      "~%~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 436,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 118,
+    "nonTerminal": "<MultiplicativeExpression'>",
+    "guidingSymbols": [
+      "~/~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 439,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 119,
+    "nonTerminal": "<MultiplicativeExpression'>",
+    "guidingSymbols": [
+      "~*~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 442,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 120,
+    "nonTerminal": "<ExponentiationExpression'>",
+    "guidingSymbols": [
+      "~**~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 445,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 121,
+    "nonTerminal": "<MemberExpression'>",
+    "guidingSymbols": [
+      "~[~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 448,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 122,
+    "nonTerminal": "<MemberExpression'>",
+    "guidingSymbols": [
+      "~.~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 452,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 123,
+    "nonTerminal": "<ArgumentList'>",
+    "guidingSymbols": [
+      "~,~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 455,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 124,
+    "nonTerminal": "<StatementList'>",
+    "guidingSymbols": [
+      "~#~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 458,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 125,
+    "nonTerminal": "<StatementList'>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~abstract~",
+      "~break~",
+      "~const~",
+      "~continue~",
+      "~export~",
+      "~for~",
+      "~function~",
+      "~if~",
+      "~import~",
+      "~null~",
+      "~return~",
+      "~var~",
+      "~ε~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 459,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 126,
+    "nonTerminal": "<VariableDeclaration'>",
+    "guidingSymbols": [
+      "~;~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 460,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 127,
+    "nonTerminal": "<VariableDeclaration'>",
+    "guidingSymbols": [
+      "~=~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 461,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 128,
+    "nonTerminal": "<ClassElementList'>",
+    "guidingSymbols": [
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 463,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 129,
+    "nonTerminal": "<ClassElementList'>",
+    "guidingSymbols": [
+      "~abstract~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~ε~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 464,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 130,
+    "nonTerminal": "<ImportSpecifierList'>",
+    "guidingSymbols": [
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 465,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 131,
+    "nonTerminal": "<ImportSpecifierList'>",
+    "guidingSymbols": [
+      "~,~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 466,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 132,
+    "nonTerminal": "<ImportSpecifier'>",
+    "guidingSymbols": [
+      "~as~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 468,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 133,
+    "nonTerminal": "<ImportSpecifier'>",
+    "guidingSymbols": [
+      "~,~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 470,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 134,
+    "nonTerminal": "<ExportSpecifierList'>",
+    "guidingSymbols": [
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 471,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 135,
+    "nonTerminal": "<ExportSpecifierList'>",
+    "guidingSymbols": [
+      "~,~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 472,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 136,
+    "nonTerminal": "<ExportSpecifier'>",
+    "guidingSymbols": [
+      "~as~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 474,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 137,
+    "nonTerminal": "<ExportSpecifier'>",
+    "guidingSymbols": [
+      "~,~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 476,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 138,
+    "nonTerminal": "<ParameterList'1>",
+    "guidingSymbols": [
+      "~)~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 477,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 139,
+    "nonTerminal": "<ParameterList'1>",
+    "guidingSymbols": [
+      "~,~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 478,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 140,
+    "nonTerminal": "<LogicalOrExpression'1>",
+    "guidingSymbols": [
+      "~)~",
+      "~,~",
+      "~;~",
+      "~]~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 479,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 141,
+    "nonTerminal": "<LogicalOrExpression'1>",
+    "guidingSymbols": [
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 480,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 142,
+    "nonTerminal": "<LogicalAndExpression'1>",
+    "guidingSymbols": [
+      "~)~",
+      "~,~",
+      "~;~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 481,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 143,
+    "nonTerminal": "<LogicalAndExpression'1>",
+    "guidingSymbols": [
+      "~&&~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 482,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 144,
+    "nonTerminal": "<EqualityExpression'1>",
+    "guidingSymbols": [
+      "~&&~",
+      "~)~",
+      "~,~",
+      "~;~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 483,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 145,
+    "nonTerminal": "<EqualityExpression'1>",
+    "guidingSymbols": [
+      "~!=~",
+      "~==~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 484,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 146,
+    "nonTerminal": "<RelationalExpression'1>",
+    "guidingSymbols": [
+      "~!=~",
+      "~&&~",
+      "~)~",
+      "~,~",
+      "~;~",
+      "~==~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 485,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 147,
+    "nonTerminal": "<RelationalExpression'1>",
+    "guidingSymbols": [
+      "~<=~",
+      "~<~",
+      "~>=~",
+      "~>~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 486,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 148,
+    "nonTerminal": "<AdditiveExpression'1>",
+    "guidingSymbols": [
+      "~!=~",
+      "~&&~",
+      "~)~",
+      "~,~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 487,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 149,
+    "nonTerminal": "<AdditiveExpression'1>",
+    "guidingSymbols": [
+      "~+~",
+      "~-~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 488,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 150,
+    "nonTerminal": "<MultiplicativeExpression'1>",
+    "guidingSymbols": [
+      "~!=~",
+      "~&&~",
+      "~)~",
+      "~+~",
+      "~,~",
+      "~-~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 489,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 151,
+    "nonTerminal": "<MultiplicativeExpression'1>",
+    "guidingSymbols": [
+      "~%~",
+      "~*~",
+      "~/~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 490,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 152,
+    "nonTerminal": "<ExponentiationExpression'1>",
+    "guidingSymbols": [
+      "~!=~",
+      "~%~",
+      "~&&~",
+      "~)~",
+      "~*~",
+      "~+~",
+      "~,~",
+      "~-~",
+      "~/~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 491,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 153,
+    "nonTerminal": "<ExponentiationExpression'1>",
+    "guidingSymbols": [
+      "~**~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 492,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 154,
+    "nonTerminal": "<PostfixExpression'>",
+    "guidingSymbols": [
+      "~!=~",
+      "~%~",
+      "~&&~",
+      "~)~",
+      "~**~",
+      "~*~",
+      "~+=~",
+      "~+~",
+      "~,~",
+      "~-=~",
+      "~-~",
+      "~/~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~=~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 493,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 155,
+    "nonTerminal": "<PostfixExpression'>",
+    "guidingSymbols": [
+      "~++~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 494,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 156,
+    "nonTerminal": "<PostfixExpression'>",
+    "guidingSymbols": [
+      "~--~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 495,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 157,
+    "nonTerminal": "<MemberExpression'1>",
+    "guidingSymbols": [
+      "~!=~",
+      "~%~",
+      "~&&~",
+      "~(~",
+      "~)~",
+      "~**~",
+      "~*~",
+      "~++~",
+      "~+=~",
+      "~+~",
+      "~,~",
+      "~--~",
+      "~-=~",
+      "~-~",
+      "~/~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~=~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 496,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 158,
+    "nonTerminal": "<MemberExpression'1>",
+    "guidingSymbols": [
+      "~.~",
+      "~[~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 497,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 159,
+    "nonTerminal": "<ArgumentList'1>",
+    "guidingSymbols": [
+      "~)~",
+      "~]~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 498,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 160,
+    "nonTerminal": "<ArgumentList'1>",
+    "guidingSymbols": [
+      "~,~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 499,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 161,
+    "nonTerminal": "<IfStatement'>",
+    "guidingSymbols": [
+      "~!~",
+      "~#~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~abstract~",
+      "~break~",
+      "~const~",
+      "~continue~",
+      "~export~",
+      "~for~",
+      "~function~",
+      "~if~",
+      "~import~",
+      "~null~",
+      "~return~",
+      "~var~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 500,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 162,
+    "nonTerminal": "<IfStatement'>",
+    "guidingSymbols": [
+      "~else~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 501,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 163,
+    "nonTerminal": "<ReturnStatement'>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 503,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 164,
+    "nonTerminal": "<ReturnStatement'>",
+    "guidingSymbols": [
+      "~;~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 504,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 165,
+    "nonTerminal": "<ParameterList''>",
+    "guidingSymbols": [
+      "~)~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 505,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 166,
+    "nonTerminal": "<ParameterList''>",
+    "guidingSymbols": [
+      "~,~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 506,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 167,
+    "nonTerminal": "<LogicalOrExpression''>",
+    "guidingSymbols": [
+      "~)~",
+      "~,~",
+      "~;~",
+      "~]~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 507,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 168,
+    "nonTerminal": "<LogicalOrExpression''>",
+    "guidingSymbols": [
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 508,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 169,
+    "nonTerminal": "<LogicalAndExpression''>",
+    "guidingSymbols": [
+      "~)~",
+      "~,~",
+      "~;~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 509,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 170,
+    "nonTerminal": "<LogicalAndExpression''>",
+    "guidingSymbols": [
+      "~&&~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 510,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 171,
+    "nonTerminal": "<EqualityExpression''>",
+    "guidingSymbols": [
+      "~&&~",
+      "~)~",
+      "~,~",
+      "~;~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 511,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 172,
+    "nonTerminal": "<EqualityExpression''>",
+    "guidingSymbols": [
+      "~!=~",
+      "~==~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 512,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 173,
+    "nonTerminal": "<RelationalExpression''>",
+    "guidingSymbols": [
+      "~!=~",
+      "~&&~",
+      "~)~",
+      "~,~",
+      "~;~",
+      "~==~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 513,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 174,
+    "nonTerminal": "<RelationalExpression''>",
+    "guidingSymbols": [
+      "~<=~",
+      "~<~",
+      "~>=~",
+      "~>~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 514,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 175,
+    "nonTerminal": "<AdditiveExpression''>",
+    "guidingSymbols": [
+      "~!=~",
+      "~&&~",
+      "~)~",
+      "~,~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 515,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 176,
+    "nonTerminal": "<AdditiveExpression''>",
+    "guidingSymbols": [
+      "~+~",
+      "~-~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 516,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 177,
+    "nonTerminal": "<MultiplicativeExpression''>",
+    "guidingSymbols": [
+      "~!=~",
+      "~&&~",
+      "~)~",
+      "~+~",
+      "~,~",
+      "~-~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 517,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 178,
+    "nonTerminal": "<MultiplicativeExpression''>",
+    "guidingSymbols": [
+      "~%~",
+      "~*~",
+      "~/~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 518,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 179,
+    "nonTerminal": "<ExponentiationExpression''>",
+    "guidingSymbols": [
+      "~!=~",
+      "~%~",
+      "~&&~",
+      "~)~",
+      "~*~",
+      "~+~",
+      "~,~",
+      "~-~",
+      "~/~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 519,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 180,
+    "nonTerminal": "<ExponentiationExpression''>",
+    "guidingSymbols": [
+      "~**~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 520,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 181,
+    "nonTerminal": "<MemberExpression''>",
+    "guidingSymbols": [
+      "~!=~",
+      "~%~",
+      "~&&~",
+      "~(~",
+      "~)~",
+      "~**~",
+      "~*~",
+      "~++~",
+      "~+=~",
+      "~+~",
+      "~,~",
+      "~--~",
+      "~-=~",
+      "~-~",
+      "~/~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~=~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 521,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 182,
+    "nonTerminal": "<MemberExpression''>",
+    "guidingSymbols": [
+      "~.~",
+      "~[~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 522,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 183,
+    "nonTerminal": "<ArgumentList''>",
+    "guidingSymbols": [
+      "~)~",
+      "~]~"
+    ],
+    "isShift": false,
+    "isError": false,
+    "pointer": 523,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 184,
+    "nonTerminal": "<ArgumentList''>",
+    "guidingSymbols": [
+      "~,~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 524,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 185,
+    "nonTerminal": "<StatementList>",
+    "guidingSymbols": [
+      "~#~",
+      "~}~",
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~abstract~",
+      "~break~",
+      "~const~",
+      "~continue~",
+      "~export~",
+      "~for~",
+      "~function~",
+      "~if~",
+      "~import~",
+      "~null~",
+      "~return~",
+      "~var~",
+      "~ε~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 2,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 186,
+    "nonTerminal": "~#~",
+    "guidingSymbols": [
+      "~#~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": true
+  },
+  {
+    "number": 187,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~#~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 188,
+    "nonTerminal": "<Statement>",
+    "guidingSymbols": [
+      "~abstract~",
+      "~const~",
+      "~export~",
+      "~function~",
+      "~import~",
+      "~var~",
+      "~ε~",
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~",
+      "~if~",
+      "~for~",
+      "~return~",
+      "~(~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~",
+      "~continue~",
+      "~break~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 4,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 189,
+    "nonTerminal": "<StatementList'>",
+    "guidingSymbols": [
+      "~#~",
+      "~}~",
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~abstract~",
+      "~break~",
+      "~const~",
+      "~continue~",
+      "~export~",
+      "~for~",
+      "~function~",
+      "~if~",
+      "~import~",
+      "~null~",
+      "~return~",
+      "~var~",
+      "~ε~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 124,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 190,
+    "nonTerminal": "<Declaration>",
+    "guidingSymbols": [
+      "~const~",
+      "~var~",
+      "~function~",
+      "~abstract~",
+      "~ε~",
+      "~import~",
+      "~export~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 15,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 191,
+    "nonTerminal": "<Expression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 62,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 192,
+    "nonTerminal": "~;~",
+    "guidingSymbols": [
+      "~;~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 193,
+    "nonTerminal": "<IfStatement>",
+    "guidingSymbols": [
+      "~if~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 90,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 194,
+    "nonTerminal": "<ForStatement>",
+    "guidingSymbols": [
+      "~for~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 91,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 195,
+    "nonTerminal": "<ReturnStatement>",
+    "guidingSymbols": [
+      "~return~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 99,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 196,
+    "nonTerminal": "~;~",
+    "guidingSymbols": [
+      "~;~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 197,
+    "nonTerminal": "<Assignment>",
+    "guidingSymbols": [
+      "~(~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 100,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 198,
+    "nonTerminal": "~;~",
+    "guidingSymbols": [
+      "~;~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 199,
+    "nonTerminal": "<ContinueStatement>",
+    "guidingSymbols": [
+      "~continue~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 12,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 200,
+    "nonTerminal": "~;~",
+    "guidingSymbols": [
+      "~;~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 201,
+    "nonTerminal": "<BreakStatement>",
+    "guidingSymbols": [
+      "~break~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 13,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 202,
+    "nonTerminal": "~;~",
+    "guidingSymbols": [
+      "~;~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 203,
+    "nonTerminal": "~continue~",
+    "guidingSymbols": [
+      "~continue~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 204,
+    "nonTerminal": "~break~",
+    "guidingSymbols": [
+      "~break~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 205,
+    "nonTerminal": "~{~",
+    "guidingSymbols": [
+      "~{~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 206,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 206,
+    "nonTerminal": "<StatementList>",
+    "guidingSymbols": [
+      "~#~",
+      "~}~",
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~abstract~",
+      "~break~",
+      "~const~",
+      "~continue~",
+      "~export~",
+      "~for~",
+      "~function~",
+      "~if~",
+      "~import~",
+      "~null~",
+      "~return~",
+      "~var~",
+      "~ε~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 2,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 207,
+    "nonTerminal": "~}~",
+    "guidingSymbols": [
+      "~}~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 208,
+    "nonTerminal": "<VariableDeclaration>",
+    "guidingSymbols": [
+      "~const~",
+      "~var~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 20,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 209,
+    "nonTerminal": "~;~",
+    "guidingSymbols": [
+      "~;~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 210,
+    "nonTerminal": "<FunctionDeclaration>",
+    "guidingSymbols": [
+      "~function~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 50,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 211,
+    "nonTerminal": "<ClassDeclaration>",
+    "guidingSymbols": [
+      "~abstract~",
+      "~ε~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 22,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 212,
+    "nonTerminal": "<ImportDeclaration>",
+    "guidingSymbols": [
+      "~import~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 42,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 213,
+    "nonTerminal": "<ExportDeclaration>",
+    "guidingSymbols": [
+      "~export~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 46,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 214,
+    "nonTerminal": "~const~",
+    "guidingSymbols": [
+      "~const~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 215,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 215,
+    "nonTerminal": "~Identifier~",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 216,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 216,
+    "nonTerminal": "~:~",
+    "guidingSymbols": [
+      "~:~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 217,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 217,
+    "nonTerminal": "<Type>",
+    "guidingSymbols": [
+      "~number~",
+      "~bool~",
+      "~null~",
+      "~string~",
+      "~array~",
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 54,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 218,
+    "nonTerminal": "~=~",
+    "guidingSymbols": [
+      "~=~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 219,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 219,
+    "nonTerminal": "<Expression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 62,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 220,
+    "nonTerminal": "~var~",
+    "guidingSymbols": [
+      "~var~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 221,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 221,
+    "nonTerminal": "~Identifier~",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 222,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 222,
+    "nonTerminal": "~:~",
+    "guidingSymbols": [
+      "~:~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 223,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 223,
+    "nonTerminal": "<Type>",
+    "guidingSymbols": [
+      "~number~",
+      "~bool~",
+      "~null~",
+      "~string~",
+      "~array~",
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 54,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 224,
+    "nonTerminal": "<VariableDeclaration'>",
+    "guidingSymbols": [
+      "~;~",
+      "~=~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 126,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 225,
+    "nonTerminal": "<AbstractModifier>",
+    "guidingSymbols": [
+      "~abstract~",
+      "~abstract~",
+      "~class~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 23,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 226,
+    "nonTerminal": "~class~",
+    "guidingSymbols": [
+      "~class~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 227,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 227,
+    "nonTerminal": "~Identifier~",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 228,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 228,
+    "nonTerminal": "<SuperClass>",
+    "guidingSymbols": [
+      "~extends~",
+      "~{~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 25,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 229,
+    "nonTerminal": "~{~",
+    "guidingSymbols": [
+      "~{~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 230,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 230,
+    "nonTerminal": "<ClassElementList>",
+    "guidingSymbols": [
+      "~}~",
+      "~abstract~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~ε~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 27,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 231,
+    "nonTerminal": "~}~",
+    "guidingSymbols": [
+      "~}~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 232,
+    "nonTerminal": "~abstract~",
+    "guidingSymbols": [
+      "~abstract~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 233,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~abstract~",
+      "~class~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 234,
+    "nonTerminal": "~extends~",
+    "guidingSymbols": [
+      "~extends~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 235,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 235,
+    "nonTerminal": "~Identifier~",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 236,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~{~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 237,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 238,
+    "nonTerminal": "<ClassElement>",
+    "guidingSymbols": [
+      "~abstract~",
+      "~ε~",
+      "~abstract~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~ε~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 29,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 239,
+    "nonTerminal": "<ClassElementList'>",
+    "guidingSymbols": [
+      "~}~",
+      "~abstract~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~ε~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 128,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 240,
+    "nonTerminal": "<PropertyDefinition>",
+    "guidingSymbols": [
+      "~abstract~",
+      "~ε~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 31,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 241,
+    "nonTerminal": "<MethodDefinition>",
+    "guidingSymbols": [
+      "~abstract~",
+      "~ε~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~ε~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 32,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 242,
+    "nonTerminal": "<AbstractModifier>",
+    "guidingSymbols": [
+      "~abstract~",
+      "~abstract~",
+      "~class~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 23,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 243,
+    "nonTerminal": "<AccessibilityModifier>",
+    "guidingSymbols": [
+      "~public~",
+      "~private~",
+      "~protected~",
+      "~abstract~",
+      "~constructor~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~static~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 34,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 244,
+    "nonTerminal": "<StaticModifier>",
+    "guidingSymbols": [
+      "~static~",
+      "~abstract~",
+      "~override~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 38,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 245,
+    "nonTerminal": "<OverrideModifier>",
+    "guidingSymbols": [
+      "~override~",
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 40,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 246,
+    "nonTerminal": "~Identifier~",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 247,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 247,
+    "nonTerminal": "~:~",
+    "guidingSymbols": [
+      "~:~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 248,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 248,
+    "nonTerminal": "<Type>",
+    "guidingSymbols": [
+      "~number~",
+      "~bool~",
+      "~null~",
+      "~string~",
+      "~array~",
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 54,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 249,
+    "nonTerminal": "~=~",
+    "guidingSymbols": [
+      "~=~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 250,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 250,
+    "nonTerminal": "<Expression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 62,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 251,
+    "nonTerminal": "~;~",
+    "guidingSymbols": [
+      "~;~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 252,
+    "nonTerminal": "<AbstractModifier>",
+    "guidingSymbols": [
+      "~abstract~",
+      "~abstract~",
+      "~class~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 23,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 253,
+    "nonTerminal": "<AccessibilityModifier>",
+    "guidingSymbols": [
+      "~public~",
+      "~private~",
+      "~protected~",
+      "~abstract~",
+      "~constructor~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~static~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 34,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 254,
+    "nonTerminal": "<StaticModifier>",
+    "guidingSymbols": [
+      "~static~",
+      "~abstract~",
+      "~override~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 38,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 255,
+    "nonTerminal": "<OverrideModifier>",
+    "guidingSymbols": [
+      "~override~",
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 40,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 256,
+    "nonTerminal": "~Identifier~",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 257,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 257,
+    "nonTerminal": "~(~",
+    "guidingSymbols": [
+      "~(~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 258,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 258,
+    "nonTerminal": "<ParameterList>",
+    "guidingSymbols": [
+      "~)~",
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 51,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 259,
+    "nonTerminal": "~)~",
+    "guidingSymbols": [
+      "~)~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 260,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 260,
+    "nonTerminal": "~:~",
+    "guidingSymbols": [
+      "~:~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 261,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 261,
+    "nonTerminal": "<FunctionReturnType>",
+    "guidingSymbols": [
+      "~Identifier~",
+      "~array~",
+      "~bool~",
+      "~null~",
+      "~number~",
+      "~string~",
+      "~void~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 60,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 262,
+    "nonTerminal": "<Block>",
+    "guidingSymbols": [
+      "~{~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 14,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 263,
+    "nonTerminal": "<AccessibilityModifier>",
+    "guidingSymbols": [
+      "~public~",
+      "~private~",
+      "~protected~",
+      "~abstract~",
+      "~constructor~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~static~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 34,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 264,
+    "nonTerminal": "~constructor~",
+    "guidingSymbols": [
+      "~constructor~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 265,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 265,
+    "nonTerminal": "~(~",
+    "guidingSymbols": [
+      "~(~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 266,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 266,
+    "nonTerminal": "<ParameterList>",
+    "guidingSymbols": [
+      "~)~",
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 51,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 267,
+    "nonTerminal": "~)~",
+    "guidingSymbols": [
+      "~)~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 268,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 268,
+    "nonTerminal": "<Block>",
+    "guidingSymbols": [
+      "~{~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 14,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 269,
+    "nonTerminal": "~public~",
+    "guidingSymbols": [
+      "~public~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 270,
+    "nonTerminal": "~private~",
+    "guidingSymbols": [
+      "~private~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 271,
+    "nonTerminal": "~protected~",
+    "guidingSymbols": [
+      "~protected~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 272,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~abstract~",
+      "~constructor~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~static~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 273,
+    "nonTerminal": "~static~",
+    "guidingSymbols": [
+      "~static~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 274,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~abstract~",
+      "~override~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 275,
+    "nonTerminal": "~override~",
+    "guidingSymbols": [
+      "~override~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 276,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 277,
+    "nonTerminal": "~import~",
+    "guidingSymbols": [
+      "~import~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 278,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 278,
+    "nonTerminal": "~{~",
+    "guidingSymbols": [
+      "~{~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 279,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 279,
+    "nonTerminal": "<ImportSpecifierList>",
+    "guidingSymbols": [
+      "~}~",
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 43,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 280,
+    "nonTerminal": "~}~",
+    "guidingSymbols": [
+      "~}~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 281,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 281,
+    "nonTerminal": "~from~",
+    "guidingSymbols": [
+      "~from~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 282,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 282,
+    "nonTerminal": "~StringLiteral~",
+    "guidingSymbols": [
+      "~StringLiteral~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 283,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 283,
+    "nonTerminal": "~;~",
+    "guidingSymbols": [
+      "~;~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 284,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 285,
+    "nonTerminal": "<ImportSpecifier>",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 45,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 286,
+    "nonTerminal": "<ImportSpecifierList'>",
+    "guidingSymbols": [
+      "~}~",
+      "~,~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 130,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 287,
+    "nonTerminal": "~Identifier~",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 288,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 288,
+    "nonTerminal": "<ImportSpecifier'>",
+    "guidingSymbols": [
+      "~as~",
+      "~,~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 132,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 289,
+    "nonTerminal": "~export~",
+    "guidingSymbols": [
+      "~export~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 290,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 290,
+    "nonTerminal": "~{~",
+    "guidingSymbols": [
+      "~{~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 291,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 291,
+    "nonTerminal": "<ExportSpecifierList>",
+    "guidingSymbols": [
+      "~}~",
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 47,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 292,
+    "nonTerminal": "~}~",
+    "guidingSymbols": [
+      "~}~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 293,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 293,
+    "nonTerminal": "~;~",
+    "guidingSymbols": [
+      "~;~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 294,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 295,
+    "nonTerminal": "<ExportSpecifier>",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 49,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 296,
+    "nonTerminal": "<ExportSpecifierList'>",
+    "guidingSymbols": [
+      "~}~",
+      "~,~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 134,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 297,
+    "nonTerminal": "~Identifier~",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 298,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 298,
+    "nonTerminal": "<ExportSpecifier'>",
+    "guidingSymbols": [
+      "~as~",
+      "~,~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 136,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 299,
+    "nonTerminal": "~function~",
+    "guidingSymbols": [
+      "~function~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 300,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 300,
+    "nonTerminal": "~Identifier~",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 301,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 301,
+    "nonTerminal": "~(~",
+    "guidingSymbols": [
+      "~(~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 302,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 302,
+    "nonTerminal": "<ParameterList>",
+    "guidingSymbols": [
+      "~)~",
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 51,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 303,
+    "nonTerminal": "~)~",
+    "guidingSymbols": [
+      "~)~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 304,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 304,
+    "nonTerminal": "~:~",
+    "guidingSymbols": [
+      "~:~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 305,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 305,
+    "nonTerminal": "<FunctionReturnType>",
+    "guidingSymbols": [
+      "~Identifier~",
+      "~array~",
+      "~bool~",
+      "~null~",
+      "~number~",
+      "~string~",
+      "~void~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 60,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 306,
+    "nonTerminal": "<Block>",
+    "guidingSymbols": [
+      "~{~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 14,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 307,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~)~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 308,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 308,
+    "nonTerminal": "<ParameterList'1>",
+    "guidingSymbols": [
+      "~)~",
+      "~,~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 138,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 309,
+    "nonTerminal": "<Parameter>",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 53,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 310,
+    "nonTerminal": "<ParameterList'1>",
+    "guidingSymbols": [
+      "~)~",
+      "~,~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 138,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 311,
+    "nonTerminal": "~Identifier~",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 312,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 312,
+    "nonTerminal": "~:~",
+    "guidingSymbols": [
+      "~:~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 313,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 313,
+    "nonTerminal": "<Type>",
+    "guidingSymbols": [
+      "~number~",
+      "~bool~",
+      "~null~",
+      "~string~",
+      "~array~",
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 54,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 314,
+    "nonTerminal": "~number~",
+    "guidingSymbols": [
+      "~number~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 315,
+    "nonTerminal": "~bool~",
+    "guidingSymbols": [
+      "~bool~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 316,
+    "nonTerminal": "~null~",
+    "guidingSymbols": [
+      "~null~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 317,
+    "nonTerminal": "~string~",
+    "guidingSymbols": [
+      "~string~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 318,
+    "nonTerminal": "~array~",
+    "guidingSymbols": [
+      "~array~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 319,
+    "nonTerminal": "~Identifier~",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 320,
+    "nonTerminal": "<Type>",
+    "guidingSymbols": [
+      "~number~",
+      "~bool~",
+      "~null~",
+      "~string~",
+      "~array~",
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 54,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 321,
+    "nonTerminal": "~void~",
+    "guidingSymbols": [
+      "~void~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 322,
+    "nonTerminal": "<LogicalOrExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 63,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 323,
+    "nonTerminal": "<LogicalAndExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 64,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 324,
+    "nonTerminal": "<LogicalOrExpression'1>",
+    "guidingSymbols": [
+      "~)~",
+      "~,~",
+      "~;~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 140,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 325,
+    "nonTerminal": "<EqualityExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 65,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 326,
+    "nonTerminal": "<LogicalAndExpression'1>",
+    "guidingSymbols": [
+      "~)~",
+      "~,~",
+      "~;~",
+      "~]~",
+      "~||~",
+      "~&&~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 142,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 327,
+    "nonTerminal": "<RelationalExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 66,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 328,
+    "nonTerminal": "<EqualityExpression'1>",
+    "guidingSymbols": [
+      "~&&~",
+      "~)~",
+      "~,~",
+      "~;~",
+      "~]~",
+      "~||~",
+      "~!=~",
+      "~==~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 144,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 329,
+    "nonTerminal": "<AdditiveExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 67,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 330,
+    "nonTerminal": "<RelationalExpression'1>",
+    "guidingSymbols": [
+      "~!=~",
+      "~&&~",
+      "~)~",
+      "~,~",
+      "~;~",
+      "~==~",
+      "~]~",
+      "~||~",
+      "~<=~",
+      "~<~",
+      "~>=~",
+      "~>~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 146,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 331,
+    "nonTerminal": "<MultiplicativeExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 68,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 332,
+    "nonTerminal": "<AdditiveExpression'1>",
+    "guidingSymbols": [
+      "~!=~",
+      "~&&~",
+      "~)~",
+      "~,~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~",
+      "~+~",
+      "~-~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 148,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 333,
+    "nonTerminal": "<ExponentiationExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 69,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 334,
+    "nonTerminal": "<MultiplicativeExpression'1>",
+    "guidingSymbols": [
+      "~!=~",
+      "~&&~",
+      "~)~",
+      "~+~",
+      "~,~",
+      "~-~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~",
+      "~%~",
+      "~*~",
+      "~/~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 150,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 335,
+    "nonTerminal": "<UnaryExpression>",
+    "guidingSymbols": [
+      "~(~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~",
+      "~-~",
+      "~!~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 70,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 336,
+    "nonTerminal": "<ExponentiationExpression'1>",
+    "guidingSymbols": [
+      "~!=~",
+      "~%~",
+      "~&&~",
+      "~)~",
+      "~*~",
+      "~+~",
+      "~,~",
+      "~-~",
+      "~/~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~",
+      "~**~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 152,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 337,
+    "nonTerminal": "<PostfixExpression>",
+    "guidingSymbols": [
+      "~(~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 73,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 338,
+    "nonTerminal": "~-~",
+    "guidingSymbols": [
+      "~-~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 339,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 339,
+    "nonTerminal": "<UnaryExpression>",
+    "guidingSymbols": [
+      "~(~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~",
+      "~-~",
+      "~!~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 70,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 340,
+    "nonTerminal": "~!~",
+    "guidingSymbols": [
+      "~!~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 341,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 341,
+    "nonTerminal": "<UnaryExpression>",
+    "guidingSymbols": [
+      "~(~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~",
+      "~-~",
+      "~!~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 70,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 342,
+    "nonTerminal": "<FunctionCall>",
+    "guidingSymbols": [
+      "~(~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 84,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 343,
+    "nonTerminal": "<PostfixExpression'>",
+    "guidingSymbols": [
+      "~!=~",
+      "~%~",
+      "~&&~",
+      "~)~",
+      "~**~",
+      "~*~",
+      "~+=~",
+      "~+~",
+      "~,~",
+      "~-=~",
+      "~-~",
+      "~/~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~=~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~",
+      "~++~",
+      "~--~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 154,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 344,
+    "nonTerminal": "<PrimaryExpression>",
+    "guidingSymbols": [
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~BooleanLiteral~",
+      "~[~",
+      "~Identifier~",
+      "~null~",
+      "~function~",
+      "~(~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 75,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 345,
+    "nonTerminal": "<MemberExpression'1>",
+    "guidingSymbols": [
+      "~!=~",
+      "~%~",
+      "~&&~",
+      "~(~",
+      "~)~",
+      "~**~",
+      "~*~",
+      "~++~",
+      "~+=~",
+      "~+~",
+      "~,~",
+      "~--~",
+      "~-=~",
+      "~-~",
+      "~/~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~=~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~",
+      "~.~",
+      "~[~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 157,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 346,
+    "nonTerminal": "~NumberLiteral~",
+    "guidingSymbols": [
+      "~NumberLiteral~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 347,
+    "nonTerminal": "~StringLiteral~",
+    "guidingSymbols": [
+      "~StringLiteral~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 348,
+    "nonTerminal": "~BooleanLiteral~",
+    "guidingSymbols": [
+      "~BooleanLiteral~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 349,
+    "nonTerminal": "<ArrayLiteral>",
+    "guidingSymbols": [
+      "~[~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 87,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 350,
+    "nonTerminal": "~Identifier~",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 351,
+    "nonTerminal": "~null~",
+    "guidingSymbols": [
+      "~null~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 352,
+    "nonTerminal": "<FunctionExpression>",
+    "guidingSymbols": [
+      "~function~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 83,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 353,
+    "nonTerminal": "~(~",
+    "guidingSymbols": [
+      "~(~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 354,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 354,
+    "nonTerminal": "<Expression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 62,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 355,
+    "nonTerminal": "~)~",
+    "guidingSymbols": [
+      "~)~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 356,
+    "nonTerminal": "~function~",
+    "guidingSymbols": [
+      "~function~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 357,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 357,
+    "nonTerminal": "~(~",
+    "guidingSymbols": [
+      "~(~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 358,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 358,
+    "nonTerminal": "<ParameterList>",
+    "guidingSymbols": [
+      "~)~",
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 51,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 359,
+    "nonTerminal": "~)~",
+    "guidingSymbols": [
+      "~)~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 360,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 360,
+    "nonTerminal": "<Block>",
+    "guidingSymbols": [
+      "~{~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 14,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 361,
+    "nonTerminal": "<MemberExpression>",
+    "guidingSymbols": [
+      "~(~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 74,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 362,
+    "nonTerminal": "<FunctionCallArgumentList>",
+    "guidingSymbols": [
+      "~(~",
+      "~!=~",
+      "~%~",
+      "~&&~",
+      "~)~",
+      "~**~",
+      "~*~",
+      "~++~",
+      "~+=~",
+      "~+~",
+      "~,~",
+      "~--~",
+      "~-=~",
+      "~-~",
+      "~/~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~=~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 85,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 363,
+    "nonTerminal": "~(~",
+    "guidingSymbols": [
+      "~(~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 364,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 364,
+    "nonTerminal": "<ArgumentList>",
+    "guidingSymbols": [
+      "~)~",
+      "~]~",
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 88,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 365,
+    "nonTerminal": "~)~",
+    "guidingSymbols": [
+      "~)~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 366,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~!=~",
+      "~%~",
+      "~&&~",
+      "~)~",
+      "~**~",
+      "~*~",
+      "~++~",
+      "~+=~",
+      "~+~",
+      "~,~",
+      "~--~",
+      "~-=~",
+      "~-~",
+      "~/~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~=~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 367,
+    "nonTerminal": "~[~",
+    "guidingSymbols": [
+      "~[~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 368,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 368,
+    "nonTerminal": "<ArgumentList>",
+    "guidingSymbols": [
+      "~)~",
+      "~]~",
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 88,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 369,
+    "nonTerminal": "~]~",
+    "guidingSymbols": [
+      "~]~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 370,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~)~",
+      "~]~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 371,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 371,
+    "nonTerminal": "<ArgumentList'1>",
+    "guidingSymbols": [
+      "~)~",
+      "~]~",
+      "~,~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 159,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 372,
+    "nonTerminal": "<Expression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 62,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 373,
+    "nonTerminal": "<ArgumentList'1>",
+    "guidingSymbols": [
+      "~)~",
+      "~]~",
+      "~,~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 159,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 374,
+    "nonTerminal": "~if~",
+    "guidingSymbols": [
+      "~if~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 375,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 375,
+    "nonTerminal": "~(~",
+    "guidingSymbols": [
+      "~(~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 376,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 376,
+    "nonTerminal": "<Expression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 62,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 377,
+    "nonTerminal": "~)~",
+    "guidingSymbols": [
+      "~)~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 378,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 378,
+    "nonTerminal": "<Block>",
+    "guidingSymbols": [
+      "~{~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 14,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 379,
+    "nonTerminal": "<IfStatement'>",
+    "guidingSymbols": [
+      "~!~",
+      "~#~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~abstract~",
+      "~break~",
+      "~const~",
+      "~continue~",
+      "~export~",
+      "~for~",
+      "~function~",
+      "~if~",
+      "~import~",
+      "~null~",
+      "~return~",
+      "~var~",
+      "~}~",
+      "~else~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 161,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 380,
+    "nonTerminal": "~for~",
+    "guidingSymbols": [
+      "~for~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 381,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 381,
+    "nonTerminal": "~(~",
+    "guidingSymbols": [
+      "~(~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 382,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 382,
+    "nonTerminal": "<FirstForArgument>",
+    "guidingSymbols": [
+      "~const~",
+      "~var~",
+      "~(~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~",
+      "~;~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 92,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 383,
+    "nonTerminal": "~;~",
+    "guidingSymbols": [
+      "~;~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 384,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 384,
+    "nonTerminal": "<SecondForArgument>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~",
+      "~;~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 95,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 385,
+    "nonTerminal": "~;~",
+    "guidingSymbols": [
+      "~;~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 386,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 386,
+    "nonTerminal": "<ThirdForArgument>",
+    "guidingSymbols": [
+      "~(~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~",
+      "~)~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 97,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 387,
+    "nonTerminal": "~)~",
+    "guidingSymbols": [
+      "~)~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 388,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 388,
+    "nonTerminal": "<Block>",
+    "guidingSymbols": [
+      "~{~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 14,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 389,
+    "nonTerminal": "<VariableDeclaration>",
+    "guidingSymbols": [
+      "~const~",
+      "~var~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 20,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 390,
+    "nonTerminal": "<Assignment>",
+    "guidingSymbols": [
+      "~(~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 100,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 391,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~;~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 392,
+    "nonTerminal": "<Expression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 62,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 393,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~;~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 394,
+    "nonTerminal": "<Assignment>",
+    "guidingSymbols": [
+      "~(~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 100,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 395,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~)~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 396,
+    "nonTerminal": "~return~",
+    "guidingSymbols": [
+      "~return~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 397,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 397,
+    "nonTerminal": "<ReturnStatement'>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~",
+      "~;~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 163,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 398,
+    "nonTerminal": "<PostfixExpression>",
+    "guidingSymbols": [
+      "~(~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 73,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 399,
+    "nonTerminal": "<AssignmentRightPart>",
+    "guidingSymbols": [
+      "~+=~",
+      "~-=~",
+      "~=~",
+      "~)~",
+      "~;~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 101,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 400,
+    "nonTerminal": "<AssignmentOperator>",
+    "guidingSymbols": [
+      "~=~",
+      "~+=~",
+      "~-=~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 103,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 401,
+    "nonTerminal": "<Expression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 62,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 402,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~)~",
+      "~;~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 403,
+    "nonTerminal": "~=~",
+    "guidingSymbols": [
+      "~=~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 404,
+    "nonTerminal": "~+=~",
+    "guidingSymbols": [
+      "~+=~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 405,
+    "nonTerminal": "~-=~",
+    "guidingSymbols": [
+      "~-=~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 406,
+    "nonTerminal": "~,~",
+    "guidingSymbols": [
+      "~,~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 407,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 407,
+    "nonTerminal": "<Parameter>",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 53,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 408,
+    "nonTerminal": "<ParameterList''>",
+    "guidingSymbols": [
+      "~)~",
+      "~,~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 165,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 409,
+    "nonTerminal": "~&&~",
+    "guidingSymbols": [
+      "~&&~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 410,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 410,
+    "nonTerminal": "<EqualityExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 65,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 411,
+    "nonTerminal": "<LogicalAndExpression''>",
+    "guidingSymbols": [
+      "~)~",
+      "~,~",
+      "~;~",
+      "~]~",
+      "~||~",
+      "~&&~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 169,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 412,
+    "nonTerminal": "~!=~",
+    "guidingSymbols": [
+      "~!=~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 413,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 413,
+    "nonTerminal": "<RelationalExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 66,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 414,
+    "nonTerminal": "<EqualityExpression''>",
+    "guidingSymbols": [
+      "~&&~",
+      "~)~",
+      "~,~",
+      "~;~",
+      "~]~",
+      "~||~",
+      "~!=~",
+      "~==~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 171,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 415,
+    "nonTerminal": "~==~",
+    "guidingSymbols": [
+      "~==~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 416,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 416,
+    "nonTerminal": "<RelationalExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 66,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 417,
+    "nonTerminal": "<EqualityExpression''>",
+    "guidingSymbols": [
+      "~&&~",
+      "~)~",
+      "~,~",
+      "~;~",
+      "~]~",
+      "~||~",
+      "~!=~",
+      "~==~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 171,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 418,
+    "nonTerminal": "~>=~",
+    "guidingSymbols": [
+      "~>=~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 419,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 419,
+    "nonTerminal": "<AdditiveExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 67,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 420,
+    "nonTerminal": "<RelationalExpression''>",
+    "guidingSymbols": [
+      "~!=~",
+      "~&&~",
+      "~)~",
+      "~,~",
+      "~;~",
+      "~==~",
+      "~]~",
+      "~||~",
+      "~<=~",
+      "~<~",
+      "~>=~",
+      "~>~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 173,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 421,
+    "nonTerminal": "~>~",
+    "guidingSymbols": [
+      "~>~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 422,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 422,
+    "nonTerminal": "<AdditiveExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 67,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 423,
+    "nonTerminal": "<RelationalExpression''>",
+    "guidingSymbols": [
+      "~!=~",
+      "~&&~",
+      "~)~",
+      "~,~",
+      "~;~",
+      "~==~",
+      "~]~",
+      "~||~",
+      "~<=~",
+      "~<~",
+      "~>=~",
+      "~>~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 173,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 424,
+    "nonTerminal": "~<=~",
+    "guidingSymbols": [
+      "~<=~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 425,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 425,
+    "nonTerminal": "<AdditiveExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 67,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 426,
+    "nonTerminal": "<RelationalExpression''>",
+    "guidingSymbols": [
+      "~!=~",
+      "~&&~",
+      "~)~",
+      "~,~",
+      "~;~",
+      "~==~",
+      "~]~",
+      "~||~",
+      "~<=~",
+      "~<~",
+      "~>=~",
+      "~>~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 173,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 427,
+    "nonTerminal": "~<~",
+    "guidingSymbols": [
+      "~<~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 428,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 428,
+    "nonTerminal": "<AdditiveExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 67,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 429,
+    "nonTerminal": "<RelationalExpression''>",
+    "guidingSymbols": [
+      "~!=~",
+      "~&&~",
+      "~)~",
+      "~,~",
+      "~;~",
+      "~==~",
+      "~]~",
+      "~||~",
+      "~<=~",
+      "~<~",
+      "~>=~",
+      "~>~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 173,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 430,
+    "nonTerminal": "~-~",
+    "guidingSymbols": [
+      "~-~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 431,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 431,
+    "nonTerminal": "<MultiplicativeExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 68,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 432,
+    "nonTerminal": "<AdditiveExpression''>",
+    "guidingSymbols": [
+      "~!=~",
+      "~&&~",
+      "~)~",
+      "~,~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~",
+      "~+~",
+      "~-~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 175,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 433,
+    "nonTerminal": "~+~",
+    "guidingSymbols": [
+      "~+~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 434,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 434,
+    "nonTerminal": "<MultiplicativeExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 68,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 435,
+    "nonTerminal": "<AdditiveExpression''>",
+    "guidingSymbols": [
+      "~!=~",
+      "~&&~",
+      "~)~",
+      "~,~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~",
+      "~+~",
+      "~-~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 175,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 436,
+    "nonTerminal": "~%~",
+    "guidingSymbols": [
+      "~%~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 437,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 437,
+    "nonTerminal": "<ExponentiationExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 69,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 438,
+    "nonTerminal": "<MultiplicativeExpression''>",
+    "guidingSymbols": [
+      "~!=~",
+      "~&&~",
+      "~)~",
+      "~+~",
+      "~,~",
+      "~-~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~",
+      "~%~",
+      "~*~",
+      "~/~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 177,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 439,
+    "nonTerminal": "~/~",
+    "guidingSymbols": [
+      "~/~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 440,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 440,
+    "nonTerminal": "<ExponentiationExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 69,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 441,
+    "nonTerminal": "<MultiplicativeExpression''>",
+    "guidingSymbols": [
+      "~!=~",
+      "~&&~",
+      "~)~",
+      "~+~",
+      "~,~",
+      "~-~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~",
+      "~%~",
+      "~*~",
+      "~/~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 177,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 442,
+    "nonTerminal": "~*~",
+    "guidingSymbols": [
+      "~*~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 443,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 443,
+    "nonTerminal": "<ExponentiationExpression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 69,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 444,
+    "nonTerminal": "<MultiplicativeExpression''>",
+    "guidingSymbols": [
+      "~!=~",
+      "~&&~",
+      "~)~",
+      "~+~",
+      "~,~",
+      "~-~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~",
+      "~%~",
+      "~*~",
+      "~/~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 177,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 445,
+    "nonTerminal": "~**~",
+    "guidingSymbols": [
+      "~**~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 446,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 446,
+    "nonTerminal": "<UnaryExpression>",
+    "guidingSymbols": [
+      "~(~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~",
+      "~-~",
+      "~!~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 70,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 447,
+    "nonTerminal": "<ExponentiationExpression''>",
+    "guidingSymbols": [
+      "~!=~",
+      "~%~",
+      "~&&~",
+      "~)~",
+      "~*~",
+      "~+~",
+      "~,~",
+      "~-~",
+      "~/~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~",
+      "~**~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 179,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 448,
+    "nonTerminal": "~[~",
+    "guidingSymbols": [
+      "~[~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 449,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 449,
+    "nonTerminal": "<Expression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 62,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 450,
+    "nonTerminal": "~]~",
+    "guidingSymbols": [
+      "~]~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 451,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 451,
+    "nonTerminal": "<MemberExpression''>",
+    "guidingSymbols": [
+      "~!=~",
+      "~%~",
+      "~&&~",
+      "~(~",
+      "~)~",
+      "~**~",
+      "~*~",
+      "~++~",
+      "~+=~",
+      "~+~",
+      "~,~",
+      "~--~",
+      "~-=~",
+      "~-~",
+      "~/~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~=~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~",
+      "~.~",
+      "~[~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 181,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 452,
+    "nonTerminal": "~.~",
+    "guidingSymbols": [
+      "~.~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 453,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 453,
+    "nonTerminal": "~Identifier~",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 454,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 454,
+    "nonTerminal": "<MemberExpression''>",
+    "guidingSymbols": [
+      "~!=~",
+      "~%~",
+      "~&&~",
+      "~(~",
+      "~)~",
+      "~**~",
+      "~*~",
+      "~++~",
+      "~+=~",
+      "~+~",
+      "~,~",
+      "~--~",
+      "~-=~",
+      "~-~",
+      "~/~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~=~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~",
+      "~.~",
+      "~[~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 181,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 455,
+    "nonTerminal": "~,~",
+    "guidingSymbols": [
+      "~,~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 456,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 456,
+    "nonTerminal": "<Expression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 62,
+    "isStack": true,
+    "isEnd": false
+  },
+  {
+    "number": 457,
+    "nonTerminal": "<ArgumentList''>",
+    "guidingSymbols": [
+      "~)~",
+      "~]~",
+      "~,~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 183,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 458,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~#~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 459,
+    "nonTerminal": "<StatementList>",
+    "guidingSymbols": [
+      "~#~",
+      "~}~",
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~abstract~",
+      "~break~",
+      "~const~",
+      "~continue~",
+      "~export~",
+      "~for~",
+      "~function~",
+      "~if~",
+      "~import~",
+      "~null~",
+      "~return~",
+      "~var~",
+      "~ε~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 2,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 460,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~;~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 461,
+    "nonTerminal": "~=~",
+    "guidingSymbols": [
+      "~=~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 462,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 462,
+    "nonTerminal": "<Expression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 62,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 463,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 464,
+    "nonTerminal": "<ClassElementList>",
+    "guidingSymbols": [
+      "~}~",
+      "~abstract~",
+      "~private~",
+      "~protected~",
+      "~public~",
+      "~ε~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 27,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 465,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 466,
+    "nonTerminal": "~,~",
+    "guidingSymbols": [
+      "~,~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 467,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 467,
+    "nonTerminal": "<ImportSpecifierList>",
+    "guidingSymbols": [
+      "~}~",
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 43,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 468,
+    "nonTerminal": "~as~",
+    "guidingSymbols": [
+      "~as~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 469,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 469,
+    "nonTerminal": "~Identifier~",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 470,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~,~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 471,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 472,
+    "nonTerminal": "~,~",
+    "guidingSymbols": [
+      "~,~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 473,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 473,
+    "nonTerminal": "<ExportSpecifierList>",
+    "guidingSymbols": [
+      "~}~",
+      "~Identifier~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 47,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 474,
+    "nonTerminal": "~as~",
+    "guidingSymbols": [
+      "~as~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 475,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 475,
+    "nonTerminal": "~Identifier~",
+    "guidingSymbols": [
+      "~Identifier~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 476,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~,~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 477,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~)~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 478,
+    "nonTerminal": "<ParameterList'>",
+    "guidingSymbols": [
+      "~,~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 106,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 479,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~)~",
+      "~,~",
+      "~;~",
+      "~]~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 480,
+    "nonTerminal": "<LogicalOrExpression'>",
+    "guidingSymbols": [
+      "|~<LogicalAndExpression><LogicalOrExpression''>",
+      "|",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 107,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 481,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~)~",
+      "~,~",
+      "~;~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 482,
+    "nonTerminal": "<LogicalAndExpression'>",
+    "guidingSymbols": [
+      "~&&~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 108,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 483,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~&&~",
+      "~)~",
+      "~,~",
+      "~;~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 484,
+    "nonTerminal": "<EqualityExpression'>",
+    "guidingSymbols": [
+      "~!=~",
+      "~==~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 109,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 485,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~!=~",
+      "~&&~",
+      "~)~",
+      "~,~",
+      "~;~",
+      "~==~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 486,
+    "nonTerminal": "<RelationalExpression'>",
+    "guidingSymbols": [
+      "~>=~",
+      "~>~",
+      "~<=~",
+      "~<~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 111,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 487,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~!=~",
+      "~&&~",
+      "~)~",
+      "~,~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 488,
+    "nonTerminal": "<AdditiveExpression'>",
+    "guidingSymbols": [
+      "~-~",
+      "~+~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 115,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 489,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~!=~",
+      "~&&~",
+      "~)~",
+      "~+~",
+      "~,~",
+      "~-~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 490,
+    "nonTerminal": "<MultiplicativeExpression'>",
+    "guidingSymbols": [
+      "~%~",
+      "~/~",
+      "~*~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 117,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 491,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~!=~",
+      "~%~",
+      "~&&~",
+      "~)~",
+      "~*~",
+      "~+~",
+      "~,~",
+      "~-~",
+      "~/~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 492,
+    "nonTerminal": "<ExponentiationExpression'>",
+    "guidingSymbols": [
+      "~**~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 120,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 493,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~!=~",
+      "~%~",
+      "~&&~",
+      "~)~",
+      "~**~",
+      "~*~",
+      "~+=~",
+      "~+~",
+      "~,~",
+      "~-=~",
+      "~-~",
+      "~/~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~=~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 494,
+    "nonTerminal": "~++~",
+    "guidingSymbols": [
+      "~++~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 495,
+    "nonTerminal": "~--~",
+    "guidingSymbols": [
+      "~--~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 496,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~!=~",
+      "~%~",
+      "~&&~",
+      "~(~",
+      "~)~",
+      "~**~",
+      "~*~",
+      "~++~",
+      "~+=~",
+      "~+~",
+      "~,~",
+      "~--~",
+      "~-=~",
+      "~-~",
+      "~/~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~=~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 497,
+    "nonTerminal": "<MemberExpression'>",
+    "guidingSymbols": [
+      "~[~",
+      "~.~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 121,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 498,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~)~",
+      "~]~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 499,
+    "nonTerminal": "<ArgumentList'>",
+    "guidingSymbols": [
+      "~,~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 123,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 500,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~!~",
+      "~#~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~abstract~",
+      "~break~",
+      "~const~",
+      "~continue~",
+      "~export~",
+      "~for~",
+      "~function~",
+      "~if~",
+      "~import~",
+      "~null~",
+      "~return~",
+      "~var~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 501,
+    "nonTerminal": "~else~",
+    "guidingSymbols": [
+      "~else~"
+    ],
+    "isShift": true,
+    "isError": true,
+    "pointer": 502,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 502,
+    "nonTerminal": "<Block>",
+    "guidingSymbols": [
+      "~{~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 14,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 503,
+    "nonTerminal": "<Expression>",
+    "guidingSymbols": [
+      "~!~",
+      "~(~",
+      "~-~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~function~",
+      "~null~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 62,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 504,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~;~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 505,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~)~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 506,
+    "nonTerminal": "<ParameterList'>",
+    "guidingSymbols": [
+      "~,~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 106,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 507,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~)~",
+      "~,~",
+      "~;~",
+      "~]~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 508,
+    "nonTerminal": "<LogicalOrExpression'>",
+    "guidingSymbols": [
+      "|~<LogicalAndExpression><LogicalOrExpression''>",
+      "|",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 107,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 509,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~)~",
+      "~,~",
+      "~;~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 510,
+    "nonTerminal": "<LogicalAndExpression'>",
+    "guidingSymbols": [
+      "~&&~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 108,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 511,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~&&~",
+      "~)~",
+      "~,~",
+      "~;~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 512,
+    "nonTerminal": "<EqualityExpression'>",
+    "guidingSymbols": [
+      "~!=~",
+      "~==~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 109,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 513,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~!=~",
+      "~&&~",
+      "~)~",
+      "~,~",
+      "~;~",
+      "~==~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 514,
+    "nonTerminal": "<RelationalExpression'>",
+    "guidingSymbols": [
+      "~>=~",
+      "~>~",
+      "~<=~",
+      "~<~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 111,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 515,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~!=~",
+      "~&&~",
+      "~)~",
+      "~,~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 516,
+    "nonTerminal": "<AdditiveExpression'>",
+    "guidingSymbols": [
+      "~-~",
+      "~+~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 115,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 517,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~!=~",
+      "~&&~",
+      "~)~",
+      "~+~",
+      "~,~",
+      "~-~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 518,
+    "nonTerminal": "<MultiplicativeExpression'>",
+    "guidingSymbols": [
+      "~%~",
+      "~/~",
+      "~*~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 117,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 519,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~!=~",
+      "~%~",
+      "~&&~",
+      "~)~",
+      "~*~",
+      "~+~",
+      "~,~",
+      "~-~",
+      "~/~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 520,
+    "nonTerminal": "<ExponentiationExpression'>",
+    "guidingSymbols": [
+      "~**~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 120,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 521,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~!=~",
+      "~%~",
+      "~&&~",
+      "~(~",
+      "~)~",
+      "~**~",
+      "~*~",
+      "~++~",
+      "~+=~",
+      "~+~",
+      "~,~",
+      "~--~",
+      "~-=~",
+      "~-~",
+      "~/~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~=~",
+      "~>=~",
+      "~>~",
+      "~]~",
+      "~||~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 522,
+    "nonTerminal": "<MemberExpression'>",
+    "guidingSymbols": [
+      "~[~",
+      "~.~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 121,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 523,
+    "nonTerminal": "~ε~",
+    "guidingSymbols": [
+      "~)~",
+      "~]~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": null,
+    "isStack": false,
+    "isEnd": false
+  },
+  {
+    "number": 524,
+    "nonTerminal": "<ArgumentList'>",
+    "guidingSymbols": [
+      "~,~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 123,
+    "isStack": false,
+    "isEnd": false
+  }
+]
