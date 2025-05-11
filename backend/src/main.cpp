@@ -1,10 +1,13 @@
 #include "iostream"
 #include "Common/Chunk.h"
-#include "Common/ChunkCreator.h"
+#include "Parser/ChunkCreator.h"
+#include "Parser/Preprocessor.h"
 #include "Prelude/Prelude.h"
 
 int main()
 {
+	auto preprocessor = Preprocessor();
+	preprocessor.preprocessFile("before.prmbc", "after.prmbc");
 	auto chunkCreator = ChunkCreator();
 	Chunk chunk = chunkCreator.createFromFile("bytecode.prmbc");
 

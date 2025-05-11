@@ -1,0 +1,9 @@
+.code
+1 true
+1 jmpfalse else
+3 true
+3 jmp endif
+else:
+7 false
+endif:
+9 ret
