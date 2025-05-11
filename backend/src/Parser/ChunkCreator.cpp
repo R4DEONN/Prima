@@ -24,11 +24,18 @@ void ChunkCreator::_parseCodeString(const std::string &codeString)
 	_chunk.lines.push_back(line);
 	std::string token;
 	str >> token;
-	_chunk.code.push_back(static_cast<uint8_t>(getOpCodeFromString(token)));
+	OpCode opCode = getOpCodeFromString(token);
+	_chunk.code.push_back(static_cast<uint8_t>(opCode));
 
-	while (str >> token)
+	if (opCode == OpCode::CONSTANT || opCode == OpCode::JMP || opCode == OpCode::JMP_IF_FALSE)
 	{
-		_chunk.code.push_back(std::stoi(token));
+		std::string argToken;
+		if (!(str >> argToken))
+			throw std::runtime_error("Expected argument after opcode: " + token);
+
+		uint16_t arg = static_cast<uint16_t>(std::stoi(argToken));
+		_chunk.code.push_back(static_cast<uint8_t>((arg >> 8) & 0xFF));
+		_chunk.code.push_back(static_cast<uint8_t>(arg & 0xFF));
 	}
 }
 

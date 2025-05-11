@@ -9,7 +9,7 @@ int main()
 	auto preprocessor = Preprocessor();
 	preprocessor.preprocessFile("before.prmbc", "after.prmbc");
 	auto chunkCreator = ChunkCreator();
-	Chunk chunk = chunkCreator.createFromFile("bytecode.prmbc");
+	Chunk chunk = chunkCreator.createFromFile("after.prmbc");
 
 	Prelude prelude(chunk);
 

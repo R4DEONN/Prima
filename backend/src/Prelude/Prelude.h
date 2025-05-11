@@ -79,6 +79,19 @@ public:
 			case OpCode::LESS:
 				BINARY_OP(<);
 				break;
+			case OpCode::JMP:
+			{
+				uint16_t offset = (static_cast<uint16_t>(advance()) << 8) | advance();
+				ip = offset;
+				break;
+			}
+			case OpCode::JMP_IF_FALSE:
+			{
+				uint16_t offset = (static_cast<uint16_t>(advance()) << 8) | advance();
+				if (!toBool(pop()))
+					ip = offset;
+				break;
+			}
 			default:
 				throw std::runtime_error("Unknown opcode");
 			}
