@@ -27,20 +27,19 @@ public:
 		}
 		catch (const std::exception& e)
 		{
-			throw std::runtime_error(e.what() + std::string(" at line ") + std::to_string(chunk.lines[ip - chunk.code.begin()]));
+			throw std::runtime_error(e.what() + std::string(" at line ") + std::to_string(chunk.lines[ip]));
 		}
 	}
 
 	void runImpl()
 	{
-		ip = chunk.code.begin();
-		while (ip < chunk.code.end())
+		while (ip < chunk.code.size())
 		{
-			switch (static_cast<OpCode>(*ip++))
+			switch (static_cast<OpCode>(advance()))
 			{
 			case OpCode::CONSTANT:
 			{
-				Value constant = chunk.constants[*ip++];
+				Value constant = chunk.constants[advance()];
 				push(constant);
 				break;
 			}
@@ -87,6 +86,11 @@ public:
 	}
 
 private:
+	uint8_t advance()
+	{
+		return chunk.code[ip++];
+	}
+
 	void push(const Value &value)
 	{
 		stack.push(value);
@@ -104,6 +108,6 @@ private:
 	}
 
 	Chunk chunk;
-	std::vector<uint8_t>::const_iterator ip;
+	size_t ip = 0;
 	std::stack<Value> stack;
 };

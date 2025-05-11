@@ -15,10 +15,17 @@ enum class OpCode : uint8_t
 	GREATER,
 	LESS,
 
-	//Declaration
+	//Push
 	CONSTANT,
 	TRUE,
 	FALSE,
+
+	//JMP
+	JMP,
+	JMP_IF_FALSE,
+
+	//Debug
+	PRINT,
 
 	//End
 	RETURN,

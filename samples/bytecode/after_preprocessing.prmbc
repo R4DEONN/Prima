@@ -1,0 +1,7 @@
+.code
+true
+jmpfalse 4
+true
+jmp 5
+false
+ret
