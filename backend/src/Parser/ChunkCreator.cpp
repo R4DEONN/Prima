@@ -27,7 +27,7 @@ void ChunkCreator::_parseCodeString(const std::string &codeString)
 	OpCode opCode = getOpCodeFromString(token);
 	_chunk.code.push_back(static_cast<uint8_t>(opCode));
 
-	if (OpCode::CONSTANT == opCode)
+	if (getCountCommandBytes(opCode) == 2)
 	{
 		std::string argToken;
 		if (!(str >> argToken))
@@ -36,7 +36,7 @@ void ChunkCreator::_parseCodeString(const std::string &codeString)
 		_chunk.code.push_back(std::stoi(argToken));
 	}
 
-	if ( opCode == OpCode::JMP || opCode == OpCode::JMP_IF_FALSE)
+	if (getCountCommandBytes(opCode) == 3)
 	{
 		std::string argToken;
 		if (!(str >> argToken))
