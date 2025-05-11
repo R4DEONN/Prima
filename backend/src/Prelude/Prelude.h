@@ -39,7 +39,7 @@ public:
 			{
 			case OpCode::CONSTANT:
 			{
-				Value constant = chunk.constants[advance()];
+				Value constant = chunk.constants[advance() - 1];
 				push(constant);
 				break;
 			}
