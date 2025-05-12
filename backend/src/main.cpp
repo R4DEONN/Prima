@@ -6,15 +6,15 @@
 
 int main()
 {
-	auto preprocessor = Preprocessor();
-	preprocessor.preprocessFile("before.prmbc", "after.prmbc");
-	auto chunkCreator = ChunkCreator();
-	Chunk chunk = chunkCreator.createFromFile("after.prmbc");
-
-	Prelude prelude(chunk);
-
 	try
 	{
+		auto preprocessor = Preprocessor();
+		preprocessor.preprocessFile("before.prmbc", "after.prmbc");
+		auto chunkCreator = ChunkCreator();
+		Chunk chunk = chunkCreator.createFromFile("after.prmbc");
+
+		Prelude prelude(chunk);
+
 		prelude.run();
 		std::cout << "No errors" << std::endl;
 	}

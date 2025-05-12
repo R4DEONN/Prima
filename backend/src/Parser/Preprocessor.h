@@ -14,9 +14,16 @@ class Preprocessor : AbstractByteCodeProcessor
 public:
 	void preprocessFile(const std::string &inputFileName, const std::string &outputFileName)
 	{
-		processFile(inputFileName);
-		std::vector<std::string> output = _generateByteCode();
-		_writeLinesToFile(outputFileName, output);
+		try
+		{
+			processFile(inputFileName);
+			std::vector<std::string> output = _generateByteCode();
+			_writeLinesToFile(outputFileName, output);
+		}
+		catch (const std::exception& e)
+		{
+			throw std::runtime_error(std::string("Preprocessor error: ") + e.what());
+		}
 	}
 
 private:
@@ -48,6 +55,15 @@ private:
 			std::string linePos, opcodeStr;
 			iss >> linePos >> opcodeStr;
 
+			try
+			{
+				std::stoi(linePos);
+			}
+			catch (...)
+			{
+				throw std::invalid_argument("Expected line position, but came: " + linePos);
+			}
+
 			_currentAddress += getCountCommandBytes(getOpCodeFromString(opcodeStr));
 		}
 	}
@@ -70,13 +86,13 @@ private:
 	{
 		std::vector<std::string> output;
 
-		if (_newConstantLines.size() > 0)
+		if (!_newConstantLines.empty())
 		{
 			output.push_back(CONSTANT_STATE_STRING);
 			std::ranges::for_each(_newConstantLines, [&](auto &line) {output.push_back(line);});
 		}
 
-		if (_newCodeLines.size() > 0)
+		if (!_newCodeLines.empty())
 		{
 			output.push_back(CODE_STATE_STRING);
 			std::ranges::for_each(_newCodeLines, [&](auto &line)

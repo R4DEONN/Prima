@@ -18,7 +18,7 @@ std::string getTypeName(const Value &value)
 		{
 			return "number";
 		}
-		else if constexpr (std::is_same_v<T, std::string>)
+		else if constexpr (std::is_same_v<T, std::string*>)
 		{
 			return "string";
 		}
@@ -43,9 +43,9 @@ bool toBool(const Value& value)
 		{
 			return static_cast<bool>(arg);
 		}
-		else if constexpr (std::is_same_v<T, std::string>)
+		else if constexpr (std::is_same_v<T, std::string*>)
 		{
-			return !arg.empty();
+			return !arg->empty();
 		}
 		else
 		{
@@ -67,10 +67,6 @@ std::ostream &operator<<(std::ostream &output, const Value &value)
 	else if (std::holds_alternative<bool>(value))
 	{
 		output << (std::get<bool>(value) ? "true" : "false");
-	}
-	else if (std::holds_alternative<std::string>(value))
-	{
-		output << "\"" << std::get<std::string>(value) << "\"";
 	}
 	else
 	{

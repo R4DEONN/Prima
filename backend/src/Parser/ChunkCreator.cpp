@@ -12,8 +12,15 @@ const std::unordered_map<std::string, ValueType> TypeMap = {
 
 Chunk ChunkCreator::createFromFile(const std::string &filename)
 {
-	processFile(filename);
-	return _chunk;
+	try
+	{
+		processFile(filename);
+		return _chunk;
+	}
+	catch (const std::exception& e)
+	{
+		throw std::runtime_error(std::string("Chunk creator error: ") + e.what());
+	}
 }
 
 void ChunkCreator::_parseCodeString(const std::string &codeString)
