@@ -9,6 +9,9 @@ import {BlockStatement} from "../AST/Nodes/BlockStatement";
 import {IfStatement} from "../AST/Nodes/IfStatement";
 import {Statement} from "../AST/Nodes/Statement";
 import {Declaration} from "../AST/Nodes/Declaration";
+import {Marker} from "../AST/Nodes/Marker";
+
+export const BLOCK_START = new Marker("BLOCK_START");
 
 export const actionHandlers: Record<string, (stack: ASTNode[]) => ASTNode> = {
     makeProgram: (stack) =>
@@ -41,11 +44,17 @@ export const actionHandlers: Record<string, (stack: ASTNode[]) => ASTNode> = {
         while (stack.length > 0)
         {
             const node = stack.pop();
-            if (!(node instanceof Statement) && !(node instanceof Declaration))
+
+            if (node == BLOCK_START)
             {
-                stack.push(node);
                 break;
             }
+
+            if (!(node instanceof Statement) && !(node instanceof Declaration))
+            {
+                throw new Error("Statement or Declaration expected. Got: " + node.nodeType);
+            }
+
             nodes.push(node);
         }
         return new BlockStatement(nodes.reverse());
@@ -64,6 +73,21 @@ export const actionHandlers: Record<string, (stack: ASTNode[]) => ASTNode> = {
             throw new Error("Expression for if expected. Got something else: " + expression.nodeType);
         }
         throw new Error("Block for if expected. Got something else: " + block.nodeType);
+    },
+
+    makeElse: (stack) =>
+    {
+        const block = stack.pop();
+        if (block instanceof BlockStatement)
+        {
+            const ifStatement = stack.pop();
+            if (ifStatement instanceof IfStatement)
+            {
+                return new IfStatement(ifStatement.condition, ifStatement.consequent, block);
+            }
+            throw new Error("IfStatement for else expected. Got something else: " + ifStatement.nodeType);
+        }
+        throw new Error("Block for else expected. Got something else: " + block.nodeType);
     },
 
     makeAdd: bin("+", Type.NUMBER),

@@ -1,0 +1,36 @@
+const start: number = 10;
+const end: number = 100;
+
+for (var num: number = start; num <= end; num++)
+{
+    if (num <= 1)
+    {
+        continue;
+    }
+
+    if (num == 2)
+    {
+        print(num);
+        continue;
+    }
+
+    if (num % 2 == 0)
+    {
+        continue;
+    }
+
+    let cond: bool = true;
+
+    for (var i: number = 3; i <= sqrt(num); i += 2)
+    {
+        if (num % i == 0)
+        {
+            cond = false;
+        }
+    }
+
+    if (cond)
+    {
+        print(num);
+    }
+}

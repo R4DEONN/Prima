@@ -184,7 +184,7 @@
 <ArgumentList> -> ~ε~
 
 <IfStatement> -> ~if~ ~(~ <Expression> ~)~ <Block>
-<IfStatement> -> ~if~ ~(~ <Expression> ~)~ <Block> ~else~ <Block>
+<IfStatement> -> ~if~ ~(~ <Expression> ~)~ <Block> ~else~ <Block> <Empty>
 
 <ForStatement> -> ~for~ ~(~ <FirstForArgument> ~;~ <SecondForArgument> ~;~ <ThirdForArgument> ~)~ <Block>
 <FirstForArgument> -> <VariableDeclaration>

@@ -70,7 +70,7 @@
 <UnaryExpression> -> <PostfixExpression> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
 <UnaryExpression> -> ~-~<UnaryExpression><Empty> | ~-~ {{makeUnaryMinus}}
 <UnaryExpression> -> ~!~<UnaryExpression><Empty> | ~!~ {{makeNot}}
-<Empty> -> ~ε~ | ~!=~ ~%~ ~&&~ ~)~ ~**~ ~*~ ~+~ ~,~ ~-~ ~/~ ~;~ ~<=~ ~<~ ~==~ ~>=~ ~>~ ~]~ ~||~
+<Empty> -> ~ε~ | ~!=~ ~!~ ~#~ ~%~ ~&&~ ~(~ ~)~ ~**~ ~*~ ~+~ ~,~ ~-~ ~/~ ~;~ ~<=~ ~<~ ~==~ ~>=~ ~>~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~]~ ~abstract~ ~break~ ~const~ ~continue~ ~export~ ~for~ ~function~ ~if~ ~import~ ~null~ ~return~ ~var~ ~||~ ~}~
 <PostfixExpression> -> <FunctionCall><PostfixExpression'> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
 <MemberExpression> -> <PrimaryExpression><MemberExpression'1> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
 <PrimaryExpression> -> ~NumberLiteral~ | ~NumberLiteral~
@@ -160,7 +160,7 @@
 <ArgumentList'1> -> ~ε~ | ~)~ ~]~
 <ArgumentList'1> -> <ArgumentList'> | ~,~
 <IfStatement'> -> ~ε~ | ~!~ ~#~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~abstract~ ~break~ ~const~ ~continue~ ~export~ ~for~ ~function~ ~if~ ~import~ ~null~ ~return~ ~var~ ~}~
-<IfStatement'> -> ~else~<Block> | ~else~
+<IfStatement'> -> ~else~<Block><Empty> | ~else~ {{makeElse}}
 <ReturnStatement'> -> <Expression> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
 <ReturnStatement'> -> ~ε~ | ~;~
 <ParameterList''> -> ~ε~ | ~)~

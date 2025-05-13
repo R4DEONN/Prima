@@ -10,7 +10,7 @@ import {
 import * as fs from 'fs';
 import {TYPE_TO_TERMINAL} from "../Common/TypeToTerminal";
 import {ASTNode} from "../AST/Nodes/ASTNode";
-import {actionHandlers} from "./ActionHandlers";
+import {actionHandlers, BLOCK_START} from "./ActionHandlers";
 import {tokenToAstNode} from "./tokenToAstNode";
 
 export class SyntacticRecognizer
@@ -126,6 +126,11 @@ export class SyntacticRecognizer
         {
             if (row.isShift)
             {
+                if (currentSymbol === '~{~')
+                {
+                    this.astStack.push(BLOCK_START);
+                }
+
                 const token = this.m_tokens[this.m_currentTokenIndex];
                 const node = tokenToAstNode(token);
 

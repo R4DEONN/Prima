@@ -12,5 +12,6 @@ export enum NodeType
     BLOCK_STATEMENT = "BlockStatement",
     IF_STATEMENT = "IfStatement",
     LITERAL = "Literal",
+    MARKER = "Marker",
     RETURN_STATEMENT = "ReturnStatement"
 }
