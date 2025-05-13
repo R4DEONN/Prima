@@ -3,8 +3,11 @@
 #include <variant>
 #include <string>
 #include <iostream>
+#include <memory>
 
-using Value = std::variant<int, double, bool, std::string*>;
+using StringPtr = std::shared_ptr<std::string>;
+
+using Value = std::variant<int, double, bool, StringPtr>;
 
 std::ostream& operator<<(std::ostream& output, const Value& value);
 

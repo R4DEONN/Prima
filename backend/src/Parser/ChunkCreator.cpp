@@ -8,6 +8,7 @@
 
 const std::unordered_map<std::string, ValueType> TypeMap = {
 	{"number", ValueType::NUMBER},
+	{"string", ValueType::STRING},
 };
 
 Chunk ChunkCreator::createFromFile(const std::string &filename)
@@ -17,7 +18,7 @@ Chunk ChunkCreator::createFromFile(const std::string &filename)
 		processFile(filename);
 		return _chunk;
 	}
-	catch (const std::exception& e)
+	catch (const std::exception &e)
 	{
 		throw std::runtime_error(std::string("Chunk creator error: ") + e.what());
 	}
@@ -57,18 +58,35 @@ void ChunkCreator::_parseCodeString(const std::string &codeString)
 
 void ChunkCreator::_parseConstantString(const std::string &codeString)
 {
-	std::stringstream str(codeString);
+	std::stringstream strStream(codeString);
 	std::string type;
-	str >> type;
-	ValueType valueType = TypeMap.find(type)->second;
+	strStream >> type;
 
-	std::string value;
-	str >> value;
-	switch (valueType)
+	switch (TypeMap.find(type)->second)
 	{
 	case ValueType::NUMBER:
-		_chunk.constants.push_back(std::stod(value));
+	{
+		double number;
+		strStream >> number;
+		_chunk.constants.push_back(number);
 		break;
+	}
+
+	case ValueType::STRING:
+	{
+		std::string value;
+		std::getline(strStream, value, '"');
+		value.clear();
+		std::getline(strStream, value, '"');
+		if (strStream.fail())
+		{
+			throw std::runtime_error("Invalid string constant format");
+		}
+		_chunk.constants.push_back(std::make_shared<std::string>(value));
+		break;
+	}
+
+
 	default:
 		throw std::invalid_argument("Invalid value type");
 	}

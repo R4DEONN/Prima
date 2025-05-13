@@ -13,6 +13,5 @@ private:
 
 	void _parseCodeString(const std::string& codeString) override;
 
-	// State _state = State::CONST;
 	Chunk _chunk;
 };

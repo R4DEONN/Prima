@@ -1,5 +1,7 @@
 #include "Value.h"
 
+#include <sstream>
+
 std::string getTypeName(const Value &value)
 {
 	return std::visit([](auto &&arg) -> std::string
@@ -18,7 +20,7 @@ std::string getTypeName(const Value &value)
 		{
 			return "number";
 		}
-		else if constexpr (std::is_same_v<T, std::string*>)
+		else if constexpr (std::is_same_v<T, std::shared_ptr<std::string> >)
 		{
 			return "string";
 		}
@@ -29,9 +31,9 @@ std::string getTypeName(const Value &value)
 	}, value);
 }
 
-bool toBool(const Value& value)
+bool toBool(const Value &value)
 {
-	return std::visit([](auto&& arg) -> bool
+	return std::visit([](auto &&arg) -> bool
 	{
 		using T = std::decay_t<decltype(arg)>;
 
@@ -43,7 +45,7 @@ bool toBool(const Value& value)
 		{
 			return static_cast<bool>(arg);
 		}
-		else if constexpr (std::is_same_v<T, std::string*>)
+		else if constexpr (std::is_same_v<T, StringPtr>)
 		{
 			return !arg->empty();
 		}
@@ -67,6 +69,10 @@ std::ostream &operator<<(std::ostream &output, const Value &value)
 	else if (std::holds_alternative<bool>(value))
 	{
 		output << (std::get<bool>(value) ? "true" : "false");
+	}
+	else if (std::holds_alternative<StringPtr>(value))
+	{
+		output << *std::get<StringPtr>(value);
 	}
 	else
 	{
@@ -118,7 +124,30 @@ Value operator-(const Value &lhs, const Value &rhs)
 
 Value operator+(const Value &lhs, const Value &rhs)
 {
-	return applyArithmeticOp(lhs, rhs, [](auto a, auto b) { return a + b; });
+	return std::visit([&](auto &&l, auto &&r) -> Value
+	{
+		using L = std::decay_t<decltype(l)>;
+		using R = std::decay_t<decltype(r)>;
+
+		if constexpr (std::is_same_v<L, StringPtr> && std::is_same_v<R, StringPtr>)
+		{
+			return std::make_shared<std::string>(*l + *r);
+		}
+		else if constexpr (std::is_same_v<L, StringPtr> && std::is_arithmetic_v<R>)
+		{
+			std::ostringstream oss;
+			oss << *l << r;
+			return std::make_shared<std::string>(oss.str());
+		}
+		else if constexpr (std::is_arithmetic_v<L> && std::is_arithmetic_v<R>)
+		{
+			return l + r;
+		}
+		else
+		{
+			throw std::invalid_argument("Cannot add values of types: " + getTypeName(lhs) + " and " + getTypeName(rhs));
+		}
+	}, lhs, rhs);
 }
 
 Value operator*(const Value &lhs, const Value &rhs)
@@ -152,9 +181,9 @@ Value operator/(const Value &lhs, const Value &rhs)
 	});
 }
 
-bool operator==(const Value& lhs, const Value& rhs)
+bool operator==(const Value &lhs, const Value &rhs)
 {
-	return std::visit([](const auto& l, const auto& r) -> bool
+	return std::visit([](const auto &l, const auto &r) -> bool
 	{
 		using L = std::decay_t<decltype(l)>;
 		using R = std::decay_t<decltype(r)>;
@@ -170,14 +199,14 @@ bool operator==(const Value& lhs, const Value& rhs)
 	}, lhs, rhs);
 }
 
-bool operator!=(const Value& lhs, const Value& rhs)
+bool operator!=(const Value &lhs, const Value &rhs)
 {
 	return !(lhs == rhs);
 }
 
-bool operator<(const Value& lhs, const Value& rhs)
+bool operator<(const Value &lhs, const Value &rhs)
 {
-	return std::visit([](const auto& l, const auto& r) -> bool
+	return std::visit([](const auto &l, const auto &r) -> bool
 	{
 		using L = std::decay_t<decltype(l)>;
 		using R = std::decay_t<decltype(r)>;
@@ -193,6 +222,6 @@ bool operator<(const Value& lhs, const Value& rhs)
 	}, lhs, rhs);
 }
 
-bool operator>(const Value& lhs, const Value& rhs) { return rhs < lhs; }
-bool operator<=(const Value& lhs, const Value& rhs) { return !(rhs < lhs); }
-bool operator>=(const Value& lhs, const Value& rhs) { return !(lhs < rhs); }
+bool operator>(const Value &lhs, const Value &rhs) { return rhs < lhs; }
+bool operator<=(const Value &lhs, const Value &rhs) { return !(rhs < lhs); }
+bool operator>=(const Value &lhs, const Value &rhs) { return !(lhs < rhs); }
