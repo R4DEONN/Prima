@@ -9,18 +9,16 @@ add_executable(${PROJECT_NAME}
         src/main.cpp
         src/Common/Chunk.h
         src/Common/OpCode.h
-        src/Common/Value.h
-        src/Common/Value.cpp
+        src/Value/Value.h
+        src/Value/Value.cpp
         src/Prelude/Prelude.h
-        src/Common/Object.h
-        src/Common/ObjectType.h
-        src/Common/StringObject.h
-        src/Common/ValueType.h
-        src/Parser/ChunkCreator.h
-        src/Parser/ChunkCreator.cpp
+        src/Value/ValueType.h
+        src/Parser/ByteCodeParser.h
+        src/Parser/ByteCodeParser.cpp
         src/Parser/Preprocessor.h
         src/Parser/Constants.h
         src/Parser/AbstractByteCodeProcessor.h
+        src/Value/StringPool.h
 )
 
 find_package(Catch2)
@@ -30,9 +28,9 @@ if(Catch2_FOUND)
             test/ChunkTest.cpp
             src/Common/Chunk.h
             src/Common/OpCode.h
-            src/Common/Value.h
+            src/Value/Value.h
             src/Prelude/Prelude.h
-            src/Common/Value.cpp
+            src/Value/Value.cpp
     )
 
     target_link_libraries(test PRIVATE Catch2::Catch2WithMain)

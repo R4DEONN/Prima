@@ -1,2 +1,9 @@
-const sa: number = 5;
-sa;
+if (1 == 2)
+{
+    "Hello, World";
+}
+else
+{
+    "Hello, Pasha";
+    "Hello " + "Frontend";
+}

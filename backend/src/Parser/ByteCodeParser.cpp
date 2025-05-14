@@ -1,22 +1,22 @@
 #include <fstream>
 #include <sstream>
-#include "ChunkCreator.h"
+#include "ByteCodeParser.h"
 
 #include <unordered_map>
 
-#include "../Common/ValueType.h"
+#include "../Value/ValueType.h"
 
 const std::unordered_map<std::string, ValueType> TypeMap = {
 	{"number", ValueType::NUMBER},
 	{"string", ValueType::STRING},
 };
 
-Chunk ChunkCreator::createFromFile(const std::string &filename)
+ParsingData ByteCodeParser::createFromFile(const std::string &filename)
 {
 	try
 	{
 		processFile(filename);
-		return _chunk;
+		return {_chunk, _stringPool};
 	}
 	catch (const std::exception &e)
 	{
@@ -24,7 +24,7 @@ Chunk ChunkCreator::createFromFile(const std::string &filename)
 	}
 }
 
-void ChunkCreator::_parseCodeString(const std::string &codeString)
+void ByteCodeParser::_parseCodeString(const std::string &codeString)
 {
 	std::stringstream str(codeString);
 	int line;
@@ -56,7 +56,7 @@ void ChunkCreator::_parseCodeString(const std::string &codeString)
 	}
 }
 
-void ChunkCreator::_parseConstantString(const std::string &codeString)
+void ByteCodeParser::_parseConstantString(const std::string &codeString)
 {
 	std::stringstream strStream(codeString);
 	std::string type;
@@ -82,7 +82,7 @@ void ChunkCreator::_parseConstantString(const std::string &codeString)
 		{
 			throw std::runtime_error("Invalid string constant format");
 		}
-		_chunk.constants.push_back(std::make_shared<std::string>(value));
+		_chunk.constants.push_back(_stringPool.intern(value));
 		break;
 	}
 

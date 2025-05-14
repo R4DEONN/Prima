@@ -14,8 +14,9 @@ push(a op b); \
 class Prelude
 {
 public:
-	explicit Prelude(Chunk chunk)
-		: chunk(std::move(chunk))
+	explicit Prelude(Chunk chunk, StringPool stringPool)
+		: _chunk(std::move(chunk)),
+			_stringPool(std::move(stringPool))
 	{
 	}
 
@@ -27,19 +28,19 @@ public:
 		}
 		catch (const std::exception& e)
 		{
-			throw std::runtime_error(e.what() + std::string(" at line ") + std::to_string(chunk.lines[ip]));
+			throw std::runtime_error(e.what() + std::string(" at line ") + std::to_string(_chunk.lines[_ip]));
 		}
 	}
 
 	void runImpl()
 	{
-		while (ip < chunk.code.size())
+		while (_ip < _chunk.code.size())
 		{
 			switch (static_cast<OpCode>(advanceCode()))
 			{
 			case OpCode::CONSTANT:
 			{
-				Value constant = chunk.constants[advanceCode() - 1];
+				Value constant = _chunk.constants[advanceCode() - 1];
 				push(constant);
 				break;
 			}
@@ -47,8 +48,17 @@ public:
 				push(!toBool(pop()));
 				break;
 			case OpCode::ADD:
-				BINARY_OP(+);
+			{
+				Value b = pop();
+				Value a = pop();
+				auto newValue = a + b;
+				if (std::holds_alternative<StringPtr>(newValue))
+				{
+					newValue = _stringPool.intern(*std::get<StringPtr>(newValue));
+				}
+				push(newValue);
 				break;
+			}
 			case OpCode::SUBTRACT:
 				BINARY_OP(-);
 				break;
@@ -82,14 +92,14 @@ public:
 			case OpCode::JMP:
 			{
 				uint16_t offset = (static_cast<uint16_t>(advanceCode()) << 8) | advanceCode();
-				ip = offset;
+				_ip = offset;
 				break;
 			}
 			case OpCode::JMP_IF_FALSE:
 			{
 				uint16_t offset = (static_cast<uint16_t>(advanceCode()) << 8) | advanceCode();
 				if (!toBool(pop()))
-					ip = offset;
+					_ip = offset;
 				break;
 			}
 			default:
@@ -101,26 +111,27 @@ public:
 private:
 	uint8_t advanceCode()
 	{
-		return chunk.code[ip++];
+		return _chunk.code[_ip++];
 	}
 
 	void push(const Value &value)
 	{
-		stack.push(value);
+		_stack.push(value);
 	}
 
 	Value pop()
 	{
-		if (stack.empty())
+		if (_stack.empty())
 		{
 			throw std::runtime_error("Stack underflow");
 		}
-		auto value = stack.top();
-		stack.pop();
+		auto value = _stack.top();
+		_stack.pop();
 		return value;
 	}
 
-	Chunk chunk;
-	size_t ip = 0;
-	std::stack<Value> stack;
+	Chunk _chunk;
+	StringPool _stringPool;
+	size_t _ip = 0;
+	std::stack<Value> _stack;
 };
