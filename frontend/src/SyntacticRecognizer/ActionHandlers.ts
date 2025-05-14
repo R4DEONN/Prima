@@ -10,6 +10,9 @@ import {IfStatement} from "../AST/Nodes/IfStatement";
 import {Statement} from "../AST/Nodes/Statement";
 import {Declaration} from "../AST/Nodes/Declaration";
 import {Marker} from "../AST/Nodes/Marker";
+import {TypeNode} from "../AST/Nodes/TypeNode";
+import {Identifier} from "../AST/Nodes/Identifier";
+import {VariableDeclaration} from "../AST/Nodes/VariableDeclaration";
 
 export const BLOCK_START = new Marker("BLOCK_START");
 
@@ -88,6 +91,31 @@ export const actionHandlers: Record<string, (stack: ASTNode[]) => ASTNode> = {
             throw new Error("IfStatement for else expected. Got something else: " + ifStatement.nodeType);
         }
         throw new Error("Block for else expected. Got something else: " + block.nodeType);
+    },
+
+    makeNumberType: () =>
+    {
+        return new TypeNode(Type.NUMBER);
+    },
+
+    makeConstDeclaration: (stack) =>
+    {
+        const expression = stack.pop();
+        if (expression instanceof Expression)
+        {
+            const type = stack.pop();
+            if (type instanceof TypeNode)
+            {
+                const identifier = stack.pop();
+                if (identifier instanceof Identifier)
+                {
+                    return new VariableDeclaration("const", identifier, type.type, expression)
+                }
+                throw new Error("Identifier for const declaration expected. Got something else: " + identifier.nodeType);
+            }
+            throw new Error("Type for const declaration expected. Got something else: " + type.nodeType);
+        }
+        throw new Error("Expression for const declaration expected. Got something else: " + expression.nodeType);
     },
 
     makeAdd: bin("+", Type.NUMBER),

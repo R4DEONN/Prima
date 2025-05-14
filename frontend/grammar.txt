@@ -1,12 +1,12 @@
-<Program> -> <StatementList>~#~ | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~abstract~ ~break~ ~const~ ~continue~ ~export~ ~for~ ~function~ ~if~ ~import~ ~null~ ~return~ ~var~ ~#~ ~}~ {{makeProgram}}
+<Program> -> <StatementList>~#~ | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~abstract~ ~break~ ~const~ ~continue~ ~export~ ~for~ ~function~ ~if~ ~import~ ~return~ ~var~ ~#~ ~}~ {{makeProgram}}
 <StatementList> -> ~ε~ | ~#~ ~}~
-<StatementList> -> <Statement><StatementList'> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~abstract~ ~break~ ~const~ ~continue~ ~export~ ~for~ ~function~ ~if~ ~import~ ~null~ ~return~ ~var~ ~;~
+<StatementList> -> <Statement><StatementList'> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~abstract~ ~break~ ~const~ ~continue~ ~export~ ~for~ ~function~ ~if~ ~import~ ~return~ ~var~ ~;~
 <Statement> -> <Declaration> | ~abstract~ ~const~ ~export~ ~function~ ~import~ ~var~ ~;~
-<Statement> -> <Expression>~;~ | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~ {{makeExpressionStatement}}
+<Statement> -> <Expression>~;~ | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ {{makeExpressionStatement}}
 <Statement> -> <IfStatement> | ~if~
 <Statement> -> <ForStatement> | ~for~
 <Statement> -> <ReturnStatement>~;~ | ~return~
-<Statement> -> <Assignment>~;~ | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
+<Statement> -> <Assignment>~;~ | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~
 <Statement> -> <ContinueStatement>~;~ | ~continue~
 <Statement> -> <BreakStatement>~;~ | ~break~
 <ContinueStatement> -> ~continue~ | ~continue~
@@ -17,7 +17,7 @@
 <Declaration> -> <ClassDeclaration> | ~abstract~ ~abstract~ ~class~ ~private~ ~protected~ ~public~ ~}~
 <Declaration> -> <ImportDeclaration> | ~import~
 <Declaration> -> <ExportDeclaration> | ~export~
-<VariableDeclaration> -> ~const~~Identifier~~:~<Type>~=~<Expression> | ~const~
+<VariableDeclaration> -> ~const~~Identifier~~:~<Type>~=~<Expression><Empty> | ~const~ {{makeConstDeclaration}}
 <VariableDeclaration> -> ~var~~Identifier~~:~<Type><VariableDeclaration'> | ~var~
 <ClassDeclaration> -> <AbstractModifier>~class~~Identifier~<SuperClass>~{~<ClassElementList>~}~ | ~abstract~ ~abstract~ ~class~ ~private~ ~protected~ ~public~ ~}~
 <AbstractModifier> -> ~abstract~ | ~abstract~
@@ -51,54 +51,52 @@
 <ParameterList> -> ~ε~<ParameterList'1> | ~)~
 <ParameterList> -> <Parameter><ParameterList'1> | ~Identifier~
 <Parameter> -> ~Identifier~~:~<Type> | ~Identifier~
-<Type> -> ~number~ | ~number~
-<Type> -> ~bool~ | ~bool~
-<Type> -> ~null~ | ~null~
-<Type> -> ~string~ | ~string~
+<Type> -> ~number~ | ~number~ {{makeNumberType}}
+<Type> -> ~bool~ | ~bool~ {{makeBoolType}}
+<Type> -> ~string~ | ~string~ {{makeStringType}}
 <Type> -> ~array~ | ~array~
 <Type> -> ~Identifier~ | ~Identifier~
-<FunctionReturnType> -> <Type> | ~Identifier~ ~array~ ~bool~ ~null~ ~number~ ~string~
+<FunctionReturnType> -> <Type> | ~Identifier~ ~array~ ~bool~ ~number~ ~string~
 <FunctionReturnType> -> ~void~ | ~void~
-<Expression> -> <LogicalOrExpression> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
-<LogicalOrExpression> -> <LogicalAndExpression><LogicalOrExpression'1> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
-<LogicalAndExpression> -> <EqualityExpression><LogicalAndExpression'1> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
-<EqualityExpression> -> <RelationalExpression><EqualityExpression'1> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
-<RelationalExpression> -> <AdditiveExpression><RelationalExpression'1> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
-<AdditiveExpression> -> <MultiplicativeExpression><AdditiveExpression'1> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
-<MultiplicativeExpression> -> <ExponentiationExpression><MultiplicativeExpression'1> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
-<ExponentiationExpression> -> <UnaryExpression><ExponentiationExpression'1> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
-<UnaryExpression> -> <PostfixExpression> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
+<Expression> -> <LogicalOrExpression> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~
+<LogicalOrExpression> -> <LogicalAndExpression><LogicalOrExpression'1> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~
+<LogicalAndExpression> -> <EqualityExpression><LogicalAndExpression'1> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~
+<EqualityExpression> -> <RelationalExpression><EqualityExpression'1> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~
+<RelationalExpression> -> <AdditiveExpression><RelationalExpression'1> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~
+<AdditiveExpression> -> <MultiplicativeExpression><AdditiveExpression'1> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~
+<MultiplicativeExpression> -> <ExponentiationExpression><MultiplicativeExpression'1> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~
+<ExponentiationExpression> -> <UnaryExpression><ExponentiationExpression'1> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~
+<UnaryExpression> -> <PostfixExpression> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~
 <UnaryExpression> -> ~-~<UnaryExpression><Empty> | ~-~ {{makeUnaryMinus}}
 <UnaryExpression> -> ~!~<UnaryExpression><Empty> | ~!~ {{makeNot}}
-<Empty> -> ~ε~ | ~!=~ ~!~ ~#~ ~%~ ~&&~ ~(~ ~)~ ~**~ ~*~ ~+~ ~,~ ~-~ ~/~ ~;~ ~<=~ ~<~ ~==~ ~>=~ ~>~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~]~ ~abstract~ ~break~ ~const~ ~continue~ ~export~ ~for~ ~function~ ~if~ ~import~ ~null~ ~return~ ~var~ ~||~ ~}~
-<PostfixExpression> -> <FunctionCall><PostfixExpression'> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
-<MemberExpression> -> <PrimaryExpression><MemberExpression'1> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
+<Empty> -> ~ε~ | ~!=~ ~!~ ~#~ ~%~ ~&&~ ~(~ ~)~ ~**~ ~*~ ~+~ ~,~ ~-~ ~/~ ~;~ ~<=~ ~<~ ~==~ ~>=~ ~>~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~]~ ~abstract~ ~break~ ~const~ ~continue~ ~export~ ~for~ ~function~ ~if~ ~import~ ~return~ ~var~ ~||~ ~}~
+<PostfixExpression> -> <FunctionCall><PostfixExpression'> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~
+<MemberExpression> -> <PrimaryExpression><MemberExpression'1> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~
 <PrimaryExpression> -> ~NumberLiteral~ | ~NumberLiteral~
 <PrimaryExpression> -> ~StringLiteral~ | ~StringLiteral~
 <PrimaryExpression> -> ~BooleanLiteral~ | ~BooleanLiteral~
 <PrimaryExpression> -> <ArrayLiteral> | ~[~
 <PrimaryExpression> -> ~Identifier~ | ~Identifier~
-<PrimaryExpression> -> ~null~ | ~null~
 <PrimaryExpression> -> <FunctionExpression> | ~function~
 <PrimaryExpression> -> ~(~<Expression>~)~ | ~(~
 <FunctionExpression> -> ~function~~(~<ParameterList>~)~<Block> | ~function~
-<FunctionCall> -> <MemberExpression><FunctionCallArgumentList> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
+<FunctionCall> -> <MemberExpression><FunctionCallArgumentList> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~
 <FunctionCallArgumentList> -> ~(~<ArgumentList>~)~ | ~(~
 <FunctionCallArgumentList> -> ~ε~ | ~!=~ ~%~ ~&&~ ~)~ ~**~ ~*~ ~++~ ~+=~ ~+~ ~,~ ~--~ ~-=~ ~-~ ~/~ ~;~ ~<=~ ~<~ ~==~ ~=~ ~>=~ ~>~ ~]~ ~||~
 <ArrayLiteral> -> ~[~<ArgumentList>~]~ | ~[~
 <ArgumentList> -> ~ε~<ArgumentList'1> | ~)~ ~]~
-<ArgumentList> -> <Expression><ArgumentList'1> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
+<ArgumentList> -> <Expression><ArgumentList'1> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~
 <IfStatement> -> ~if~~(~<Expression>~)~<Block><IfStatement'> | ~if~ {{makeIf}}
 <ForStatement> -> ~for~~(~<FirstForArgument>~;~<SecondForArgument>~;~<ThirdForArgument>~)~<Block> | ~for~
 <FirstForArgument> -> <VariableDeclaration> | ~const~ ~var~
-<FirstForArgument> -> <Assignment> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
+<FirstForArgument> -> <Assignment> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~
 <FirstForArgument> -> ~ε~ | ~;~
-<SecondForArgument> -> <Expression> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
+<SecondForArgument> -> <Expression> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~
 <SecondForArgument> -> ~ε~ | ~;~
-<ThirdForArgument> -> <Assignment> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
+<ThirdForArgument> -> <Assignment> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~
 <ThirdForArgument> -> ~ε~ | ~)~
 <ReturnStatement> -> ~return~<ReturnStatement'> | ~return~
-<Assignment> -> <PostfixExpression><AssignmentRightPart> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
+<Assignment> -> <PostfixExpression><AssignmentRightPart> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~
 <AssignmentRightPart> -> <AssignmentOperator><Expression> | ~+=~ ~-=~ ~=~
 <AssignmentRightPart> -> ~ε~ | ~)~ ~;~
 <AssignmentOperator> -> ~=~ | ~=~
@@ -123,7 +121,7 @@
 <MemberExpression'> -> ~.~~Identifier~<MemberExpression''> | ~.~
 <ArgumentList'> -> ~,~<Expression><ArgumentList''> | ~,~
 <StatementList'> -> ~ε~ | ~#~ ~}~
-<StatementList'> -> <StatementList> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~abstract~ ~break~ ~const~ ~continue~ ~export~ ~for~ ~function~ ~if~ ~import~ ~null~ ~return~ ~var~ ~#~ ~}~
+<StatementList'> -> <StatementList> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~abstract~ ~break~ ~const~ ~continue~ ~export~ ~for~ ~function~ ~if~ ~import~ ~return~ ~var~ ~#~ ~}~
 <VariableDeclaration'> -> ~ε~ | ~;~
 <VariableDeclaration'> -> ~=~<Expression> | ~=~
 <ClassElementList'> -> ~ε~ | ~}~
@@ -159,9 +157,9 @@
 <MemberExpression'1> -> <MemberExpression'> | ~.~ ~[~
 <ArgumentList'1> -> ~ε~ | ~)~ ~]~
 <ArgumentList'1> -> <ArgumentList'> | ~,~
-<IfStatement'> -> ~ε~ | ~!~ ~#~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~abstract~ ~break~ ~const~ ~continue~ ~export~ ~for~ ~function~ ~if~ ~import~ ~null~ ~return~ ~var~ ~}~
+<IfStatement'> -> ~ε~ | ~!~ ~#~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~abstract~ ~break~ ~const~ ~continue~ ~export~ ~for~ ~function~ ~if~ ~import~ ~return~ ~var~ ~}~
 <IfStatement'> -> ~else~<Block><Empty> | ~else~ {{makeElse}}
-<ReturnStatement'> -> <Expression> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ ~null~
+<ReturnStatement'> -> <Expression> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~
 <ReturnStatement'> -> ~ε~ | ~;~
 <ParameterList''> -> ~ε~ | ~)~
 <ParameterList''> -> <ParameterList'> | ~,~

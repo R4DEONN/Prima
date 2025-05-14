@@ -13,5 +13,6 @@ export enum NodeType
     IF_STATEMENT = "IfStatement",
     LITERAL = "Literal",
     MARKER = "Marker",
-    RETURN_STATEMENT = "ReturnStatement"
+    RETURN_STATEMENT = "ReturnStatement",
+    TYPE_NODE = "TypeNode",
 }

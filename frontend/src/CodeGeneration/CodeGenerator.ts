@@ -7,9 +7,6 @@ export class CodeGenerator
 	public lastOp: string = '';
 	private variables: Map<string, {index: number, isConst: boolean}> = new Map();
 	private nextVarIndex = 0;
-	private labels: Map<string, number> = new Map();
-	private nextLabelId = 0;
-	// private functions: FunctionDefinition[] = [];
 
 	addConstant(type: Type, value: any): number
 	{
@@ -59,31 +56,5 @@ export class CodeGenerator
 		const varInfo = this.variables.get(name);
 		if (!varInfo) throw new Error(`Undefined variable: ${name}`);
 		return varInfo.index;
-	}
-
-	createLabel(): string {
-		const label = `L${this.nextLabelId++}`;
-		this.labels.set(label, -1); // Пока не размещена
-		return label;
-	}
-
-	placeLabel(label: string): void {
-		this.labels.set(label, this.code.length);
-	}
-
-	// addFunction(func: FunctionDefinition): number {
-	// 	const index = this.functions.length;
-	// 	this.functions.push(func);
-	// 	return index;
-	// }
-
-	getBreakLabel(): string {
-		// Должен возвращать метку для break из текущего контекста
-		return 'break_label';
-	}
-
-	getContinueLabel(): string {
-		// Должен возвращать метку для continue из текущего контекста
-		return 'continue_label';
 	}
 }

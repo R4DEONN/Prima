@@ -35,12 +35,19 @@ enum TokenType
 	IDENTIFIER = "IDENTIFIER",
 	STRING = "STRING",
 	NUMBER = "NUMBER",
+	TRUE = "TRUE",
+	FALSE = "FALSE",
+
+	// Types.
+
+	NUMBER_TYPE = "NUMBER_TYPE",
+	STRING_TYPE = "STRING_TYPE",
+	BOOL_TYPE = "BOOL_TYPE",
 
 	// Keywords.
 	AND = "AND",
 	CLASS = "CLASS",
 	ELSE = "ELSE",
-	FALSE = "FALSE",
 	FUNCTION = "FUNCTION",
 	FOR = "FOR",
 	IF = "IF",
@@ -50,7 +57,6 @@ enum TokenType
 	RETURN = "RETURN",
 	SUPER = "SUPER",
 	THIS = "THIS",
-	TRUE = "TRUE",
 	VAR = "VAR",
 	CONST = "CONST",
 	ABSTRACT = "ABSTRACT",

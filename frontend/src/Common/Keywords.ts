@@ -26,4 +26,7 @@ export const KEYWORDS: Record<string, TokenType> = {
 	import: TokenType.IMPORT,
 	export: TokenType.EXPORT,
 	as: TokenType.AS,
+	string: TokenType.STRING_TYPE,
+	number: TokenType.NUMBER_TYPE,
+	bool: TokenType.BOOL_TYPE,
 };

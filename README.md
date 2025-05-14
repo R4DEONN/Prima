@@ -15,7 +15,6 @@
 
 * number
 * bool
-* null
 * string
 
 ### Other:
@@ -59,7 +58,7 @@
 
 <VariableDeclaration> -> ~var~ ~Identifier~ ~:~ <Type>
 <VariableDeclaration> -> ~var~ ~Identifier~ ~:~ <Type> ~=~ <Expression>
-<VariableDeclaration> -> ~const~ ~Identifier~ ~:~ <Type> ~=~ <Expression>
+<VariableDeclaration> -> ~const~ ~Identifier~ ~:~ <Type> ~=~ <Expression> <Empty>
 
 <ClassDeclaration> -> <AbstractModifier> ~class~ ~Identifier~ <SuperClass> ~{~ <ClassElementList> ~}~
 <AbstractModifier> -> ~abstract~
@@ -111,7 +110,6 @@
 
 <Type> -> ~number~
 <Type> -> ~bool~
-<Type> -> ~null~
 <Type> -> ~string~
 <Type> -> ~array~
 <Type> -> ~Identifier~
@@ -167,7 +165,6 @@
 <PrimaryExpression> -> ~BooleanLiteral~
 <PrimaryExpression> -> <ArrayLiteral>
 <PrimaryExpression> -> ~Identifier~
-<PrimaryExpression> -> ~null~
 <PrimaryExpression> -> <FunctionExpression>
 <PrimaryExpression> -> ~(~ <Expression> ~)~
 
