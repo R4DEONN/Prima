@@ -81,11 +81,11 @@
 <PrimaryExpression> -> ~(~<Expression>~)~ | ~(~
 <FunctionExpression> -> ~function~~(~<ParameterList>~)~<Block> | ~function~
 <FunctionCall> -> <MemberExpression><FunctionCallArgumentList> | ~(~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~
-<FunctionCallArgumentList> -> ~(~<ArgumentList>~)~ | ~(~
+<FunctionCallArgumentList> -> ~(~<ArgumentList>~)~ | ~(~ {{makeFunctionCall}}
 <FunctionCallArgumentList> -> ~ε~ | ~!=~ ~%~ ~&&~ ~)~ ~**~ ~*~ ~++~ ~+=~ ~+~ ~,~ ~--~ ~-=~ ~-~ ~/~ ~;~ ~<=~ ~<~ ~==~ ~=~ ~>=~ ~>~ ~]~ ~||~
 <ArrayLiteral> -> ~[~<ArgumentList>~]~ | ~[~
 <ArgumentList> -> ~ε~<ArgumentList'1> | ~)~ ~]~
-<ArgumentList> -> <Expression><ArgumentList'1> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~
+<ArgumentList> -> <Expression><ArgumentList'1> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~function~ {{makeArgument}}
 <IfStatement> -> ~if~~(~<Expression>~)~<Block><IfStatement'> | ~if~ {{makeIf}}
 <ForStatement> -> ~for~~(~<FirstForArgument>~;~<SecondForArgument>~;~<ThirdForArgument>~)~<Block> | ~for~
 <FirstForArgument> -> <VariableDeclaration> | ~const~ ~var~
@@ -119,7 +119,7 @@
 <ExponentiationExpression'> -> ~**~<UnaryExpression><ExponentiationExpression''> | ~**~
 <MemberExpression'> -> ~[~<Expression>~]~<MemberExpression''> | ~[~
 <MemberExpression'> -> ~.~~Identifier~<MemberExpression''> | ~.~
-<ArgumentList'> -> ~,~<Expression><ArgumentList''> | ~,~
+<ArgumentList'> -> ~,~<Expression><ArgumentList''> | ~,~ {{makeArgument}}
 <StatementList'> -> ~ε~ | ~#~ ~}~
 <StatementList'> -> <StatementList> | ~!~ ~(~ ~-~ ~BooleanLiteral~ ~Identifier~ ~NumberLiteral~ ~StringLiteral~ ~[~ ~abstract~ ~break~ ~const~ ~continue~ ~export~ ~for~ ~function~ ~if~ ~import~ ~return~ ~var~ ~#~ ~}~
 <VariableDeclaration'> -> ~ε~ | ~;~

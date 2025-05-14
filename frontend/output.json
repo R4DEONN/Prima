@@ -5709,7 +5709,8 @@
     "isError": true,
     "pointer": null,
     "isStack": false,
-    "isEnd": false
+    "isEnd": false,
+    "action": "makeFunctionCall"
   },
   {
     "number": 367,
@@ -5850,7 +5851,8 @@
     "isError": true,
     "pointer": 158,
     "isStack": false,
-    "isEnd": false
+    "isEnd": false,
+    "action": "makeArgument"
   },
   {
     "number": 375,
@@ -7299,7 +7301,8 @@
     "isError": true,
     "pointer": 182,
     "isStack": false,
-    "isEnd": false
+    "isEnd": false,
+    "action": "makeArgument"
   },
   {
     "number": 459,

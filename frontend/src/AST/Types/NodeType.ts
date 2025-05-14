@@ -15,4 +15,5 @@ export enum NodeType
     MARKER = "Marker",
     RETURN_STATEMENT = "ReturnStatement",
     TYPE_NODE = "TypeNode",
+    ARGUMENT = "Argument",
 }

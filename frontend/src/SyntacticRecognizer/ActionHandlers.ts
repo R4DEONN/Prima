@@ -13,6 +13,8 @@ import {Marker} from "../AST/Nodes/Marker";
 import {TypeNode} from "../AST/Nodes/TypeNode";
 import {Identifier} from "../AST/Nodes/Identifier";
 import {VariableDeclaration} from "../AST/Nodes/VariableDeclaration";
+import {ArgumentNode} from "../AST/Nodes/ArgumentNode";
+import {CallExpression} from "../AST/Nodes/CallExpression";
 
 export const BLOCK_START = new Marker("BLOCK_START");
 
@@ -146,6 +148,35 @@ export const actionHandlers: Record<string, (stack: ASTNode[]) => ASTNode> = {
             throw new Error("Variable declaration expected. Got something else: " + varDeclaration.nodeType);
         }
         throw new Error("Expression for const declaration expected. Got something else: " + expression.nodeType);
+    },
+
+    makeArgument: (stack) => {
+        const expression = stack.pop();
+        if (expression instanceof Expression)
+        {
+            return new ArgumentNode(expression);
+        }
+        throw new Error("Expression for argument expected. Got something else: " + expression.nodeType);
+    },
+
+    makeFunctionCall: (stack) => {
+        const nodes: ArgumentNode[] = [];
+        while (stack.length > 0)
+        {
+            const node = stack.pop();
+
+            if (node instanceof Expression && !(node instanceof ArgumentNode))
+            {
+                return new CallExpression(node, nodes, Type.NUMBER)
+            }
+
+            if (!(node instanceof ArgumentNode))
+            {
+                throw new Error("Argument expected. Got: " + node.nodeType);
+            }
+
+            nodes.push(node);
+        }
     },
 
     makeAdd: bin("+", Type.NUMBER),
