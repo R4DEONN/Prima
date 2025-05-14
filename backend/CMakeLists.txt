@@ -19,6 +19,7 @@ add_executable(${PROJECT_NAME}
         src/Parser/Constants.h
         src/Parser/AbstractByteCodeProcessor.h
         src/Value/StringPool.h
+        src/Value/GlobalVariables.h
 )
 
 find_package(Catch2)

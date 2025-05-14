@@ -21,6 +21,11 @@ enum class OpCode : uint8_t
 	TRUE,
 	FALSE,
 
+	//Var
+	DEFINE_GLOBAL,
+	GET_GLOBAL,
+	SET_GLOBAL,
+
 	//JMP
 	JMP,
 	JMP_IF_FALSE,
@@ -94,6 +99,9 @@ const std::unordered_map<std::string, OpCode> InstructionMap = {
 	{"not", OpCode::NOT},
 	{"jmpfalse", OpCode::JMP_IF_FALSE},
 	{"jmp", OpCode::JMP},
+	{"defglobal", OpCode::DEFINE_GLOBAL},
+	{"setglobal", OpCode::SET_GLOBAL},
+	{"getglobal", OpCode::GET_GLOBAL},
 };
 
 inline OpCode getOpCodeFromString(const std::string &str)

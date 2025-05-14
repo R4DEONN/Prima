@@ -3,6 +3,7 @@
 #include <stack>
 #include <utility>
 #include "../Common/Chunk.h"
+#include "../Value/GlobalVariables.h"
 
 #define BINARY_OP(op) \
 do { \
@@ -102,6 +103,26 @@ public:
 					_ip = offset;
 				break;
 			}
+			case OpCode::DEFINE_GLOBAL:
+			{
+				Value constant = _chunk.constants[advanceCode() - 1];
+				_globals.define(std::get<StringPtr>(constant), pop());
+				break;
+			}
+			case OpCode::GET_GLOBAL:
+			{
+				Value constant = _chunk.constants[advanceCode() - 1];
+				push(_globals.get(std::get<StringPtr>(constant)));
+				break;
+			}
+			case OpCode::SET_GLOBAL:
+			{
+				Value constant = _chunk.constants[advanceCode() - 1];
+				_globals.set(std::get<StringPtr>(constant), pop());
+				break;
+			}
+			case OpCode::PRINT:
+				break;
 			default:
 				throw std::runtime_error("Unknown opcode");
 			}
@@ -132,6 +153,7 @@ private:
 
 	Chunk _chunk;
 	StringPool _stringPool;
+	GlobalVariables _globals;
 	size_t _ip = 0;
 	std::stack<Value> _stack;
 };
