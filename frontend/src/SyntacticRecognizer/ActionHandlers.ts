@@ -100,6 +100,11 @@ export const actionHandlers: Record<string, (stack: ASTNode[]) => ASTNode> = {
         return new TypeNode(Type.NUMBER);
     },
 
+    makeStringType: () =>
+    {
+        return new TypeNode(Type.STRING);
+    },
+
     makeConstDeclaration: (stack) =>
     {
         const expression = stack.pop();
@@ -150,7 +155,8 @@ export const actionHandlers: Record<string, (stack: ASTNode[]) => ASTNode> = {
         throw new Error("Expression for const declaration expected. Got something else: " + expression.nodeType);
     },
 
-    makeArgument: (stack) => {
+    makeArgument: (stack) =>
+    {
         const expression = stack.pop();
         if (expression instanceof Expression)
         {
@@ -159,7 +165,8 @@ export const actionHandlers: Record<string, (stack: ASTNode[]) => ASTNode> = {
         throw new Error("Expression for argument expected. Got something else: " + expression.nodeType);
     },
 
-    makeFunctionCall: (stack) => {
+    makeFunctionCall: (stack) =>
+    {
         const nodes: ArgumentNode[] = [];
         while (stack.length > 0)
         {

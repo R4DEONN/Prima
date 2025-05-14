@@ -20,7 +20,12 @@ export class CodeGenerator
 		}
 
 		this.constants.push({type, value});
-		return this.constants.length - 1;
+		return this.constants.length;
+	}
+
+	getConstantIndex(value: any): number
+	{
+		return this.constants.findIndex(constant => constant.value == value) + 1;
 	}
 
 	addLabel(name: string): void

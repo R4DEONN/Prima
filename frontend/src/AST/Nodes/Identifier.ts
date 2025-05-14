@@ -14,6 +14,6 @@ export class Identifier extends Expression
 
 	generate(generator: CodeGenerator): void
 	{
-		// generator.emit(1, 'load', generator.getVariableIndex(this.name));
+		generator.emit(1, "getglobal", generator.getConstantIndex(`"${this.name}"`));
 	}
 }

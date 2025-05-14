@@ -15,7 +15,11 @@ export class Literal extends Expression
 
 	generate(generator: CodeGenerator): void
 	{
-		const index = generator.addConstant(this.type, this.value);
-		generator.emit(1, 'const', index + 1);
+		let index = generator.getConstantIndex(this.value);
+		if (index == 0)
+		{
+			index = generator.addConstant(this.type, this.value);
+		}
+		generator.emit(1, 'const', index);
 	}
 }
