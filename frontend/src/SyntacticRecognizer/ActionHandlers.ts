@@ -118,6 +118,36 @@ export const actionHandlers: Record<string, (stack: ASTNode[]) => ASTNode> = {
         throw new Error("Expression for const declaration expected. Got something else: " + expression.nodeType);
     },
 
+    makeVarDeclaration: (stack) =>
+    {
+        const type = stack.pop();
+        if (type instanceof TypeNode)
+        {
+            const identifier = stack.pop();
+            if (identifier instanceof Identifier)
+            {
+                return new VariableDeclaration("var", identifier, type.type)
+            }
+            throw new Error("Identifier for var declaration expected. Got something else: " + identifier.nodeType);
+        }
+        throw new Error("Type for var declaration expected. Got something else: " + type.nodeType);
+    },
+
+    makeVarAssDeclaration: (stack) =>
+    {
+        const expression = stack.pop();
+        if (expression instanceof Expression)
+        {
+            const varDeclaration = stack.pop();
+            if (varDeclaration instanceof VariableDeclaration)
+            {
+                return new VariableDeclaration(varDeclaration.kind, varDeclaration.name, varDeclaration.variableType, expression);
+            }
+            throw new Error("Variable declaration expected. Got something else: " + varDeclaration.nodeType);
+        }
+        throw new Error("Expression for const declaration expected. Got something else: " + expression.nodeType);
+    },
+
     makeAdd: bin("+", Type.NUMBER),
     makeSub: bin("-", Type.NUMBER),
     makeMul: bin("*", Type.NUMBER),

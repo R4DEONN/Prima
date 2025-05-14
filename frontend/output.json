@@ -1866,7 +1866,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 464,
+    "pointer": 465,
     "isStack": false,
     "isEnd": false
   },
@@ -1882,7 +1882,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 465,
+    "pointer": 466,
     "isStack": false,
     "isEnd": false
   },
@@ -1894,7 +1894,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 466,
+    "pointer": 467,
     "isStack": false,
     "isEnd": false
   },
@@ -1906,7 +1906,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 467,
+    "pointer": 468,
     "isStack": false,
     "isEnd": false
   },
@@ -1918,7 +1918,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 469,
+    "pointer": 470,
     "isStack": false,
     "isEnd": false
   },
@@ -1931,7 +1931,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 471,
+    "pointer": 472,
     "isStack": false,
     "isEnd": false
   },
@@ -1943,7 +1943,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 472,
+    "pointer": 473,
     "isStack": false,
     "isEnd": false
   },
@@ -1955,7 +1955,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 473,
+    "pointer": 474,
     "isStack": false,
     "isEnd": false
   },
@@ -1967,7 +1967,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 475,
+    "pointer": 476,
     "isStack": false,
     "isEnd": false
   },
@@ -1980,7 +1980,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 477,
+    "pointer": 478,
     "isStack": false,
     "isEnd": false
   },
@@ -1992,7 +1992,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 478,
+    "pointer": 479,
     "isStack": false,
     "isEnd": false
   },
@@ -2004,7 +2004,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 479,
+    "pointer": 480,
     "isStack": false,
     "isEnd": false
   },
@@ -2019,7 +2019,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 480,
+    "pointer": 481,
     "isStack": false,
     "isEnd": false
   },
@@ -2031,7 +2031,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 481,
+    "pointer": 482,
     "isStack": false,
     "isEnd": false
   },
@@ -2047,7 +2047,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 482,
+    "pointer": 483,
     "isStack": false,
     "isEnd": false
   },
@@ -2059,7 +2059,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 483,
+    "pointer": 484,
     "isStack": false,
     "isEnd": false
   },
@@ -2076,7 +2076,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 484,
+    "pointer": 485,
     "isStack": false,
     "isEnd": false
   },
@@ -2089,7 +2089,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 485,
+    "pointer": 486,
     "isStack": false,
     "isEnd": false
   },
@@ -2108,7 +2108,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 486,
+    "pointer": 487,
     "isStack": false,
     "isEnd": false
   },
@@ -2123,7 +2123,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 487,
+    "pointer": 488,
     "isStack": false,
     "isEnd": false
   },
@@ -2146,7 +2146,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 488,
+    "pointer": 489,
     "isStack": false,
     "isEnd": false
   },
@@ -2159,7 +2159,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 489,
+    "pointer": 490,
     "isStack": false,
     "isEnd": false
   },
@@ -2184,7 +2184,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 490,
+    "pointer": 491,
     "isStack": false,
     "isEnd": false
   },
@@ -2198,7 +2198,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 491,
+    "pointer": 492,
     "isStack": false,
     "isEnd": false
   },
@@ -2226,7 +2226,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 492,
+    "pointer": 493,
     "isStack": false,
     "isEnd": false
   },
@@ -2238,7 +2238,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 493,
+    "pointer": 494,
     "isStack": false,
     "isEnd": false
   },
@@ -2270,7 +2270,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 494,
+    "pointer": 495,
     "isStack": false,
     "isEnd": false
   },
@@ -2282,7 +2282,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 495,
+    "pointer": 496,
     "isStack": false,
     "isEnd": false
   },
@@ -2294,7 +2294,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 496,
+    "pointer": 497,
     "isStack": false,
     "isEnd": false
   },
@@ -2329,7 +2329,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 497,
+    "pointer": 498,
     "isStack": false,
     "isEnd": false
   },
@@ -2342,7 +2342,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 498,
+    "pointer": 499,
     "isStack": false,
     "isEnd": false
   },
@@ -2355,7 +2355,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 499,
+    "pointer": 500,
     "isStack": false,
     "isEnd": false
   },
@@ -2367,7 +2367,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 500,
+    "pointer": 501,
     "isStack": false,
     "isEnd": false
   },
@@ -2399,7 +2399,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 501,
+    "pointer": 502,
     "isStack": false,
     "isEnd": false
   },
@@ -2411,7 +2411,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 502,
+    "pointer": 503,
     "isStack": false,
     "isEnd": false
   },
@@ -2431,7 +2431,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 505,
+    "pointer": 506,
     "isStack": false,
     "isEnd": false
   },
@@ -2443,7 +2443,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 506,
+    "pointer": 507,
     "isStack": false,
     "isEnd": false
   },
@@ -2455,7 +2455,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 507,
+    "pointer": 508,
     "isStack": false,
     "isEnd": false
   },
@@ -2467,7 +2467,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 508,
+    "pointer": 509,
     "isStack": false,
     "isEnd": false
   },
@@ -2482,7 +2482,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 509,
+    "pointer": 510,
     "isStack": false,
     "isEnd": false
   },
@@ -2494,7 +2494,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 510,
+    "pointer": 511,
     "isStack": false,
     "isEnd": false
   },
@@ -2510,7 +2510,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 511,
+    "pointer": 512,
     "isStack": false,
     "isEnd": false
   },
@@ -2522,7 +2522,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 512,
+    "pointer": 513,
     "isStack": false,
     "isEnd": false
   },
@@ -2539,7 +2539,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 513,
+    "pointer": 514,
     "isStack": false,
     "isEnd": false
   },
@@ -2552,7 +2552,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 514,
+    "pointer": 515,
     "isStack": false,
     "isEnd": false
   },
@@ -2571,7 +2571,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 515,
+    "pointer": 516,
     "isStack": false,
     "isEnd": false
   },
@@ -2586,7 +2586,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 516,
+    "pointer": 517,
     "isStack": false,
     "isEnd": false
   },
@@ -2609,7 +2609,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 517,
+    "pointer": 518,
     "isStack": false,
     "isEnd": false
   },
@@ -2622,7 +2622,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 518,
+    "pointer": 519,
     "isStack": false,
     "isEnd": false
   },
@@ -2647,7 +2647,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 519,
+    "pointer": 520,
     "isStack": false,
     "isEnd": false
   },
@@ -2661,7 +2661,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 520,
+    "pointer": 521,
     "isStack": false,
     "isEnd": false
   },
@@ -2689,7 +2689,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 521,
+    "pointer": 522,
     "isStack": false,
     "isEnd": false
   },
@@ -2701,7 +2701,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 522,
+    "pointer": 523,
     "isStack": false,
     "isEnd": false
   },
@@ -2736,7 +2736,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 523,
+    "pointer": 524,
     "isStack": false,
     "isEnd": false
   },
@@ -2749,7 +2749,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 524,
+    "pointer": 525,
     "isStack": false,
     "isEnd": false
   },
@@ -2762,7 +2762,7 @@
     ],
     "isShift": false,
     "isError": false,
-    "pointer": 525,
+    "pointer": 526,
     "isStack": false,
     "isEnd": false
   },
@@ -2774,7 +2774,7 @@
     ],
     "isShift": false,
     "isError": true,
-    "pointer": 526,
+    "pointer": 527,
     "isStack": false,
     "isEnd": false
   },
@@ -3450,7 +3450,8 @@
     "isError": true,
     "pointer": 125,
     "isStack": false,
-    "isEnd": false
+    "isEnd": false,
+    "action": "makeVarDeclaration"
   },
   {
     "number": 225,
@@ -4711,7 +4712,8 @@
     "isError": true,
     "pointer": null,
     "isStack": false,
-    "isEnd": false
+    "isEnd": false,
+    "action": "makeBoolType"
   },
   {
     "number": 316,
@@ -4723,7 +4725,8 @@
     "isError": true,
     "pointer": null,
     "isStack": false,
-    "isEnd": false
+    "isEnd": false,
+    "action": "makeStringType"
   },
   {
     "number": 317,
@@ -7385,11 +7388,61 @@
     "isShift": false,
     "isError": true,
     "pointer": 61,
-    "isStack": false,
+    "isStack": true,
     "isEnd": false
   },
   {
     "number": 464,
+    "nonTerminal": "<Empty>",
+    "guidingSymbols": [
+      "~!=~",
+      "~!~",
+      "~#~",
+      "~%~",
+      "~&&~",
+      "~(~",
+      "~)~",
+      "~**~",
+      "~*~",
+      "~+~",
+      "~,~",
+      "~-~",
+      "~/~",
+      "~;~",
+      "~<=~",
+      "~<~",
+      "~==~",
+      "~>=~",
+      "~>~",
+      "~BooleanLiteral~",
+      "~Identifier~",
+      "~NumberLiteral~",
+      "~StringLiteral~",
+      "~[~",
+      "~]~",
+      "~abstract~",
+      "~break~",
+      "~const~",
+      "~continue~",
+      "~export~",
+      "~for~",
+      "~function~",
+      "~if~",
+      "~import~",
+      "~return~",
+      "~var~",
+      "~||~",
+      "~}~"
+    ],
+    "isShift": false,
+    "isError": true,
+    "pointer": 72,
+    "isStack": false,
+    "isEnd": false,
+    "action": "makeVarAssDeclaration"
+  },
+  {
+    "number": 465,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~}~"
@@ -7401,7 +7454,7 @@
     "isEnd": false
   },
   {
-    "number": 465,
+    "number": 466,
     "nonTerminal": "<ClassElementList>",
     "guidingSymbols": [
       "~}~",
@@ -7423,7 +7476,7 @@
     "isEnd": false
   },
   {
-    "number": 466,
+    "number": 467,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~}~"
@@ -7435,19 +7488,19 @@
     "isEnd": false
   },
   {
-    "number": 467,
+    "number": 468,
     "nonTerminal": "~,~",
     "guidingSymbols": [
       "~,~"
     ],
     "isShift": true,
     "isError": true,
-    "pointer": 468,
+    "pointer": 469,
     "isStack": false,
     "isEnd": false
   },
   {
-    "number": 468,
+    "number": 469,
     "nonTerminal": "<ImportSpecifierList>",
     "guidingSymbols": [
       "~}~",
@@ -7460,19 +7513,19 @@
     "isEnd": false
   },
   {
-    "number": 469,
+    "number": 470,
     "nonTerminal": "~as~",
     "guidingSymbols": [
       "~as~"
     ],
     "isShift": true,
     "isError": true,
-    "pointer": 470,
+    "pointer": 471,
     "isStack": false,
     "isEnd": false
   },
   {
-    "number": 470,
+    "number": 471,
     "nonTerminal": "~Identifier~",
     "guidingSymbols": [
       "~Identifier~"
@@ -7484,7 +7537,7 @@
     "isEnd": false
   },
   {
-    "number": 471,
+    "number": 472,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~,~",
@@ -7497,7 +7550,7 @@
     "isEnd": false
   },
   {
-    "number": 472,
+    "number": 473,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~}~"
@@ -7509,19 +7562,19 @@
     "isEnd": false
   },
   {
-    "number": 473,
+    "number": 474,
     "nonTerminal": "~,~",
     "guidingSymbols": [
       "~,~"
     ],
     "isShift": true,
     "isError": true,
-    "pointer": 474,
+    "pointer": 475,
     "isStack": false,
     "isEnd": false
   },
   {
-    "number": 474,
+    "number": 475,
     "nonTerminal": "<ExportSpecifierList>",
     "guidingSymbols": [
       "~}~",
@@ -7534,19 +7587,19 @@
     "isEnd": false
   },
   {
-    "number": 475,
+    "number": 476,
     "nonTerminal": "~as~",
     "guidingSymbols": [
       "~as~"
     ],
     "isShift": true,
     "isError": true,
-    "pointer": 476,
+    "pointer": 477,
     "isStack": false,
     "isEnd": false
   },
   {
-    "number": 476,
+    "number": 477,
     "nonTerminal": "~Identifier~",
     "guidingSymbols": [
       "~Identifier~"
@@ -7558,7 +7611,7 @@
     "isEnd": false
   },
   {
-    "number": 477,
+    "number": 478,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~,~",
@@ -7571,7 +7624,7 @@
     "isEnd": false
   },
   {
-    "number": 478,
+    "number": 479,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~)~"
@@ -7583,7 +7636,7 @@
     "isEnd": false
   },
   {
-    "number": 479,
+    "number": 480,
     "nonTerminal": "<ParameterList'>",
     "guidingSymbols": [
       "~,~"
@@ -7595,7 +7648,7 @@
     "isEnd": false
   },
   {
-    "number": 480,
+    "number": 481,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~)~",
@@ -7610,7 +7663,7 @@
     "isEnd": false
   },
   {
-    "number": 481,
+    "number": 482,
     "nonTerminal": "<LogicalOrExpression'>",
     "guidingSymbols": [
       "|~<LogicalAndExpression><LogicalOrExpression''>",
@@ -7624,7 +7677,7 @@
     "isEnd": false
   },
   {
-    "number": 482,
+    "number": 483,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~)~",
@@ -7640,7 +7693,7 @@
     "isEnd": false
   },
   {
-    "number": 483,
+    "number": 484,
     "nonTerminal": "<LogicalAndExpression'>",
     "guidingSymbols": [
       "~&&~"
@@ -7652,7 +7705,7 @@
     "isEnd": false
   },
   {
-    "number": 484,
+    "number": 485,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~&&~",
@@ -7669,7 +7722,7 @@
     "isEnd": false
   },
   {
-    "number": 485,
+    "number": 486,
     "nonTerminal": "<EqualityExpression'>",
     "guidingSymbols": [
       "~!=~",
@@ -7682,7 +7735,7 @@
     "isEnd": false
   },
   {
-    "number": 486,
+    "number": 487,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~!=~",
@@ -7701,7 +7754,7 @@
     "isEnd": false
   },
   {
-    "number": 487,
+    "number": 488,
     "nonTerminal": "<RelationalExpression'>",
     "guidingSymbols": [
       "~>=~",
@@ -7716,7 +7769,7 @@
     "isEnd": false
   },
   {
-    "number": 488,
+    "number": 489,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~!=~",
@@ -7739,7 +7792,7 @@
     "isEnd": false
   },
   {
-    "number": 489,
+    "number": 490,
     "nonTerminal": "<AdditiveExpression'>",
     "guidingSymbols": [
       "~-~",
@@ -7752,7 +7805,7 @@
     "isEnd": false
   },
   {
-    "number": 490,
+    "number": 491,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~!=~",
@@ -7777,7 +7830,7 @@
     "isEnd": false
   },
   {
-    "number": 491,
+    "number": 492,
     "nonTerminal": "<MultiplicativeExpression'>",
     "guidingSymbols": [
       "~%~",
@@ -7791,7 +7844,7 @@
     "isEnd": false
   },
   {
-    "number": 492,
+    "number": 493,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~!=~",
@@ -7819,7 +7872,7 @@
     "isEnd": false
   },
   {
-    "number": 493,
+    "number": 494,
     "nonTerminal": "<ExponentiationExpression'>",
     "guidingSymbols": [
       "~**~"
@@ -7831,7 +7884,7 @@
     "isEnd": false
   },
   {
-    "number": 494,
+    "number": 495,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~!=~",
@@ -7863,7 +7916,7 @@
     "isEnd": false
   },
   {
-    "number": 495,
+    "number": 496,
     "nonTerminal": "~++~",
     "guidingSymbols": [
       "~++~"
@@ -7875,7 +7928,7 @@
     "isEnd": false
   },
   {
-    "number": 496,
+    "number": 497,
     "nonTerminal": "~--~",
     "guidingSymbols": [
       "~--~"
@@ -7887,7 +7940,7 @@
     "isEnd": false
   },
   {
-    "number": 497,
+    "number": 498,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~!=~",
@@ -7922,7 +7975,7 @@
     "isEnd": false
   },
   {
-    "number": 498,
+    "number": 499,
     "nonTerminal": "<MemberExpression'>",
     "guidingSymbols": [
       "~[~",
@@ -7935,7 +7988,7 @@
     "isEnd": false
   },
   {
-    "number": 499,
+    "number": 500,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~)~",
@@ -7948,7 +8001,7 @@
     "isEnd": false
   },
   {
-    "number": 500,
+    "number": 501,
     "nonTerminal": "<ArgumentList'>",
     "guidingSymbols": [
       "~,~"
@@ -7960,7 +8013,7 @@
     "isEnd": false
   },
   {
-    "number": 501,
+    "number": 502,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~!~",
@@ -7992,19 +8045,19 @@
     "isEnd": false
   },
   {
-    "number": 502,
+    "number": 503,
     "nonTerminal": "~else~",
     "guidingSymbols": [
       "~else~"
     ],
     "isShift": true,
     "isError": true,
-    "pointer": 503,
+    "pointer": 504,
     "isStack": false,
     "isEnd": false
   },
   {
-    "number": 503,
+    "number": 504,
     "nonTerminal": "<Block>",
     "guidingSymbols": [
       "~{~"
@@ -8016,7 +8069,7 @@
     "isEnd": false
   },
   {
-    "number": 504,
+    "number": 505,
     "nonTerminal": "<Empty>",
     "guidingSymbols": [
       "~!=~",
@@ -8066,7 +8119,7 @@
     "action": "makeElse"
   },
   {
-    "number": 505,
+    "number": 506,
     "nonTerminal": "<Expression>",
     "guidingSymbols": [
       "~!~",
@@ -8086,7 +8139,7 @@
     "isEnd": false
   },
   {
-    "number": 506,
+    "number": 507,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~;~"
@@ -8098,7 +8151,7 @@
     "isEnd": false
   },
   {
-    "number": 507,
+    "number": 508,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~)~"
@@ -8110,7 +8163,7 @@
     "isEnd": false
   },
   {
-    "number": 508,
+    "number": 509,
     "nonTerminal": "<ParameterList'>",
     "guidingSymbols": [
       "~,~"
@@ -8122,7 +8175,7 @@
     "isEnd": false
   },
   {
-    "number": 509,
+    "number": 510,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~)~",
@@ -8137,7 +8190,7 @@
     "isEnd": false
   },
   {
-    "number": 510,
+    "number": 511,
     "nonTerminal": "<LogicalOrExpression'>",
     "guidingSymbols": [
       "|~<LogicalAndExpression><LogicalOrExpression''>",
@@ -8151,7 +8204,7 @@
     "isEnd": false
   },
   {
-    "number": 511,
+    "number": 512,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~)~",
@@ -8167,7 +8220,7 @@
     "isEnd": false
   },
   {
-    "number": 512,
+    "number": 513,
     "nonTerminal": "<LogicalAndExpression'>",
     "guidingSymbols": [
       "~&&~"
@@ -8179,7 +8232,7 @@
     "isEnd": false
   },
   {
-    "number": 513,
+    "number": 514,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~&&~",
@@ -8196,7 +8249,7 @@
     "isEnd": false
   },
   {
-    "number": 514,
+    "number": 515,
     "nonTerminal": "<EqualityExpression'>",
     "guidingSymbols": [
       "~!=~",
@@ -8209,7 +8262,7 @@
     "isEnd": false
   },
   {
-    "number": 515,
+    "number": 516,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~!=~",
@@ -8228,7 +8281,7 @@
     "isEnd": false
   },
   {
-    "number": 516,
+    "number": 517,
     "nonTerminal": "<RelationalExpression'>",
     "guidingSymbols": [
       "~>=~",
@@ -8243,7 +8296,7 @@
     "isEnd": false
   },
   {
-    "number": 517,
+    "number": 518,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~!=~",
@@ -8266,7 +8319,7 @@
     "isEnd": false
   },
   {
-    "number": 518,
+    "number": 519,
     "nonTerminal": "<AdditiveExpression'>",
     "guidingSymbols": [
       "~-~",
@@ -8279,7 +8332,7 @@
     "isEnd": false
   },
   {
-    "number": 519,
+    "number": 520,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~!=~",
@@ -8304,7 +8357,7 @@
     "isEnd": false
   },
   {
-    "number": 520,
+    "number": 521,
     "nonTerminal": "<MultiplicativeExpression'>",
     "guidingSymbols": [
       "~%~",
@@ -8318,7 +8371,7 @@
     "isEnd": false
   },
   {
-    "number": 521,
+    "number": 522,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~!=~",
@@ -8346,7 +8399,7 @@
     "isEnd": false
   },
   {
-    "number": 522,
+    "number": 523,
     "nonTerminal": "<ExponentiationExpression'>",
     "guidingSymbols": [
       "~**~"
@@ -8358,7 +8411,7 @@
     "isEnd": false
   },
   {
-    "number": 523,
+    "number": 524,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~!=~",
@@ -8393,7 +8446,7 @@
     "isEnd": false
   },
   {
-    "number": 524,
+    "number": 525,
     "nonTerminal": "<MemberExpression'>",
     "guidingSymbols": [
       "~[~",
@@ -8406,7 +8459,7 @@
     "isEnd": false
   },
   {
-    "number": 525,
+    "number": 526,
     "nonTerminal": "~ε~",
     "guidingSymbols": [
       "~)~",
@@ -8419,7 +8472,7 @@
     "isEnd": false
   },
   {
-    "number": 526,
+    "number": 527,
     "nonTerminal": "<ArgumentList'>",
     "guidingSymbols": [
       "~,~"

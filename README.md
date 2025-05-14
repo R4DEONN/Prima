@@ -57,7 +57,7 @@
 <Declaration> -> <ExportDeclaration>
 
 <VariableDeclaration> -> ~var~ ~Identifier~ ~:~ <Type>
-<VariableDeclaration> -> ~var~ ~Identifier~ ~:~ <Type> ~=~ <Expression>
+<VariableDeclaration> -> ~var~ ~Identifier~ ~:~ <Type> ~=~ <Expression> <Empty>
 <VariableDeclaration> -> ~const~ ~Identifier~ ~:~ <Type> ~=~ <Expression> <Empty>
 
 <ClassDeclaration> -> <AbstractModifier> ~class~ ~Identifier~ <SuperClass> ~{~ <ClassElementList> ~}~
