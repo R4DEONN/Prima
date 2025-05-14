@@ -100,7 +100,9 @@ public:
 			{
 				uint16_t offset = (static_cast<uint16_t>(advanceCode()) << 8) | advanceCode();
 				if (!toBool(pop()))
+				{
 					_ip = offset;
+				}
 				break;
 			}
 			case OpCode::DEFINE_GLOBAL:
