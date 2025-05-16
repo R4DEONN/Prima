@@ -25,13 +25,12 @@ enum class OpCode : uint8_t
 	DEFINE_GLOBAL,
 	GET_GLOBAL,
 	SET_GLOBAL,
+	GET_LOCAL,
+	SET_LOCAL,
 
 	//JMP
 	JMP,
 	JMP_IF_FALSE,
-
-	//Debug
-	PRINT,
 
 	//End
 	RETURN,
@@ -69,8 +68,6 @@ inline std::string toString(OpCode op)
 		return "JMP";
 	case OpCode::JMP_IF_FALSE:
 		return "JMP_IF_FALSE";
-	case OpCode::PRINT:
-		return "PRINT";
 	case OpCode::RETURN:
 		return "RETURN";
 	default:
@@ -102,6 +99,8 @@ const std::unordered_map<std::string, OpCode> InstructionMap = {
 	{"defglobal", OpCode::DEFINE_GLOBAL},
 	{"setglobal", OpCode::SET_GLOBAL},
 	{"getglobal", OpCode::GET_GLOBAL},
+	{"setlocal", OpCode::SET_LOCAL},
+	{"getlocal", OpCode::GET_LOCAL},
 };
 
 inline OpCode getOpCodeFromString(const std::string &str)

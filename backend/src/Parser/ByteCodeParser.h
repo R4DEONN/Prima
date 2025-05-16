@@ -18,6 +18,7 @@ public:
 private:
 	void _parseConstantString(const std::string &codeString) override;
 
+	void _processCodeDirective(const std::string& codeDirective) override;
 	void _parseCodeString(const std::string& codeString) override;
 
 	Chunk _chunk;
