@@ -19,4 +19,11 @@ module.exports = {
         path: path.resolve(__dirname, 'build'), // Путь для выходного файла
     },
     devtool: 'source-map',
+    cache: {
+        type: 'filesystem',
+        buildDependencies: {
+            config: [__filename],
+            packageJson: [path.resolve(__dirname, 'package.json'), path.resolve(__dirname, 'package-lock.json')]
+        }
+    }
 };
