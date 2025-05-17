@@ -1,9 +1,9 @@
-var a: string = "CHLEN";
-if (a == "CHLENik")
+var a: string = "12";
+if (a == "11")
 {
-    "HORAAAY";
+    "Mew";
 }
 else
 {
-    "zalupa";
+    "  *\n ***\n*****\n ***\n  *";
 }

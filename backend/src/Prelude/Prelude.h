@@ -2,6 +2,8 @@
 
 #include <stack>
 #include <utility>
+
+#include "StackFrame.h"
 #include "../Common/Chunk.h"
 #include "../Value/GlobalVariables.h"
 
@@ -159,5 +161,6 @@ private:
 	StringPool _stringPool;
 	GlobalVariables _globals;
 	size_t _ip = 0;
-	std::stack<Value, std::vector<Value>> _stack; //TODO: Проверить производительность
+	std::stack<Value, std::vector<Value>> _stack;
+	std::vector<StackFrame> _frames;
 };

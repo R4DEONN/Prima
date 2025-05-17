@@ -1,7 +1,5 @@
 #pragma once
 
-#include <cstdint>
-
 #include "OpCode.h"
 #include "vector"
 #include "../Value/Value.h"
@@ -24,4 +22,5 @@ public:
 	std::vector<uint8_t> code;
 	std::vector<int> lines;
 	std::vector<Value> constants;
+	int localCount;
 };

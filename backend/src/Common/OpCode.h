@@ -1,4 +1,5 @@
 #pragma once
+#include <cstdint>
 #include <unordered_map>
 
 enum class OpCode : uint8_t

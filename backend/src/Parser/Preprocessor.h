@@ -32,6 +32,9 @@ private:
 	int _currentAddress = 0;
 	std::unordered_map<std::string, int> _labels;
 
+	void _processCodeDirective(const std::string &codeDirective) override
+	{}
+
 	void _parseConstantString(const std::string &codeString) override
 	{
 		_newConstantLines.push_back(codeString);

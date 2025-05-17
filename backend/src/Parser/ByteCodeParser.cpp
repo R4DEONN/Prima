@@ -94,10 +94,5 @@ void ByteCodeParser::_processCodeDirective(const std::string& codeDirective)
 {
 	std::stringstream stringStream(codeDirective);
 	std::string directive;
-	int localCount;
-	stringStream >> directive >> localCount;
-	if (localCount != 0)
-	{
-
-	}
+	stringStream >> directive >> _chunk.localCount;
 }
