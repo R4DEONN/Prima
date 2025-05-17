@@ -18,8 +18,8 @@ class Prelude
 {
 public:
 	explicit Prelude(Chunk chunk, StringPool stringPool)
-		: _chunk(std::move(chunk)),
-			_stringPool(std::move(stringPool))
+		: _stringPool(std::move(stringPool)),
+		  _frames{StackFrame(std::move(chunk))}
 	{
 	}
 
@@ -29,21 +29,26 @@ public:
 		{
 			runImpl();
 		}
-		catch (const std::exception& e)
+		catch (const std::exception &e)
 		{
-			throw std::runtime_error(e.what() + std::string(" at line ") + std::to_string(_chunk.lines[_ip]));
+			throw std::runtime_error(e.what() + std::string(" at line ") + std::to_string(getCurrentFrame().chunk.lines[_ip]));
 		}
 	}
 
 	void runImpl()
 	{
-		while (_ip < _chunk.code.size())
+		while (true)
 		{
+			auto& currentFrame = getCurrentFrame();
+			if (currentFrame.ip >= currentFrame.chunk.code.size())
+			{
+				break;
+			}
 			switch (static_cast<OpCode>(advanceCode()))
 			{
 			case OpCode::CONSTANT:
 			{
-				Value constant = _chunk.constants[advanceCode() - 1];
+				Value constant = currentFrame.chunk.constants[advanceCode() - 1];
 				push(constant);
 				break;
 			}
@@ -109,26 +114,35 @@ public:
 			}
 			case OpCode::DEFINE_GLOBAL:
 			{
-				Value constant = _chunk.constants[advanceCode() - 1];
+				Value constant = currentFrame.chunk.constants[advanceCode() - 1];
 				_globals.define(std::get<StringPtr>(constant), pop());
 				break;
 			}
 			case OpCode::GET_GLOBAL:
 			{
-				Value constant = _chunk.constants[advanceCode() - 1];
+				Value constant = currentFrame.chunk.constants[advanceCode() - 1];
 				push(_globals.get(std::get<StringPtr>(constant)));
 				break;
 			}
 			case OpCode::SET_GLOBAL:
 			{
-				Value constant = _chunk.constants[advanceCode() - 1];
+				Value constant = currentFrame.chunk.constants[advanceCode() - 1];
 				_globals.set(std::get<StringPtr>(constant), pop());
 				break;
 			}
 			case OpCode::GET_LOCAL:
+			{
+				uint8_t slot = advanceCode();
+				push(currentFrame.locals[slot]);
 				break;
+			}
+
 			case OpCode::SET_LOCAL:
+			{
+				uint8_t slot = advanceCode();
+				currentFrame.locals[slot] = pop();
 				break;
+			}
 			default:
 				throw std::runtime_error("Unknown opcode");
 			}
@@ -138,7 +152,7 @@ public:
 private:
 	uint8_t advanceCode()
 	{
-		return _chunk.code[_ip++];
+		return getCurrentFrame().chunk.code[getCurrentFrame().ip++];
 	}
 
 	void push(const Value &value)
@@ -157,10 +171,14 @@ private:
 		return value;
 	}
 
-	Chunk _chunk;
+	StackFrame& getCurrentFrame()
+	{
+		return _frames.back();
+	}
+
 	StringPool _stringPool;
 	GlobalVariables _globals;
 	size_t _ip = 0;
-	std::stack<Value, std::vector<Value>> _stack;
+	std::stack<Value, std::vector<Value> > _stack;
 	std::vector<StackFrame> _frames;
 };

@@ -37,12 +37,12 @@ protected:
 			if (line.find(CONSTANT_STATE_STRING) != std::string::npos)
 			{
 				_state = State::CONST;
-				_processCodeDirective(line);
 				continue;
 			}
 			if (line.find(CODE_STATE_STRING) != std::string::npos)
 			{
 				_state = State::CODE;
+				_processCodeDirective(line);
 				continue;
 			}
 

@@ -33,7 +33,9 @@ private:
 	std::unordered_map<std::string, int> _labels;
 
 	void _processCodeDirective(const std::string &codeDirective) override
-	{}
+	{
+		_newCodeLines.push_back(codeDirective);
+	}
 
 	void _parseConstantString(const std::string &codeString) override
 	{
@@ -97,7 +99,6 @@ private:
 
 		if (!_newCodeLines.empty())
 		{
-			output.push_back(CODE_STATE_STRING);
 			std::ranges::for_each(_newCodeLines, [&](auto &line)
 			{
 				if (includesJump(line))

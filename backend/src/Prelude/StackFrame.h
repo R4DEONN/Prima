@@ -5,13 +5,12 @@
 
 struct StackFrame
 {
-	const Chunk *chunk;
+	Chunk chunk;
 	size_t ip = 0;
 	std::vector<Value> locals;
 
-	StackFrame(const Chunk *chunk, int localCount)
-		: chunk(chunk),
-		  locals(localCount)
-	{
-	}
+	explicit StackFrame(Chunk chunk)
+		: chunk(std::move(chunk)),
+		  locals(chunk.localCount)
+	{}
 };
