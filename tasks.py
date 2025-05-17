@@ -38,7 +38,14 @@ def _run_command(c: Context, command: str, workdir: str, error_message_prefix: s
 def build_backend(c, verbose=False):
     os.makedirs(BACKEND_BUILD_OUTPUT_DIR, exist_ok=True)
 
-    _run_command(c, "cmake .", BACKEND_DIR, "Ошибка конфигурации CMake", hide_command_output=not verbose)
+    cmake_configure_parts = ["cmake"]
+    if sys.platform == "win32":
+        cmake_configure_parts.extend(["-G", "MinGW Makefiles"])
+    cmake_configure_parts.append(".")
+
+    cmake_configure_command = " ".join(cmake_configure_parts)
+
+    _run_command(c, cmake_configure_command, BACKEND_DIR, "Ошибка конфигурации CMake", hide_command_output=not verbose)
     _run_command(c, "cmake --build .", BACKEND_DIR, "Ошибка сборки CMake", hide_command_output=not verbose)
 
     if not os.path.exists(PVM_EXECUTABLE_PATH):
