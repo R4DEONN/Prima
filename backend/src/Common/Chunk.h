@@ -21,14 +21,6 @@ public:
 		lines.push_back(line);
 	}
 
-	auto writeConstant(const Value &value)
-	{
-		auto constantIndex = constants.size();
-		constants.push_back(value);
-
-		return constantIndex;
-	}
-
 	std::vector<uint8_t> code;
 	std::vector<int> lines;
 	std::vector<Value> constants;

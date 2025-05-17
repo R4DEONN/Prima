@@ -37,6 +37,7 @@ protected:
 			if (line.find(CONSTANT_STATE_STRING) != std::string::npos)
 			{
 				_state = State::CONST;
+				_processCodeDirective(line);
 				continue;
 			}
 			if (line.find(CODE_STATE_STRING) != std::string::npos)
@@ -56,6 +57,7 @@ protected:
 			}
 		}
 	}
+	virtual void _processCodeDirective(const std::string& codeDirective) = 0;
 	virtual void _parseCodeString(const std::string& codeString) = 0;
 	virtual void _parseConstantString(const std::string& codeString) = 0;
 private:

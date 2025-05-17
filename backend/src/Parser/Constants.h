@@ -26,6 +26,8 @@ inline std::unordered_map<OpCode, uint8_t> countCommandBytes = {
 	{OpCode::DEFINE_GLOBAL, 2},
 	{OpCode::SET_GLOBAL, 2},
 	{OpCode::GET_GLOBAL, 2},
+	{OpCode::SET_LOCAL, 2},
+	{OpCode::GET_LOCAL, 2},
 
 	// Three bytes
 	{OpCode::JMP, 3},

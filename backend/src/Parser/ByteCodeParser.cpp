@@ -1,4 +1,3 @@
-#include <fstream>
 #include <sstream>
 #include "ByteCodeParser.h"
 
@@ -68,7 +67,7 @@ void ByteCodeParser::_parseConstantString(const std::string &codeString)
 	{
 		double number;
 		strStream >> number;
-		_chunk.constants.push_back(number);
+		_chunk.constants.emplace_back(number);
 		break;
 	}
 
@@ -82,12 +81,23 @@ void ByteCodeParser::_parseConstantString(const std::string &codeString)
 		{
 			throw std::runtime_error("Invalid string constant format");
 		}
-		_chunk.constants.push_back(_stringPool.intern(value));
+		_chunk.constants.emplace_back(_stringPool.intern(value));
 		break;
 	}
 
-
 	default:
 		throw std::invalid_argument("Invalid value type");
+	}
+}
+
+void ByteCodeParser::_processCodeDirective(const std::string& codeDirective)
+{
+	std::stringstream stringStream(codeDirective);
+	std::string directive;
+	int localCount;
+	stringStream >> directive >> localCount;
+	if (localCount != 0)
+	{
+
 	}
 }

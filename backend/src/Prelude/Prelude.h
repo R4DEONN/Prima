@@ -123,7 +123,9 @@ public:
 				_globals.set(std::get<StringPtr>(constant), pop());
 				break;
 			}
-			case OpCode::PRINT:
+			case OpCode::GET_LOCAL:
+				break;
+			case OpCode::SET_LOCAL:
 				break;
 			default:
 				throw std::runtime_error("Unknown opcode");
@@ -157,5 +159,5 @@ private:
 	StringPool _stringPool;
 	GlobalVariables _globals;
 	size_t _ip = 0;
-	std::stack<Value> _stack;
+	std::stack<Value, std::vector<Value>> _stack; //TODO: Проверить производительность
 };
